@@ -42,5 +42,5 @@ public class Candidate {
 		else return this.Preference.get(ind);
 	}*/
 
-	public void waitchanger(Candidate c, int q, int i){ progs.get(c.previouswaitlist).num--; this.waiting=this.Preference.get(q); this.previouswaitlist=i;}
+	public void waitchanger(Candidate c, int q, int i){ this.waiting=this.Preference.get(q); this.previouswaitlist=i;}
 }

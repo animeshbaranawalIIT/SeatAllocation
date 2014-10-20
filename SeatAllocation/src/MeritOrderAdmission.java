@@ -22,8 +22,9 @@ class MeritOrderAdmission{
 		for(int j=0;j<mylist.obc_pd.size();j++) phase1(mylist.obc_pd.get(j),"OBC_PD",true);
 		for(int j=0;j<mylist.sc_pd.size();j++) phase1(mylist.sc_pd.get(j),"SC_PD",true);
 		for(int j=0;j<mylist.st_pd.size();j++) phase1(mylist.st_pd.get(j),"ST_PD",true);
-		
-		
+		System.out.println("Phase 1 completed successfully....");
+		System.out.println("Phase 2 initialising....");
+		for(int j=0;j<candidatelist.candidates.size();j++){ phase2(candidatelist.candidates.get(j)); } 
 	}
 	
 	public int find(String cd, String cat, Boolean pd){ // function to find the index of programme in prog list given its code, category and pd satus
@@ -90,67 +91,68 @@ class MeritOrderAdmission{
 
 
 	public void phase2(Candidate c){
-		int i,j; String temp;
-		if(!c.waiting.equals("")){ j = c.Preference.indexOf(c.waiting);
-									for(int q=0; q<j ; q++){
-											i = find(c.Preference.get(q),"GE",false);
+		int i,j; 
+		if(!c.waiting.equals("")){ j = c.Preference.indexOf(c.waiting); }
+		else { j = c.Preference.size(); }
+			for(int q=0; q<j ; q++){
+				i = find(c.Preference.get(q),"GE",false);
 
-											switch(c.Category){
-												case GE : if(!c.pdstatus){ 	if(progs.get(i).apply2(c)) {c.waitchanger(c,q,i); break;}
-														  					if(progs.get(i+1).apply2(c)){c.waitchanger(c,q,i+1); break;}
-														  					if(progs.get(i+4).apply2(c)){c.waitchanger(c,q,i+4); break;}
-														  					if(progs.get(i+5).apply2(c)){c.waitchanger(c,q,i+5); break;}
+								switch(c.Category){
+												case "GE" : if(!c.PD){ 	if(progs.get(i).apply2(c)) {if(c.waiting!=""){progs.get(c.previouswaitlist).num--;}; c.waitchanger(c,q,i); break;}
+														  					if(progs.get(i+1).apply2(c)){if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i+1); break;}
+														  					if(progs.get(i+4).apply2(c)){if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i+4); break;}
+														  					if(progs.get(i+5).apply2(c)){if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i+5); break;}
 														  				}
-														  else { 			if(progs.get(i).apply2(c)) {c.waitchanger(c,q,i); break;}
-														  					if(progs.get(i+4).apply2(c)){c.waitchanger(c,q,i+4); break;}
-														  					if(progs.get(i+1).apply2(c)){c.waitchanger(c,q,i+1); break;}
-														  					if(progs.get(i+5).apply2(c)){c.waitchanger(c,q,i+5); break;}
+														  else { 			if(progs.get(i).apply2(c)) {if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i); break;}
+														  					if(progs.get(i+4).apply2(c)){if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i+4); break;}
+														  					if(progs.get(i+1).apply2(c)){if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i+1); break;}
+														  					if(progs.get(i+5).apply2(c)){if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i+5); break;}
 																}
 
-												case OBC :	if(!c.pdstatus){ if(progs.get(i).apply2(c)) {c.waitchanger(c,q,i); break;}
-														  					 if(progs.get(i+1).apply2(c)){c.waitchanger(c,q,i+1); break;}
-														  				     if(progs.get(i+4).apply2(c)){c.waitchanger(c,q,i+4); break;}
-														  					 if(progs.get(i+5).apply2(c)){c.waitchanger(c,q,i+5); break;}
+												case "OBC" :	if(!c.PD){ if(progs.get(i).apply2(c)) {if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i); break;}
+														  					 if(progs.get(i+1).apply2(c)){if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i+1); break;}
+														  				     if(progs.get(i+4).apply2(c)){if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i+4); break;}
+														  					 if(progs.get(i+5).apply2(c)){if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i+5); break;}
 														  				}
-														  else { 			 if(progs.get(i).apply2(c)) {c.waitchanger(c,q,i); break;}
-														  					 if(progs.get(i+4).apply2(c)){c.waitchanger(c,q,i+4); break;}
-														  					 if(progs.get(i+1).apply2(c)){c.waitchanger(c,q,i+1); break;}
-														  					 if(progs.get(i+5).apply2(c)){c.waitchanger(c,q,i+5); break;}
+														  else { 			 if(progs.get(i).apply2(c)) {if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i); break;}
+														  					 if(progs.get(i+4).apply2(c)){if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i+4); break;}
+														  					 if(progs.get(i+1).apply2(c)){if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i+1); break;}
+														  					 if(progs.get(i+5).apply2(c)){if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i+5); break;}
 																}
 
-												case SC : if(!c.pdstatus){
-																			if(progs.get(i).apply2(c)) {c.waitchanger(c,q,i); break;}
-														  					if(progs.get(i+1).apply2(c)){c.waitchanger(c,q,i+2); break;}
-														  					if(progs.get(i+1).apply2(c)){c.waitchanger(c,q,i+1); break;}
-														  					if(progs.get(i+4).apply2(c)){c.waitchanger(c,q,i+4); break;}
-														  					if(progs.get(i+5).apply2(c)){c.waitchanger(c,q,i+5); break;}
-														  					if(progs.get(i+5).apply2(c)){c.waitchanger(c,q,i+6); break;}	
+												case "SC" : if(!c.PD){
+																			if(progs.get(i).apply2(c)) {if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i); break;}
+														  					if(progs.get(i+1).apply2(c)){if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i+2); break;}
+														  					if(progs.get(i+1).apply2(c)){if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i+1); break;}
+														  					if(progs.get(i+4).apply2(c)){if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i+4); break;}
+														  					if(progs.get(i+5).apply2(c)){if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i+5); break;}
+														  					if(progs.get(i+5).apply2(c)){if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i+6); break;}	
 																		}
 
-															else{  			if(progs.get(i).apply2(c)) {c.waitchanger(c,q,i); break;}
-														  					if(progs.get(i+2).apply2(c)){c.waitchanger(c,q,i+2); break;}
-														  					if(progs.get(i+4).apply2(c)){c.waitchanger(c,q,i+4); break;}
-														  					if(progs.get(i+6).apply2(c)){c.waitchanger(c,q,i+6); break;}
-														  					if(progs.get(i+1).apply2(c)){c.waitchanger(c,q,i+1); break;}
-														  					if(progs.get(i+5).apply2(c)){c.waitchanger(c,q,i+5); break;}
+															else{  			if(progs.get(i).apply2(c)) {if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i); break;}
+														  					if(progs.get(i+2).apply2(c)){if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i+2); break;}
+														  					if(progs.get(i+4).apply2(c)){if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i+4); break;}
+														  					if(progs.get(i+6).apply2(c)){if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i+6); break;}
+														  					if(progs.get(i+1).apply2(c)){if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i+1); break;}
+														  					if(progs.get(i+5).apply2(c)){if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i+5); break;}
 
 
 															}
-												case ST : if(!c.pdstatus){
-																			if(progs.get(i).apply2(c)) {c.waitchanger(c,q,i); break;}
-														  					if(progs.get(i+1).apply2(c)){c.waitchanger(c,q,i+3); break;}
-														  					if(progs.get(i+1).apply2(c)){c.waitchanger(c,q,i+1); break;}
-														  					if(progs.get(i+4).apply2(c)){c.waitchanger(c,q,i+4); break;}
-														  					if(progs.get(i+5).apply2(c)){c.waitchanger(c,q,i+5); break;}
-														  					if(progs.get(i+5).apply2(c)){c.waitchanger(c,q,i+7); break;}	
+												case "ST" : if(!c.PD){
+																			if(progs.get(i).apply2(c)) {if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i); break;}
+														  					if(progs.get(i+1).apply2(c)){if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i+3); break;}
+														  					if(progs.get(i+1).apply2(c)){if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i+1); break;}
+														  					if(progs.get(i+4).apply2(c)){if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i+4); break;}
+														  					if(progs.get(i+5).apply2(c)){if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i+5); break;}
+														  					if(progs.get(i+5).apply2(c)){if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i+7); break;}	
 																		}
 
-															else{  			if(progs.get(i).apply2(c)) {c.waitchanger(c,q,i); break;}
-														  					if(progs.get(i+2).apply2(c)){c.waitchanger(c,q,i+3); break;}
-														  					if(progs.get(i+4).apply2(c)){c.waitchanger(c,q,i+4); break;}
-														  					if(progs.get(i+6).apply2(c)){c.waitchanger(c,q,i+7); break;}
-														  					if(progs.get(i+1).apply2(c)){c.waitchanger(c,q,i+1); break;}
-														  					if(progs.get(i+5).apply2(c)){c.waitchanger(c,q,i+5); break;}
+															else{  			if(progs.get(i).apply2(c)) {if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i); break;}
+														  					if(progs.get(i+2).apply2(c)){if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i+3); break;}
+														  					if(progs.get(i+4).apply2(c)){if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i+4); break;}
+														  					if(progs.get(i+6).apply2(c)){if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i+7); break;}
+														  					if(progs.get(i+1).apply2(c)){if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i+1); break;}
+														  					if(progs.get(i+5).apply2(c)){if(c.waiting!=""){progs.get(c.previouswaitlist).num--;};c.waitchanger(c,q,i+5); break;}
 
 
 																}
@@ -159,76 +161,4 @@ class MeritOrderAdmission{
 														 	
 									}
 		}
-
-		else{      // when the candidate didn't get anything in phase 1
-				for(int q=0; q<c.Preference.size() ; q++){
-											i = find(c.Preference.get(q),"GE",false);
-
-											switch(c.Category){
-												case GE : if(!c.pdstatus){ 	if(progs.get(i).apply2(c)) {c.waitchanger2(c,q,i); break;}
-														  					if(progs.get(i+1).apply2(c)){c.waitchanger2(c,q,i+1); break;}
-														  					if(progs.get(i+4).apply2(c)){c.waitchanger2(c,q,i+4); break;}
-														  					if(progs.get(i+5).apply2(c)){c.waitchanger2(c,q,i+5); break;}
-														  				}
-														  else { 			if(progs.get(i).apply2(c)) {c.waitchanger2(c,q,i); break;}
-														  					if(progs.get(i+4).apply2(c)){c.waitchanger2(c,q,i+4); break;}
-														  					if(progs.get(i+1).apply2(c)){c.waitchanger2(c,q,i+1); break;}
-														  					if(progs.get(i+5).apply2(c)){c.waitchanger2(c,q,i+5); break;}
-																}
-
-												case OBC :	if(!c.pdstatus){ if(progs.get(i).apply2(c)) {c.waitchanger2(c,q,i); break;}
-														  					 if(progs.get(i+1).apply2(c)){c.waitchanger2(c,q,i+1); break;}
-														  				     if(progs.get(i+4).apply2(c)){c.waitchanger2(c,q,i+4); break;}
-														  					 if(progs.get(i+5).apply2(c)){c.waitchanger2(c,q,i+5); break;}
-														  				}
-														  else { 			 if(progs.get(i).apply2(c)) {c.waitchanger2(c,q,i); break;}
-														  					 if(progs.get(i+4).apply2(c)){c.waitchanger2(c,q,i+4); break;}
-														  					 if(progs.get(i+1).apply2(c)){c.waitchanger2(c,q,i+1); break;}
-														  					 if(progs.get(i+5).apply2(c)){c.waitchanger2(c,q,i+5); break;}
-																}
-
-												case SC : if(!c.pdstatus){
-																			if(progs.get(i).apply2(c)) {c.waitchanger2(c,q,i); break;}
-														  					if(progs.get(i+1).apply2(c)){c.waitchanger2(c,q,i+2); break;}
-														  					if(progs.get(i+1).apply2(c)){c.waitchanger2(c,q,i+1); break;}
-														  					if(progs.get(i+4).apply2(c)){c.waitchanger2(c,q,i+4); break;}
-														  					if(progs.get(i+5).apply2(c)){c.waitchanger2(c,q,i+5); break;}
-														  					if(progs.get(i+5).apply2(c)){c.waitchanger2(c,q,i+6); break;}	
-																		}
-
-															else{  			if(progs.get(i).apply2(c)) {c.waitchanger2(c,q,i); break;}
-														  					if(progs.get(i+2).apply2(c)){c.waitchanger2(c,q,i+2); break;}
-														  					if(progs.get(i+4).apply2(c)){c.waitchanger2(c,q,i+4); break;}
-														  					if(progs.get(i+6).apply2(c)){c.waitchanger2(c,q,i+6); break;}
-														  					if(progs.get(i+1).apply2(c)){c.waitchanger2(c,q,i+1); break;}
-														  					if(progs.get(i+5).apply2(c)){c.waitchanger2(c,q,i+5); break;}
-
-
-															}
-												case ST : if(!c.pdstatus){
-																			if(progs.get(i).apply2(c)) {c.waitchanger2(c,q,i); break;}
-														  					if(progs.get(i+1).apply2(c)){c.waitchanger2(c,q,i+3); break;}
-														  					if(progs.get(i+1).apply2(c)){c.waitchanger2(c,q,i+1); break;}
-														  					if(progs.get(i+4).apply2(c)){c.waitchanger2(c,q,i+4); break;}
-														  					if(progs.get(i+5).apply2(c)){c.waitchanger2(c,q,i+5); break;}
-														  					if(progs.get(i+5).apply2(c)){c.waitchanger2(c,q,i+7); break;}	
-																		}
-
-															else{  			if(progs.get(i).apply2(c)) {c.waitchanger2(c,q,i); break;}
-														  					if(progs.get(i+2).apply2(c)){c.waitchanger2(c,q,i+3); break;}
-														  					if(progs.get(i+4).apply2(c)){c.waitchanger2(c,q,i+4); break;}
-														  					if(progs.get(i+6).apply2(c)){c.waitchanger2(c,q,i+7); break;}
-														  					if(progs.get(i+1).apply2(c)){c.waitchanger2(c,q,i+1); break;}
-														  					if(progs.get(i+5).apply2(c)){c.waitchanger2(c,q,i+5); break;}
-
-
-																}
-
-											}	
-
-				}		
-			}
-
-	}
-	
 }
