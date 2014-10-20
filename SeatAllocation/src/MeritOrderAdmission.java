@@ -4,16 +4,16 @@ import java.io.IOException;
 
 class MeritOrderAdmission{
 	
-	ArrayList <VirtualProgramme> progs; 
-	MeritList candidatelist;
-	MeritListforAlgo2 mylist;
+	ArrayList <VirtualProgramme> progs; // Virtual Programmes 
+	MeritList candidatelist; // List of candidates
+	MeritListforAlgo2 mylist; // Appended Merit List for Algo 2
 
-	public MeritOrderAdmission(String f1, String f2, String f3) {
-		progs = new ArrayList<VirtualProgramme>();
+	public MeritOrderAdmission(String f1, String f2, String f3) { // file names as constructor parameters
+		progs = new ArrayList<VirtualProgramme>(); // initialising data members
 		candidatelist = new MeritList(f1,f2);
 		mylist = new MeritListforAlgo2(candidatelist.candidates);
 		mylist.sortbyrank();
-		this.fillprogramme(f3);
+		this.fillprogramme(f3); // filling the virtual programme details
 		for(int j=0;j<mylist.ge.size();j++) phase1(mylist.ge.get(j),"GE",false);
 		for(int j=0;j<mylist.obc.size();j++) phase1(mylist.obc.get(j),"OBC",false);
 		for(int j=0;j<mylist.sc.size();j++) phase1(mylist.sc.get(j),"SC",false);
@@ -25,7 +25,7 @@ class MeritOrderAdmission{
 		
 	}
 	
-	public int find(String cd, String cat, Boolean pd){
+	public int find(String cd, String cat, Boolean pd){ // function to find the index of programme in prog list given its code, category and pd satus
 		for(int j=0;j<progs.size();j++){
 			if(progs.get(j).code.equals(cd)){
 				if(progs.get(j).category.equals(cat)){
@@ -36,7 +36,7 @@ class MeritOrderAdmission{
 		return -1;
 	}
 	
-	public void fillprogramme(String f){
+	public void fillprogramme(String f){ // function to fill virtual programme details
 		File file = new File(f);
 		
 		try{	
@@ -64,18 +64,18 @@ class MeritOrderAdmission{
 		catch (IOException ex){System.out.println("sada"); }
 	}
 	
-	public void phase1(Candidate c,String cat,Boolean pd){
+	public void phase1(Candidate c,String cat,Boolean pd){ //implement phase 1 for a candidate
 		int i; String temp;
-		for(int j=0;j<c.Preference.size();j++){
-			i=find(c.Preference.get(j),cat,pd);
+		for(int j=0;j<c.Preference.size();j++){ // searching over preference list of candidate
+			i=find(c.Preference.get(j),cat,pd); // finding index of program in the list
 			System.out.println(i);
-			if(progs.get(i).apply(c, cat, pd)){
+			if(progs.get(i).applyalgo2(c, cat, pd)){ 
 				System.out.println("App accepted");
-				temp = c.Preference.get(j);
+				temp = c.Preference.get(j); // waitlisted program
 				System.out.println(temp);
-				if(c.waiting.equals("")){ System.out.println("adding to empty"); c.waiting=temp; c.previouswaitlist=i; }
+				if(c.waiting.equals("")){ System.out.println("adding to empty"); c.waiting=temp; c.previouswaitlist=i; } // assign waitlisted program if waitlist initially empty
 				else{ 
-					if(c.Preference.indexOf(temp)<c.Preference.indexOf(c.waiting)){ 
+					if(c.Preference.indexOf(temp)<c.Preference.indexOf(c.waiting)){ //update waitlist if waitlist initially not empty 
 						progs.get(c.previouswaitlist).num--;
 						c.previouswaitlist=i;
 						c.waiting=temp; 

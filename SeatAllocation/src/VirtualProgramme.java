@@ -1,5 +1,4 @@
-import java.util.*;
-import java.io.*;
+
 
 class VirtualProgramme{
 	String code;			// code of the parent programme
@@ -9,7 +8,7 @@ class VirtualProgramme{
 	int num;   				// stores the number of already shortlisted students
 	//Candidate[] waitlist; 	// stores the shortlisted candidates
 	
-	public VirtualProgramme(String cod, String cat, Boolean pd, int q){ 
+	public VirtualProgramme(String cod, String cat, Boolean pd, int q){ //Default Constructor 
 		this.code= cod; 
 		this.category=cat; 
 		this.pdstatus=pd; this.quota=q; this.num=0;
@@ -27,11 +26,13 @@ class VirtualProgramme{
 		}
 		else { System.out.println("Quota full"); return false; }
 	}*/
-	public Boolean apply(Candidate c, String cat, Boolean pd){	System.out.println("application of "+ c.Id + " " + cat + "in" + code + " " + category); System.out.println(num); System.out.println(quota);					// for new applicant
-		if(num+1 <= quota){ 
-			if( cat.equals(category) && pd == pdstatus){ System.out.println("Accepting the application");
+	public Boolean applyalgo2(Candidate c, String cat, Boolean pd){	
+		System.out.println("application of "+ c.Id + " " + cat + "in" + code + " " + category); System.out.println(num); System.out.println(quota);					// for new applicant
+		if(num+1 <= quota){  // check if quota empty
+			if( cat.equals(category) && pd == pdstatus){ //check category and pd status of student and programme 
+				System.out.println("Accepting the application");
 				//waitlist[num] = c; 
-				num++; 
+				num++; // increase seats occupied if candidate waitlisted
 				return true; 
 			}
 			else {System.out.println("not a valid application"); return false;}
