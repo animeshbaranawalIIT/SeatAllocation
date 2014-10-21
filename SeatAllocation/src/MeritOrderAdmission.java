@@ -23,6 +23,7 @@ class MeritOrderAdmission{
 		for(int j=0;j<mylist.sc_pd.size();j++) phase1(mylist.sc_pd.get(j),"SC_PD",true);
 		for(int j=0;j<mylist.st_pd.size();j++) phase1(mylist.st_pd.get(j),"ST_PD",true);
 		
+		
 	}
 	
 	public int find(String cd, String cat, Boolean pd){
@@ -85,6 +86,149 @@ class MeritOrderAdmission{
 				break;
 			}
 		}
+	}
+
+
+	public void phase2(Candidate c){
+		int i,j; String temp;
+		if(!c.waiting.equals("")){ j = c.Preference.indexOf(c.waiting);
+									for(int q=0; q<j ; q++){
+											i = find(c.Preference.get(q),"GE",false);
+
+											switch(c.Category){
+												case GE : if(!c.pdstatus){ 	if(progs.get(i).apply2(c)) {c.waitchanger(c,q,i); break;}
+														  					if(progs.get(i+1).apply2(c)){c.waitchanger(c,q,i+1); break;}
+														  					if(progs.get(i+4).apply2(c)){c.waitchanger(c,q,i+4); break;}
+														  					if(progs.get(i+5).apply2(c)){c.waitchanger(c,q,i+5); break;}
+														  				}
+														  else { 			if(progs.get(i).apply2(c)) {c.waitchanger(c,q,i); break;}
+														  					if(progs.get(i+4).apply2(c)){c.waitchanger(c,q,i+4); break;}
+														  					if(progs.get(i+1).apply2(c)){c.waitchanger(c,q,i+1); break;}
+														  					if(progs.get(i+5).apply2(c)){c.waitchanger(c,q,i+5); break;}
+																}
+
+												case OBC :	if(!c.pdstatus){ if(progs.get(i).apply2(c)) {c.waitchanger(c,q,i); break;}
+														  					 if(progs.get(i+1).apply2(c)){c.waitchanger(c,q,i+1); break;}
+														  				     if(progs.get(i+4).apply2(c)){c.waitchanger(c,q,i+4); break;}
+														  					 if(progs.get(i+5).apply2(c)){c.waitchanger(c,q,i+5); break;}
+														  				}
+														  else { 			 if(progs.get(i).apply2(c)) {c.waitchanger(c,q,i); break;}
+														  					 if(progs.get(i+4).apply2(c)){c.waitchanger(c,q,i+4); break;}
+														  					 if(progs.get(i+1).apply2(c)){c.waitchanger(c,q,i+1); break;}
+														  					 if(progs.get(i+5).apply2(c)){c.waitchanger(c,q,i+5); break;}
+																}
+
+												case SC : if(!c.pdstatus){
+																			if(progs.get(i).apply2(c)) {c.waitchanger(c,q,i); break;}
+														  					if(progs.get(i+1).apply2(c)){c.waitchanger(c,q,i+2); break;}
+														  					if(progs.get(i+1).apply2(c)){c.waitchanger(c,q,i+1); break;}
+														  					if(progs.get(i+4).apply2(c)){c.waitchanger(c,q,i+4); break;}
+														  					if(progs.get(i+5).apply2(c)){c.waitchanger(c,q,i+5); break;}
+														  					if(progs.get(i+5).apply2(c)){c.waitchanger(c,q,i+6); break;}	
+																		}
+
+															else{  			if(progs.get(i).apply2(c)) {c.waitchanger(c,q,i); break;}
+														  					if(progs.get(i+2).apply2(c)){c.waitchanger(c,q,i+2); break;}
+														  					if(progs.get(i+4).apply2(c)){c.waitchanger(c,q,i+4); break;}
+														  					if(progs.get(i+6).apply2(c)){c.waitchanger(c,q,i+6); break;}
+														  					if(progs.get(i+1).apply2(c)){c.waitchanger(c,q,i+1); break;}
+														  					if(progs.get(i+5).apply2(c)){c.waitchanger(c,q,i+5); break;}
+
+
+															}
+												case ST : if(!c.pdstatus){
+																			if(progs.get(i).apply2(c)) {c.waitchanger(c,q,i); break;}
+														  					if(progs.get(i+1).apply2(c)){c.waitchanger(c,q,i+3); break;}
+														  					if(progs.get(i+1).apply2(c)){c.waitchanger(c,q,i+1); break;}
+														  					if(progs.get(i+4).apply2(c)){c.waitchanger(c,q,i+4); break;}
+														  					if(progs.get(i+5).apply2(c)){c.waitchanger(c,q,i+5); break;}
+														  					if(progs.get(i+5).apply2(c)){c.waitchanger(c,q,i+7); break;}	
+																		}
+
+															else{  			if(progs.get(i).apply2(c)) {c.waitchanger(c,q,i); break;}
+														  					if(progs.get(i+2).apply2(c)){c.waitchanger(c,q,i+3); break;}
+														  					if(progs.get(i+4).apply2(c)){c.waitchanger(c,q,i+4); break;}
+														  					if(progs.get(i+6).apply2(c)){c.waitchanger(c,q,i+7); break;}
+														  					if(progs.get(i+1).apply2(c)){c.waitchanger(c,q,i+1); break;}
+														  					if(progs.get(i+5).apply2(c)){c.waitchanger(c,q,i+5); break;}
+
+
+																}
+
+											}
+														 	
+									}
+		}
+
+		else{      // when the candidate didn't get anything in phase 1
+				for(int q=0; q<c.Preference.size() ; q++){
+											i = find(c.Preference.get(q),"GE",false);
+
+											switch(c.Category){
+												case GE : if(!c.pdstatus){ 	if(progs.get(i).apply2(c)) {c.waitchanger2(c,q,i); break;}
+														  					if(progs.get(i+1).apply2(c)){c.waitchanger2(c,q,i+1); break;}
+														  					if(progs.get(i+4).apply2(c)){c.waitchanger2(c,q,i+4); break;}
+														  					if(progs.get(i+5).apply2(c)){c.waitchanger2(c,q,i+5); break;}
+														  				}
+														  else { 			if(progs.get(i).apply2(c)) {c.waitchanger2(c,q,i); break;}
+														  					if(progs.get(i+4).apply2(c)){c.waitchanger2(c,q,i+4); break;}
+														  					if(progs.get(i+1).apply2(c)){c.waitchanger2(c,q,i+1); break;}
+														  					if(progs.get(i+5).apply2(c)){c.waitchanger2(c,q,i+5); break;}
+																}
+
+												case OBC :	if(!c.pdstatus){ if(progs.get(i).apply2(c)) {c.waitchanger2(c,q,i); break;}
+														  					 if(progs.get(i+1).apply2(c)){c.waitchanger2(c,q,i+1); break;}
+														  				     if(progs.get(i+4).apply2(c)){c.waitchanger2(c,q,i+4); break;}
+														  					 if(progs.get(i+5).apply2(c)){c.waitchanger2(c,q,i+5); break;}
+														  				}
+														  else { 			 if(progs.get(i).apply2(c)) {c.waitchanger2(c,q,i); break;}
+														  					 if(progs.get(i+4).apply2(c)){c.waitchanger2(c,q,i+4); break;}
+														  					 if(progs.get(i+1).apply2(c)){c.waitchanger2(c,q,i+1); break;}
+														  					 if(progs.get(i+5).apply2(c)){c.waitchanger2(c,q,i+5); break;}
+																}
+
+												case SC : if(!c.pdstatus){
+																			if(progs.get(i).apply2(c)) {c.waitchanger2(c,q,i); break;}
+														  					if(progs.get(i+1).apply2(c)){c.waitchanger2(c,q,i+2); break;}
+														  					if(progs.get(i+1).apply2(c)){c.waitchanger2(c,q,i+1); break;}
+														  					if(progs.get(i+4).apply2(c)){c.waitchanger2(c,q,i+4); break;}
+														  					if(progs.get(i+5).apply2(c)){c.waitchanger2(c,q,i+5); break;}
+														  					if(progs.get(i+5).apply2(c)){c.waitchanger2(c,q,i+6); break;}	
+																		}
+
+															else{  			if(progs.get(i).apply2(c)) {c.waitchanger2(c,q,i); break;}
+														  					if(progs.get(i+2).apply2(c)){c.waitchanger2(c,q,i+2); break;}
+														  					if(progs.get(i+4).apply2(c)){c.waitchanger2(c,q,i+4); break;}
+														  					if(progs.get(i+6).apply2(c)){c.waitchanger2(c,q,i+6); break;}
+														  					if(progs.get(i+1).apply2(c)){c.waitchanger2(c,q,i+1); break;}
+														  					if(progs.get(i+5).apply2(c)){c.waitchanger2(c,q,i+5); break;}
+
+
+															}
+												case ST : if(!c.pdstatus){
+																			if(progs.get(i).apply2(c)) {c.waitchanger2(c,q,i); break;}
+														  					if(progs.get(i+1).apply2(c)){c.waitchanger2(c,q,i+3); break;}
+														  					if(progs.get(i+1).apply2(c)){c.waitchanger2(c,q,i+1); break;}
+														  					if(progs.get(i+4).apply2(c)){c.waitchanger2(c,q,i+4); break;}
+														  					if(progs.get(i+5).apply2(c)){c.waitchanger2(c,q,i+5); break;}
+														  					if(progs.get(i+5).apply2(c)){c.waitchanger2(c,q,i+7); break;}	
+																		}
+
+															else{  			if(progs.get(i).apply2(c)) {c.waitchanger2(c,q,i); break;}
+														  					if(progs.get(i+2).apply2(c)){c.waitchanger2(c,q,i+3); break;}
+														  					if(progs.get(i+4).apply2(c)){c.waitchanger2(c,q,i+4); break;}
+														  					if(progs.get(i+6).apply2(c)){c.waitchanger2(c,q,i+7); break;}
+														  					if(progs.get(i+1).apply2(c)){c.waitchanger2(c,q,i+1); break;}
+														  					if(progs.get(i+5).apply2(c)){c.waitchanger2(c,q,i+5); break;}
+
+
+																}
+
+											}	
+
+				}		
+			}
+
 	}
 	
 }

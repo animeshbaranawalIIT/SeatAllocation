@@ -41,4 +41,6 @@ public class Candidate {
 		if(ind == this.Preference.size()) return "NULL"; //Preference list exhausted
 		else return this.Preference.get(ind);
 	}*/
+
+	public void waitchanger(Candidate c, int q, int i){ progs.get(c.previouswaitlist).num--; this.waiting=this.Preference.get(q); this.previouswaitlist=i;}
 }
