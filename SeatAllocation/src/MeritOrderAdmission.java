@@ -12,6 +12,7 @@ class MeritOrderAdmission{
 		progs = new ArrayList<VirtualProgramme>();
 		candidatelist = new MeritList(f1,f2);
 		mylist = new MeritListforAlgo2(candidatelist.candidates);
+		mylist.sortbyrank();
 		this.fillprogramme(f3);
 		for(int j=0;j<mylist.ge.size();j++) phase1(mylist.ge.get(j),"GE",false);
 		for(int j=0;j<mylist.obc.size();j++) phase1(mylist.obc.get(j),"OBC",false);
@@ -21,6 +22,7 @@ class MeritOrderAdmission{
 		for(int j=0;j<mylist.obc_pd.size();j++) phase1(mylist.obc_pd.get(j),"OBC_PD",true);
 		for(int j=0;j<mylist.sc_pd.size();j++) phase1(mylist.sc_pd.get(j),"SC_PD",true);
 		for(int j=0;j<mylist.st_pd.size();j++) phase1(mylist.st_pd.get(j),"ST_PD",true);
+		
 	}
 	
 	public int find(String cd, String cat, Boolean pd){
@@ -66,17 +68,19 @@ class MeritOrderAdmission{
 		int i; String temp;
 		for(int j=0;j<c.Preference.size();j++){
 			i=find(c.Preference.get(j),cat,pd);
-			if(progs.get(i).apply(c)){
-				System.out.println("bla1");
+			System.out.println(i);
+			if(progs.get(i).apply(c, cat, pd)){
+				System.out.println("App accepted");
 				temp = c.Preference.get(j);
 				System.out.println(temp);
-				if(c.waiting.equals("")){ System.out.println("empty"); c.waiting=temp; c.previouswaitlist=i; }
+				if(c.waiting.equals("")){ System.out.println("adding to empty"); c.waiting=temp; c.previouswaitlist=i; }
 				else{ 
 					if(c.Preference.indexOf(temp)<c.Preference.indexOf(c.waiting)){ 
 						progs.get(c.previouswaitlist).num--;
 						c.previouswaitlist=i;
 						c.waiting=temp; 
-					} 
+					}
+					else {System.out.println("Found but not gud enough");} 
 				}
 				break;
 			}

@@ -16,7 +16,7 @@ public class Main {
 	   }*/
 	   MeritOrderAdmission test = new MeritOrderAdmission("choices.csv","ranklist.csv","programs.csv");
 	   for(int i=0;i<test.candidatelist.candidates.size();i++){
-		   System.out.println(test.candidatelist.candidates.get(i).Id+test.candidatelist.candidates.get(i).waiting+test.progs.get(test.candidatelist.candidates.get(i).previouswaitlist).category);
+		   System.out.println(test.candidatelist.candidates.get(i).Id+" " +test.candidatelist.candidates.get(i).Category+" "+ test.candidatelist.candidates.get(i).waiting+test.progs.get(test.candidatelist.candidates.get(i).previouswaitlist).category);
 	   }
 	 } 
 }
