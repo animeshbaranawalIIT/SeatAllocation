@@ -27,17 +27,17 @@ class VirtualProgramme{
 		else { System.out.println("Quota full"); return false; }
 	}*/
 	public Boolean applyalgo2(Candidate c, String cat, Boolean pd){	
-		System.out.println("application of "+ c.Id + " " + cat + "in" + code + " " + category); System.out.println(num); System.out.println(quota);					// for new applicant
+		//System.out.println("application of "+ c.Id + " " + cat + "in" + code + " " + category); System.out.println(num); System.out.println(quota);					// for new applicant
 		if(num+1 <= quota){  // check if quota empty
 			if( cat.equals(category) && pd == pdstatus){ //check category and pd status of student and programme 
-				System.out.println("Accepting the application");
+				//System.out.println("Accepting the application");
 				//waitlist[num] = c; 
 				num++; // increase seats occupied if candidate waitlisted
 				return true; 
 			}
-			else {System.out.println("not a valid application"); return false;}
+			else {/*System.out.println("not a valid application");*/ return false;}
 		}
-		else { System.out.println("Quota full"); return false; }
+		else { /*System.out.println("Quota full");*/ return false; }
 	}
 
 	public Boolean apply2(Candidate c){	//System.out.println("application of "+ c.Id + " " + cat + "in" + code + " " + category); System.out.println(num); System.out.println(quota);					// for new applicant
@@ -49,7 +49,7 @@ class VirtualProgramme{
 			
 			//else {System.out.println("not a valid application"); return false;}
 		}
-		else { System.out.println("Quota full"); return false; }
+		else { /*System.out.println("Quota full");*/ return false; }
 	}
 
 }

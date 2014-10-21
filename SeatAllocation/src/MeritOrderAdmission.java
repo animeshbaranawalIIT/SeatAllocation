@@ -4,16 +4,27 @@ import java.io.IOException;
 
 class MeritOrderAdmission{
 	
+	class DSq{
+		String Insti_code;
+		int seats;
+		
+		public DSq(String code){ Insti_code=code; seats=2; }
+	}
+	
 	ArrayList <VirtualProgramme> progs; // Virtual Programmes 
 	MeritList candidatelist; // List of candidates
 	MeritListforAlgo2 mylist; // Appended Merit List for Algo 2
-
+	ArrayList <DSq>Special; 
+	
+	
 	public MeritOrderAdmission(String f1, String f2, String f3) { // file names as constructor parameters
 		progs = new ArrayList<VirtualProgramme>(); // initialising data members
 		candidatelist = new MeritList(f1,f2);
 		mylist = new MeritListforAlgo2(candidatelist.candidates);
 		mylist.sortbyrank();
+		Special = new ArrayList<DSq>();
 		this.fillprogramme(f3); // filling the virtual programme details
+		this.fillDSquota();
 		for(int j=0;j<mylist.ge.size();j++) phase1(mylist.ge.get(j),"GE",false);
 		for(int j=0;j<mylist.obc.size();j++) phase1(mylist.obc.get(j),"OBC",false);
 		for(int j=0;j<mylist.sc.size();j++) phase1(mylist.sc.get(j),"SC",false);
@@ -22,9 +33,16 @@ class MeritOrderAdmission{
 		for(int j=0;j<mylist.obc_pd.size();j++) phase1(mylist.obc_pd.get(j),"OBC_PD",true);
 		for(int j=0;j<mylist.sc_pd.size();j++) phase1(mylist.sc_pd.get(j),"SC_PD",true);
 		for(int j=0;j<mylist.st_pd.size();j++) phase1(mylist.st_pd.get(j),"ST_PD",true);
-		System.out.println("Phase 1 completed successfully....");
-		System.out.println("Phase 2 initialising....");
+		//System.out.println("Phase 1 completed successfully....");
+		//System.out.println("Phase 2 initialising....");
 		for(int j=0;j<candidatelist.candidates.size();j++){ phase2(candidatelist.candidates.get(j)); } 
+	}
+	
+	public int findds(String cd){ // function to find the index of programme in prog list given its code, category and pd satus
+		for(int j=0;j<Special.size();j++){
+			if(Special.get(j).Insti_code.equals(cd)){ return j; }
+		}
+		return -1;
 	}
 	
 	public int find(String cd, String cat, Boolean pd){ // function to find the index of programme in prog list given its code, category and pd satus
@@ -66,27 +84,48 @@ class MeritOrderAdmission{
 		catch (IOException ex){System.out.println("sada"); }
 	}
 	
+	public void fillDSquota(){
+		String comparison="";
+		for(int i=0;i<progs.size();i=i+8){
+			String temp = progs.get(i).code.substring(0,1);
+			if(!temp.equals(comparison)){ Special.add(new DSq(temp)); }
+			else {}
+		}
+	}
+	
 	public void phase1(Candidate c,String cat,Boolean pd){ //implement phase 1 for a candidate
 		int i; String temp;
-		for(int j=0;j<c.Preference.size();j++){ // searching over preference list of candidate
+		if(c.Nationality==false && c.rank[0]!=0){ c.waiting = c.Preference.get(0); }
+		else if(c.DS==true){
+			for(int j=0;j<c.Preference.size();j++){
+				i=findds(c.Preference.get(j).substring(0,1));
+				if(Special.get(i).seats>0){
+					c.waiting=c.Preference.get(j); c.Category="GE";
+					Special.get(i).seats--; break;
+				}
+			}
+		}
+		else{
+		  for(int j=0;j<c.Preference.size();j++){ // searching over preference list of candidate
 			i=find(c.Preference.get(j),cat,pd); // finding index of program in the list
-			System.out.println(i);
+			//System.out.println(i);
 			if(progs.get(i).applyalgo2(c, cat, pd)){ 
-				System.out.println("App accepted");
+				//System.out.println("App accepted");
 				temp = c.Preference.get(j); // waitlisted program
-				System.out.println(temp);
-				if(c.waiting.equals("")){ System.out.println("adding to empty"); c.waiting=temp; c.previouswaitlist=i; } // assign waitlisted program if waitlist initially empty
+				//System.out.println(temp);
+				if(c.waiting.equals("")){ /*System.out.println("adding to empty");*/ c.waiting=temp; c.previouswaitlist=i; } // assign waitlisted program if waitlist initially empty
 				else{ 
 					if(c.Preference.indexOf(temp)<c.Preference.indexOf(c.waiting)){ //update waitlist if waitlist initially not empty 
 						progs.get(c.previouswaitlist).num--;
 						c.previouswaitlist=i;
 						c.waiting=temp; 
 					}
-					else {System.out.println("Found but not gud enough");} 
+					else {/*System.out.println("Found but not gud enough");*/} 
 				}
 				break;
 			}
-		}
+		  }
+	  }
 	}
 
 
