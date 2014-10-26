@@ -37,16 +37,25 @@ public class VirtualProgramme{
 		Collections.sort(Applications,new Comparator<Candidate>() {
 			public int compare(Candidate c1, Candidate c2){
 					int i,j;
-					i = merit.get(this);
-					j = merit.get(this);
+					i = merit.get(c1);
+					j = merit.get(c2);
 				   return Integer.compare(i,j);
 			}
 		});
 		ArrayList <Candidate> Rejected = new ArrayList<Candidate>();
 		for(int i=0; i<Applications.size();i++){
 					if(Curr+1 <= Quota){
-						Waitlisted.add(Applications.get(i)); 
-						Applications.get(i).setwaitlisted(Applications.get(i).retcurrent().code);
+						if(Quota-Curr>1) Applications.get(i).setwaitlisted(Applications.get(i).retcurrent().code);
+						else if(Quota-Curr==1){
+							int k=1+i; ArrayList<Candidate> temp = new ArrayList<Candidate>();
+							temp.add(Applications.get(i));
+							while(merit.get(Applications.get(k).retID())==merit.get(Applications.get(i).retID()) && k<Applications.size()){
+								temp.add(Applications.get(k)); k++;
+							}
+							for(int p=0;p<temp.size();p++){ 
+								temp.get(p).setwaitlisted(temp.get(p).retcurrent().code);
+							}
+						}
 						Curr++; 
 					}
 					else{

@@ -28,7 +28,20 @@ public class GaleShapleyAdmission {
 				implist.addcandidate(DSc.get(i), ranklist.get(DSc.get(i).retID()));
 			}
 		}
-		
+		this.setmeritprogs();
+		this.phase1();
+		for(int i=0;i<implist.retfinlist().size();i++){
+			Candidate x = implist.retfinlist().get(i);
+			if(x.retwaitlisted().equals("-1") && ranklist.get(x.retID())[0]!=0 ){ 
+				x.setp2pref();
+				x.setcurrent(x.retp2pref().get(0));
+				x.setphase2(true);
+			}
+			else { implist.removefin(i); }
+		}
+		this.implist.resetmerit(ranklist);
+		this.setmeritprogs();
+		this.phase2();
 	}
 	
 	public void fillprogs(String f1){
@@ -163,5 +176,51 @@ public class GaleShapleyAdmission {
 	public void setmeritprogs(){
 		for(int i=0;i<proglist.size();i++){ proglist.get(i).setmerit(implist); }
 	}
+	
+	public int progindex(Candidate c){
+		for(int i=0;i<8;i++){
+			if(c.retcurrent().code.equals(proglist.get(i).retcourse())){
+				if(c.retcurrent().category==proglist.get(i).retCategory()){
+					if(c.retcurrent().PDstatus==proglist.get(i).retPdstatus()){ return i; } 
+				}
+			}
+		}
+		return -1;
+	}
+	
+	public void phase1(){
+		Boolean complete=false; int j;
+		while(!complete){
+			complete=true;
+			for(int i=0;i<implist.retfinlist().size();i++){
+				if(implist.retfinlist().get(i).retwaitlisted().equals("-1") && !implist.retfinlist().get(i).retcurrent().code.equals("-1")){
+					j = progindex(implist.retfinlist().get(i));
+					proglist.get(j).apply(implist.retfinlist().get(i));
+					complete = false;
+				}
+			}
+			for(int i=0;i<proglist.size();i++){
+				proglist.get(i).filter();
+			}
+		}
+	}
+	
+	public void phase2(){
+		Boolean complete=false; int j;
+		while(!complete){
+			complete=true;
+			for(int i=0;i<implist.retfinlist().size();i++){
+				if(implist.retfinlist().get(i).retwaitlisted().equals("-1") && !implist.retfinlist().get(i).retcurrent().code.equals("-1")){
+					j = progindex(implist.retfinlist().get(i));
+					proglist.get(j).apply(implist.retfinlist().get(i));
+					complete = false;
+				}
+			}
+			for(int i=0;i<proglist.size();i++){
+				proglist.get(i).filter();
+			}
+		}
+	}
+	
 }
 			

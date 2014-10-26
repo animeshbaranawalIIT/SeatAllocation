@@ -22,8 +22,8 @@ public class Institute {
 		Collections.sort(applicants,new Comparator<Candidate>() {
 			public int compare(Candidate c1, Candidate c2){
 					int i,j;
-					i = gerank.get(applicants.indexOf(c1));
-					j = gerank.get(applicants.indexOf(c2));
+					i = gerank.get(c1.retID());
+					j = gerank.get(c2.retID());
 				   return Integer.compare(i,j);
 			}
 		});
@@ -35,10 +35,10 @@ public class Institute {
 							int k=1+i; ArrayList<Candidate> temp = new ArrayList<Candidate>();
 							temp.add(applicants.get(i));
 							while(gerank.get(applicants.get(k).retID())==gerank.get(applicants.get(i).retID()) && k<applicants.size()){
-								temp.add(applicants.get(k));
+								temp.add(applicants.get(k)); k++;
 							}
 							for(int p=0;p<temp.size();p++){ 
-								applicants.get(i).setwaitlisted(applicants.get(i).retcurrent().code);
+								temp.get(p).setwaitlisted(temp.get(p).retcurrent().code);
 							}
 						}
 						curr++;
