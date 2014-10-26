@@ -126,13 +126,13 @@ public class MeritOrderAdmission{
 		//System.out.println("Phase 1 completed successfully....");
 		//System.out.println("Phase 2 initialising....");
 		for(int j=0;j<mylist.ge.size();j++) phase2(mylist.ge.get(j));
-		for(int j=0;j<mylist.obc.size();j++) phase2(mylist.obc.get(j));
+		//for(int j=0;j<mylist.obc.size();j++) phase2(mylist.obc.get(j));
 		for(int j=0;j<mylist.sc.size();j++) phase2(mylist.sc.get(j));
 		for(int j=0;j<mylist.st.size();j++) phase2(mylist.st.get(j));
-		for(int j=0;j<mylist.ge_pd.size();j++) phase2(mylist.ge_pd.get(j));
-		for(int j=0;j<mylist.obc_pd.size();j++) phase2(mylist.obc_pd.get(j));
-		for(int j=0;j<mylist.sc_pd.size();j++) phase2(mylist.sc_pd.get(j));
-		for(int j=0;j<mylist.st_pd.size();j++) phase2(mylist.st_pd.get(j));
+		//for(int j=0;j<mylist.ge_pd.size();j++) phase2(mylist.ge_pd.get(j));
+		//for(int j=0;j<mylist.obc_pd.size();j++) phase2(mylist.obc_pd.get(j));
+		//for(int j=0;j<mylist.sc_pd.size();j++) phase2(mylist.sc_pd.get(j));
+		//for(int j=0;j<mylist.st_pd.size();j++) phase2(mylist.st_pd.get(j));
 		Collections.sort(candidatelist.candidates,new ldisort());
 	}
 	
@@ -164,73 +164,72 @@ public class MeritOrderAdmission{
 
 	public void phase2(Candidate c){
 		int i,j; Boolean comp=false;
-		if(!c.waiting.equals("")){ j = c.Preference.indexOf(c.waiting); }
-		else { j = c.Preference.size(); } //String r="";
+		if(c.waiting.equals("")){ j = c.Preference.size(); 
+		//else { j = c.Preference.size(); } //String r="";
 		//for(int q=0;q<j;q++){ r=r+c.Preference.get(j); }
 		//System.out.println(j+" "+c.Preference.size()+" "+c.Id+" "+c.Category+" "+c.PD);
 			for(int q=0; q<j ; q++){
 				i = find(c.Preference.get(q),"GE",false);
 				//System.out.println(progs.get(i).code+" "+progs.get(i).num+" "+(progs.get(i).quota-progs.get(i).num));
 								switch(c.Category){
-												case "GE" : if(!c.PD){ 	if(progs.get(i).apply2()) {if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;}; c.waitchanger(q,i);comp=true; break;}
-														  					if(progs.get(i+1).apply2()){if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i+1);comp=true; break;}
-														  					if(progs.get(i+4).apply2()){if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i+4);comp=true; break;}
-														  					if(progs.get(i+5).apply2()){if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i+5);comp=true; break;}
+												case "GE" : if(!c.PD){ 	    if(progs.get(i).applyalgo2(c)) {  c.waitchanger(q,i);comp=true; break;}
+														  					if(progs.get(i+1).applyalgo2(c)){ c.waitchanger(q,i+1);comp=true; break;}
+														  					if(progs.get(i+4).applyalgo2(c)){ c.waitchanger(q,i+4);comp=true; break;}
+														  					if(progs.get(i+5).applyalgo2(c)){ c.waitchanger(q,i+5);comp=true; break;}
 														  				}
-														  else { 			if(progs.get(i).apply2()) {if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i);comp=true; break;}
-														  					if(progs.get(i+4).apply2()){if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i+4);comp=true; break;}
-														  					if(progs.get(i+1).apply2()){if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i+1);comp=true; break;}
-														  					if(progs.get(i+5).apply2()){if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i+5);comp=true; break;}
+														  else { 			if(progs.get(i).applyalgo2(c)) { c.waitchanger(q,i);comp=true; break;}
+														  					if(progs.get(i+4).applyalgo2(c)){ c.waitchanger(q,i+4);comp=true; break;}
+														  					if(progs.get(i+1).applyalgo2(c)){ c.waitchanger(q,i+1);comp=true; break;}
+														  					if(progs.get(i+5).applyalgo2(c)){ c.waitchanger(q,i+5);comp=true; break;}
 																}
 																break;
 
-												case "OBC" :	if(!c.PD){ if(progs.get(i).apply2()) {if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i);comp=true; break;}
-														  					 if(progs.get(i+1).apply2()){if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i+1);comp=true; break;}
-														  				     if(progs.get(i+4).apply2()){if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i+4);comp=true; break;}
-														  					 if(progs.get(i+5).apply2()){if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i+5);comp=true; break;}
+												case "OBC" :	if(!c.PD){ if(progs.get(i).applyalgo2(c)) { c.waitchanger(q,i);comp=true; break;}
+														  					 if(progs.get(i+1).applyalgo2(c)){ c.waitchanger(q,i+1);comp=true; break;}
+														  				     if(progs.get(i+4).applyalgo2(c)){ c.waitchanger(q,i+4);comp=true; break;}
+														  					 if(progs.get(i+5).applyalgo2(c)){ c.waitchanger(q,i+5);comp=true; break;}
 														  				}
-														  else { 			  if(progs.get(i).apply2()) {if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i);comp=true; break;}
-														  					  if(progs.get(i+4).apply2()){if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i+4);comp=true; break;}
-														  					  if(progs.get(i+1).apply2()){if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i+1);comp=true; break;}
-														  					  if(progs.get(i+5).apply2()){if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i+5);comp=true; break;}
+														  else { 			  if(progs.get(i).applyalgo2(c)) { c.waitchanger(q,i);comp=true; break;}
+														  					  if(progs.get(i+4).applyalgo2(c)){ c.waitchanger(q,i+4);comp=true; break;}
+														  					  if(progs.get(i+1).applyalgo2(c)){ c.waitchanger(q,i+1);comp=true; break;}
+														  					  if(progs.get(i+5).applyalgo2(c)){ c.waitchanger(q,i+5);comp=true; break;}
 																}
 																break;
 																
 												case "SC" : if(!c.PD){
-																			if(progs.get(i).apply2()) {if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i);comp=true; break;}
-														  					if(progs.get(i+2).apply2()){if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i+2);comp=true; break;}
-														  					if(progs.get(i+1).apply2()){if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i+1);comp=true; break;}
-														  					if(progs.get(i+4).apply2()){if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i+4);comp=true; break;}
-														  					if(progs.get(i+5).apply2()){if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i+5);comp=true; break;}
-														  					if(progs.get(i+6).apply2()){if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i+6);comp=true; break;}	
+																			if(progs.get(i).applyalgo2(c)) { c.waitchanger(q,i);comp=true; break;}
+														  					if(progs.get(i+2).applyalgo2(c)){ c.waitchanger(q,i+2);comp=true; break;}
+														  					if(progs.get(i+1).applyalgo2(c)){ c.waitchanger(q,i+1);comp=true; break;}
+														  					if(progs.get(i+4).applyalgo2(c)){ c.waitchanger(q,i+4);comp=true; break;}
+														  					if(progs.get(i+5).applyalgo2(c)){ c.waitchanger(q,i+5);comp=true; break;}
+														  					if(progs.get(i+6).applyalgo2(c)){ c.waitchanger(q,i+6);comp=true; break;}	
 																		}
 
-															else{  			if(progs.get(i).apply2()) {if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i);comp=true; break;}
-														  					if(progs.get(i+2).apply2()){if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i+2);comp=true; break;}
-														  					if(progs.get(i+4).apply2()){if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i+4);comp=true; break;}
-														  					if(progs.get(i+6).apply2()){if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i+6);comp=true; break;}
-														  					if(progs.get(i+1).apply2()){if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i+1);comp=true; break;}
-														  					if(progs.get(i+5).apply2()){if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i+5);comp=true; break;}
+															else{  			if(progs.get(i).applyalgo2(c)) { c.waitchanger(q,i);comp=true; break;}
+														  					if(progs.get(i+2).applyalgo2(c)){ c.waitchanger(q,i+2);comp=true; break;}
+														  					if(progs.get(i+4).applyalgo2(c)){ c.waitchanger(q,i+4);comp=true; break;}
+														  					if(progs.get(i+6).applyalgo2(c)){ c.waitchanger(q,i+6);comp=true; break;}
+														  					if(progs.get(i+1).applyalgo2(c)){ c.waitchanger(q,i+1);comp=true; break;}
+														  					if(progs.get(i+5).applyalgo2(c)){ c.waitchanger(q,i+5);comp=true; break;}
 
 
 															}
 															break;
 															
-												case "ST" : if(!c.PD){		//System.out.println("YO"); System.out.println(i);
-																			if(progs.get(i).apply2()) {if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i);comp=true; break;}
-														  					if(progs.get(i+3).apply2()){if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i+3);comp=true; break;}
-														  					if(progs.get(i+1).apply2()){if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i+1);comp=true; break;}
-														  					if(progs.get(i+4).apply2()){if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i+4);comp=true; break;}
-														  					if(progs.get(i+5).apply2()){if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i+5);comp=true; break;}
-														  					if(progs.get(i+7).apply2()){if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i+7);comp=true; break;}	
+												case "ST" : if(!c.PD){		if(progs.get(i).applyalgo2(c)) { c.waitchanger(q,i);comp=true; break;}
+														  					if(progs.get(i+3).applyalgo2(c)){ c.waitchanger(q,i+3);comp=true; break;}
+														  					if(progs.get(i+1).applyalgo2(c)){ c.waitchanger(q,i+1);comp=true; break;}
+														  					if(progs.get(i+4).applyalgo2(c)){ c.waitchanger(q,i+4);comp=true; break;}
+														  					if(progs.get(i+5).applyalgo2(c)){ c.waitchanger(q,i+5);comp=true; break;}
+														  					if(progs.get(i+7).applyalgo2(c)){ c.waitchanger(q,i+7);comp=true; break;}	
 																		}
 
-															else{  			if(progs.get(i).apply2()) {if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i);comp=true; break;}
-														  					if(progs.get(i+3).apply2()){if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i+3);comp=true; break;}
-														  					if(progs.get(i+4).apply2()){if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i+4);comp=true; break;}
-														  					if(progs.get(i+7).apply2()){if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i+7);comp=true; break;}
-														  					if(progs.get(i+1).apply2()){if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i+1);comp=true; break;}
-														  					if(progs.get(i+5).apply2()){if(!c.waiting.equals("")){progs.get(c.previouswaitlist).num--;};c.waitchanger(q,i+5);comp=true; break;}
+															else{  			if(progs.get(i).applyalgo2(c)) { c.waitchanger(q,i);comp=true; break;}
+														  					if(progs.get(i+3).applyalgo2(c)){ c.waitchanger(q,i+3);comp=true; break;}
+														  					if(progs.get(i+4).applyalgo2(c)){ c.waitchanger(q,i+4);comp=true; break;}
+														  					if(progs.get(i+7).applyalgo2(c)){ c.waitchanger(q,i+7);comp=true; break;}
+														  					if(progs.get(i+1).applyalgo2(c)){ c.waitchanger(q,i+1);comp=true; break;}
+														  					if(progs.get(i+5).applyalgo2(c)){ c.waitchanger(q,i+5);comp=true; break;}
 
 
 																}
@@ -239,6 +238,7 @@ public class MeritOrderAdmission{
 										if(comp==true) break;				 	
 									}
 		}
+	}
 		
 		public void display(){
 			for(int i=0;i<candidatelist.candidates.size();i++){
