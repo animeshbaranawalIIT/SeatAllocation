@@ -1,0 +1,23 @@
+#!/bin/bash
+ROOTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )" 
+# ROOTDIR is the path of the directory in which the shell file is present
+echo 'HOUR=$(date +%H) #takes hour from the date
+if [ "$HOUR" -ge 00 ] && [ "$HOUR" -lt "12" ]; then
+		GREET="Morning"
+elif [ "$HOUR" -ge "12" ] && [ "$HOUR" -lt "17" ]; then
+		GREET="Afternoon"
+elif [ "$HOUR" -ge "17" ] && [ "$HOUR" -lt "20" ]; then
+		GREET="Evening"
+elif [ "$HOUR" -ge "20" ] && [ "$HOUR" -lt "24" ]; then
+		GREET="Night"
+fi
+
+echo -n "Good $GREET, $USER. Aap ka din shubh ho! It is "
+# echo -n is used to print without the newline,$USER evaluates to current 
+# username
+date "+%a %b %d %T"
+# a stands for Day,b for Month(short form) d for date and T for time' >> /home/$USER/.bashrc
+
+#appending the .bashrc file , please note that first execution is necessary
+#to see the visible changes on the terminal.
+#echo "$string" >> $1

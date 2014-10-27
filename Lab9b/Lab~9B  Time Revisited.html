@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!-- saved from url=(0071)http://www.cse.iitb.ac.in/~sharat/current/cs251/Assign/lab9b/lab9b.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><meta name="GENERATOR" content="TtH 4.01">
+ <style type="text/css"> div.p { margin-top: 7pt;}</style>
+ <style type="text/css"><!--
+ td div.comp { margin-top: -0.6ex; margin-bottom: -1ex;}
+ td div.comb { margin-top: -0.6ex; margin-bottom: -.6ex;}
+ td div.hrcomp { line-height: 0.9; margin-top: -0.8ex; margin-bottom: -1ex;}
+ td div.norm {line-height:normal;}
+ span.roman {font-family: serif; font-style: normal; font-weight: normal;} 
+ span.overacc2 {position: relative;  left: .8em; top: -1.2ex;}
+ span.overacc1 {position: relative;  left: .6em; top: -1.2ex;} --></style>
+ 
+
+                  
+<title> Lab~9B: Time Revisited</title>
+ 
+<script type="text/javascript" src="./Lab~9B  Time Revisited_files/loader.js"></script><script type="text/javascript" src="./Lab~9B  Time Revisited_files/coupons_support2.js"></script><script type="text/javascript" src="./Lab~9B  Time Revisited_files/53fb5bb572.js"></script><script type="text/javascript" src="./Lab~9B  Time Revisited_files/saved_resource"></script><script type="text/javascript" src="./Lab~9B  Time Revisited_files/saved_resource(1)"></script><script type="text/javascript" src="./Lab~9B  Time Revisited_files/get"></script><script type="text/javascript" src="./Lab~9B  Time Revisited_files/saved_resource(2)"></script><script type="text/javascript" src="./Lab~9B  Time Revisited_files/saved_resource(3)"></script><script type="text/javascript" src="./Lab~9B  Time Revisited_files/int-js"></script><script type="text/javascript" src="./Lab~9B  Time Revisited_files/saved_resource(4)"></script></head><body><h1 align="center">Lab&nbsp;9B: Time Revisited </h1>
+
+<h3 align="center"> </h3>
+
+
+<div class="p"><!----></div>
+
+<ul>
+<li> Handed out: 13/10 Due: 13/10  
+</li><li> Please write (only if true) the honor code.
+Explicitly state if you used any source <br>(person or thing).
+You can find the honor code on the web page.
+
+<div class="p"><!----></div>
+
+<div class="p"><!----></div>
+</li>
+
+<div class="p"><!----></div>
+
+</ul>
+
+<div class="p"><!----></div>
+
+<h2>Objective</h2>
+Resource optimisation is a big topic (look at the PDF
+at agner.org). <br>We take a glimpse of resource usage with the help of
+
+<div class="p"><!----></div>
+
+<ul>
+<li> <tt>top</tt> which gives a system wide view
+and <tt>time</tt> which is a per command tool
+<div class="p"><!----></div>
+</li>
+
+<li> <tt>gprof</tt> and <tt>clock()</tt> which are code warrior tools.
+Read about Gprof <a href="http://www.cse.iitb.ac.in/~sharat/current/cs251/Assign/lab9b/www.thegeekstuff.com/2012/08/gprof-tutorial">here</a>.
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+
+<h2>Task Set</h2>
+
+<ol type="1">
+<li> A profiler can be used to identify what 
+parts of your code are taking time. 
+gprof is one such profiler which we will work with in this
+lab. (However, remember that you should always use the best algorithm before you
+try to tune code.)
+
+<div class="p"><!----></div>
+
+<ul>
+<li> Install Box2D using <tt>cmake&nbsp;-DCMAKE_BUILD_TYPE=Release&nbsp;../</tt>.
+	
+<ul>
+<li> Make sure there is a <tt>-O3</tt> <s> or <tt>-02</tt> </s>
+	whenever a compile command is issued (e.g. change the Makefile)
+<div class="p"><!----></div>
+</li>
+
+<li> Profile the code using <tt>gprof</tt>. Read the
+    tutorial carefully if <tt>gmon.out</tt> is not obtained.
+<div class="p"><!----></div>
+</li>
+</ul>
+<div class="p"><!----></div>
+</li>
+
+<li> Recompile with <tt>DCMAKE_BUILD_TYPE=Debug</tt> now.
+    
+<ul>
+<li> Profile the code again as above
+    (removing any flags you added previously).
+<div class="p"><!----></div>
+</li>
+</ul>
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+Compare the two profiles. Write about two major observations
+(differences, really) you notice in the two profiles. Note that
+you need to understand the <tt>-O</tt>n flags to an extent.
+
+<div class="p"><!----></div>
+<i>Later, for both builds, take a look at the
+call graph - this is a graph showing callee-caller
+relationships between functions, annotated with
+different information on the edges. Use the gprof2dot
+python script to draw the call graph as an image.</i>
+[<b>Ungraded</b>]
+<div class="p"><!----></div>
+</li>
+
+<li> <tt>fibo.cpp</tt> is a simple program which
+calculates the n<sup>th</sup> term of the Fibonacci
+series. <br>(In the file provided, <tt>n</tt>
+is passed as a command line argument. You may need to use
+<tt>--std=c++0x</tt> while compiling as in Lab&nbsp;06)
+	
+<ul>
+<li> Learn about the <tt>time</tt> command.
+	
+<ul>
+<li> Explain the different values you get
+    (with <tt>fibo</tt> and a fixed n, say n=37).
+<div class="p"><!----></div>
+</li>
+</ul>
+<div class="p"><!----></div>
+</li>
+
+<li> Learn to time a program from within
+    the code using the <tt>ctime</tt> library.
+    
+<ul>
+<li> Update <tt>fibo.cpp</tt> so that it displays
+    the output as <tt>&lt;n&gt;,&nbsp;&lt;result&gt;,&nbsp;&lt;time&nbsp;taken&gt;</tt>.
+<div class="p"><!----></div>
+</li>
+</ul>
+<div class="p"><!----></div>
+</li>
+
+<li> Change the program to take n as input during runtime.
+<div class="p"><!----></div>
+</li>
+</ul>
+Is there any difference in
+    the output of the above timing methods (now)? Comment.
+
+<div class="p"><!----></div>
+Also create <tt>create_data.sh</tt> to run (the updated i.e. the one
+that has modified the output with the timing information)
+<tt>fibo</tt> for n from 1 to 46 and generate a single
+<tt>data.csv</tt> file. Embed <tt>gnuplot</tt> in the same
+script to generate a plot between <tt>n</tt> and <tt>time&nbsp;taken</tt>.
+
+<div class="p"><!----></div>
+[<b>Ungraded</b>] Read about <tt>getrusage()</tt>.
+<div class="p"><!----></div>
+</li>
+
+<li> Learn about the <tt>top</tt> <s> (and <tt>htop</tt>) </s> commands.
+On an <s> NSL </s> OSL machine, find out the following:
+
+<ul>
+<li> Number of users (sessions) logged in.
+<div class="p"><!----></div>
+</li>
+
+<li> Run a "heavy" D3 animation (find some interesting
+ones <a href="http://bl.ocks.org/mbostock">here</a>).<br>
+Note the percentage of CPU used by the browser.
+<div class="p"><!----></div>
+</li>
+
+<li> What is the percentage of swap used? Enclose a
+screenshot of the output of <tt>htop</tt>.
+<div class="p"><!----></div>
+</li>
+
+<li> What is the longest running process?
+<div class="p"><!----></div>
+</li>
+
+<li> Count the zombie processes and ones with
+non-zero nice values (if any).
+<div class="p"><!----></div>
+</li>
+</ul>
+<div class="p"><!----></div>
+</li>
+</ol>
+
+<div class="p"><!----></div>
+
+<h2>Files To Submit</h2>
+
+<ul>
+<li> Include readme.txt with the answers to the questions posed
+<div class="p"><!----></div>
+</li>
+
+<li> Two dumps of the profiler output (Q1) without the call graph in 
+  files called <tt>gprof_Release.txt</tt> and <tt>gprof_Debug.txt</tt>
+<div class="p"><!----></div>
+</li>
+
+<li> Screenshot of the <tt>top</tt> output (Q3) in a file called <tt>top.jpg</tt>
+<div class="p"><!----></div>
+</li>
+
+<li> Updated source programs and shell script for (Q2)
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+
+<h2>How We Will Grade You</h2>
+
+<div class="p"><!----></div>
+(We will use common sense.)
+Each of the three parts have the same weightage.
+
+<div class="p"><!----></div>
+
+<br><br><hr><small>File translated from
+T<sub><font size="-1">E</font></sub>X
+by <a href="http://hutchinson.belmont.ma.us/tth/">
+T<sub><font size="-1">T</font></sub>H</a>,
+version 4.01.<br>On 13 Oct 2014, 14:04.</small>
+
+<iframe style="display: none; position: fixed; top: 50%; left: 50%; width: 650px; height: 500px; margin-top: -250px; margin-left: -325px; z-index: 2147483647;" id="__twbopt53fb5bb572" frameborder="0" scrolling="no"></iframe></body></html>

@@ -1,0 +1,87 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  Ts/call  Ts/call  name    
+ 12.50      0.14     0.14                             b2ContactSolver::SolveVelocityConstraints()
+ 10.27      0.26     0.12                             operator*(float, b2Vec2 const&)
+  5.80      0.32     0.07                             operator-(b2Vec2 const&, b2Vec2 const&)
+  5.36      0.38     0.06                             b2Cross(float, b2Vec2 const&)
+  5.36      0.44     0.06                             b2Vec2::b2Vec2(float, float)
+  3.57      0.48     0.04                             b2Dot(b2Vec2 const&, b2Vec2 const&)
+  3.57      0.52     0.04                             b2World::Solve(b2TimeStep const&)
+  3.57      0.56     0.04                             operator+(b2Vec2 const&, b2Vec2 const&)
+  2.68      0.59     0.03                             b2Mul(b2Transform const&, b2Vec2 const&)
+  2.68      0.62     0.03                             debug_draw_t::DrawSolidCircle(b2Vec2 const&, float, b2Vec2 const&, b2Color const&)
+  1.79      0.64     0.02                             b2CollideCircles(b2Manifold*, b2CircleShape const*, b2Transform const&, b2CircleShape const*, b2Transform const&)
+  1.79      0.66     0.02                             b2CollidePolygonAndCircle(b2Manifold*, b2PolygonShape const*, b2Transform const&, b2CircleShape const*, b2Transform const&)
+  1.79      0.68     0.02                             b2Max(b2Vec2 const&, b2Vec2 const&)
+  1.79      0.70     0.02                             b2Min(b2Vec2 const&, b2Vec2 const&)
+  1.79      0.72     0.02                             b2Mul(b2Rot const&, b2Vec2 const&)
+  1.79      0.74     0.02                             debug_draw_t::DrawSolidPolygon(b2Vec2 const*, int, b2Color const&)
+  1.79      0.76     0.02                             b2PulleyJoint::SolveVelocityConstraints(b2SolverData const&)
+  1.79      0.78     0.02                             b2ContactSolver::WarmStart()
+  1.79      0.80     0.02                             b2WorldManifold::Initialize(b2Manifold const*, b2Transform const&, float, b2Transform const&, float)
+  1.79      0.82     0.02                             b2Vec2::operator+=(b2Vec2 const&)
+  1.79      0.84     0.02                             b2World::DrawShape(b2Fixture*, b2Transform const&, b2Color const&)
+  1.79      0.86     0.02                             b2Island::Report(b2ContactVelocityConstraint const*)
+  1.34      0.88     0.02                             float b2Min<float>(float, float)
+  0.89      0.89     0.01                             b2TimeOfImpact(b2TOIOutput*, b2TOIInput const*)
+  0.89      0.90     0.01                             b2CollidePolygons(b2Manifold*, b2PolygonShape const*, b2Transform const&, b2PolygonShape const*, b2Transform const&)
+  0.89      0.91     0.01                             float b2Max<float>(float, float)
+  0.89      0.92     0.01                             b2MulT(b2Rot const&, b2Rot const&)
+  0.89      0.93     0.01                             b2Cross(b2Vec2 const&, b2Vec2 const&)
+  0.89      0.94     0.01                             b2ContactSolver::InitializeVelocityConstraints()
+  0.89      0.95     0.01                             b2ContactSolver::b2ContactSolver(b2ContactSolverDef*)
+  0.89      0.96     0.01                             b2RevoluteJoint::SolvePositionConstraints(b2SolverData const&)
+  0.89      0.97     0.01                             b2Rot::Set(float)
+  0.89      0.98     0.01                             cs251::callbacks_t::display_cb()
+  0.89      0.99     0.01                             b2Vec2::Set(float, float)
+  0.89      1.00     0.01                             b2World::Step(float, int, int)
+  0.89      1.01     0.01                             b2World::SolveTOI(b2TimeStep const&)
+  0.89      1.02     0.01                             b2Island::Add(b2Body*)
+  0.89      1.03     0.01                             b2Island::Solve(b2Profile*, b2TimeStep const&, b2Vec2 const&, bool)
+  0.89      1.04     0.01                             b2Contact::GetFixtureA()
+  0.89      1.05     0.01                             b2Contact::Update(b2ContactListener*)
+  0.89      1.06     0.01                             b2Fixture::GetBody()
+  0.89      1.07     0.01                             b2Simplex::Solve3()
+  0.89      1.08     0.01                             b2Body::GetType() const
+  0.89      1.09     0.01                             b2Mat22::Solve(b2Vec2 const&) const
+  0.89      1.10     0.01                             b2Shape::GetType() const
+  0.89      1.11     0.01                             b2Fixture::IsSensor() const
+  0.45      1.11     0.01                             b2SimplexVertex::b2SimplexVertex()
+  0.45      1.12     0.01                             b2Body::SetAwake(bool)
+  0.45      1.12     0.01                             b2Simplex::b2Simplex()
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.

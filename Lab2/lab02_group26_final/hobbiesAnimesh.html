@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hobbies Animesh</title>
+
+		<link rel="stylesheet" type="text/css" href="main.css">
+		<script type="text/javascript" src="animeshjava.js"></script>
+		<style type="text/css">
+			#special {
+			font-weight: bold;
+			font-size: 25px;
+			text-align: center;
+			
+			color:#F3B34B;
+			font-family: Papyrus, fantasy;
+			
+			margin: 50px;
+			padding: 30px;
+			border-radius: 6px;
+			border-color: #B3B5B5;
+			background-color: rgba(0,0,20,0.6);
+			}
+			#Time{
+				width:100%;
+				height:500px;
+				font-size:23px;
+
+			}
+			#Time th{width:(100/8)%;
+				height:(100/6)%;
+				font-size:23px;
+			}
+
+			#Time td{
+				width:(100/8)%;
+				height:(100/6)%;
+				font-size:20px;
+
+			}
+		</style>
+	</head>
+	<body>
+		<div class="heading">
+   			<b>PROUD TO BE</b> group member of <b>JynXD!</b>
+  		</div>
+		<nav>
+			<table class="class1" style="margin-left:12%;width:75%;" cellspacing="10">
+			<tr>
+				<td><a href="index.html">Home</a></td>
+				<td><a href="aboutAnimesh.html">About Me</a></td>
+				<td style="color:#F0B547;">Hobbies</td>
+				<td><a href="contactAnimesh.html">Contact Me</a></td>		
+			</tr>
+			</table>		
+		</nav>
+		<hr>
+		<br>
+		
+	<div class ="block" style="font-size:15px;font-family: Papyrus, fantasy;font-weight:bold;text-align:left;color:white;">
+			Recently, I have started :
+			<ul style="list-style-type:none;">
+				<li>Trekking <img src="new.png" style="height:15px; width=15px;"> </li>
+				<li> Skating </li>
+			</ul>
+			I also like reading novels and watching movies. Below is a video.... One of my FAVOURITES! 
+		</div>	
+	<div id="special">
+	Click on the button to play the video
+	<br>
+	<br>
+		<button type="button" onclick="toggle()">Click me.</button>
+		<br>
+		<br>
+		<div id="dub" style="display:none;">
+			<iframe width="600" height="560" src="http://www.youtube.com/embed/szdOOz2q1Y4?feature=oembed&wmode=opaque&showinfo=0&showsearch=0&rel=0&start=3" frameborder="0" allowfullscreen="">
+			</iframe>
+		</div>
+	</div>
+	<!--<script>
+	   function toggle(){
+		var yoho=document.getElementById("dub");
+		if(yoho.style.display!=='none'){yoho.style.display='none';}
+		else{yoho.style.display='block';}
+	}
+	</script>	-->
+	
+		<p style="color:white; font-size:20px;text-align:center;">
+		I also like to draw emoticons..
+		</p>
+		<canvas id="myCanvas" width="1000" height="200"	>
+		</canvas>					
+		
+		<script>
+		var can = document.getElementById("myCanvas");
+		var ctx = can.getContext("2d");
+		
+		/!-- code for 1st emoji /
+		ctx.beginPath();
+		ctx.arc(125,100,50,0,2*Math.PI,false);
+		ctx.fillStyle = 'yellow';
+		ctx.fill();
+		ctx.lineWidth = 2;
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.moveTo(115,100-4/3*10);
+		ctx.lineTo(115-12,100-4/3*10-16);
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.moveTo(135,100-4/3*10);
+		ctx.lineTo(135+12,100-4/3*10-16);
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.arc(115-6,100+10,10,0,2*Math.PI);
+		ctx.fillStyle = 'black';
+		ctx.fill();
+		ctx.lineWidth = 1;
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.arc(135+6,100+10,10,0,2*Math.PI);
+		ctx.fillStyle = 'black';
+		ctx.fill();
+		ctx.lineWidth = 1;
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.moveTo(125-10,130);
+		ctx.lineTo(125+10,130);
+		ctx.stroke();
+
+		/!-- code for 2nd emoji /
+		ctx.beginPath();
+		ctx.arc(125+250,100,50,0,2*Math.PI,false);
+		var grd = ctx.createLinearGradient(250,0,500,200);
+			grd.addColorStop(0,"#AE4DAE");
+			grd.addColorStop(1,"white");
+		ctx.fillStyle = grd;
+		ctx.fill();
+		ctx.beginPath();
+		ctx.arc(250+125-20,100-15,6,0,2*Math.PI,false);
+		ctx.fillStyle = 'black';
+		ctx.fill();
+		ctx.lineWidth = 1;
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.arc(250+125+20,100-15,6,0,2*Math.PI,false);
+		ctx.fillStyle = 'black';
+		ctx.fill();
+		ctx.lineWidth = 1;
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.arc(250+125-18,100+25,6,1*Math.PI,2*Math.PI,false);
+		ctx.lineWidth = 3;
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.arc(250+125-6,100+25,6,0,1*Math.PI,false);
+		ctx.lineWidth = 3;
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.arc(250+125+6,100+25,6,1*Math.PI,2*Math.PI,false);
+		ctx.lineWidth = 3;
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.arc(250+125+18,100+25,6,0,1*Math.PI,false);
+		ctx.lineWidth = 3;
+		ctx.stroke();
+		
+		/!-- code for 3rd emoticon /
+		ctx.beginPath();
+		ctx.arc(250+250+125,100,50,0,2*Math.PI,false);
+		var grd1 = ctx.createRadialGradient(500+125,100,50,500+125,100,0);
+			grd1.addColorStop(0,"red");
+			grd1.addColorStop(1,"white");
+		ctx.fillStyle = grd1;
+		ctx.fill();
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.moveTo(500+125-10,100-4/3*10);
+		ctx.lineTo(500+125-10-12,100-4/3*10-16);
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.moveTo(500+125+10,100-4/3*10);
+		ctx.lineTo(500+125+10+12,100-4/3*10-16);
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.arc(500+125-10-6,100-5,5,0,2*Math.PI);
+		ctx.fillStyle = 'red';
+		ctx.fill();
+		ctx.lineWidth = 1;
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.arc(500+125+10+6,100-5,5,0,2*Math.PI);
+		ctx.fillStyle = 'red';
+		ctx.fill();
+		ctx.lineWidth = 1;
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.arc(250+250+125,100,40,1/4*Math.PI,3/4*Math.PI);
+		ctx.lineWidth = 3;
+		ctx.stroke();
+
+		/!-- code for 4th emoticon /
+		ctx.beginPath();
+		ctx.arc(750+125,100,50,0,2*Math.PI,false);
+		ctx.fillStyle = 'yellow';
+		ctx.fill();
+		ctx.lineWidth = 1;
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.arc(750+125-10-6,100-5,5,0.1*Math.PI,0.95*Math.PI);
+		ctx.lineWidth = 2;
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.arc(750+125+10+6,100-5,5,0.1*Math.PI,0.95*Math.PI);
+		ctx.lineWidth = 2;
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.moveTo(750+125-8,100+7);
+		ctx.lineTo(750+125-8,100+14);
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.arc(750+125-8,100+30,3,0,2*Math.PI);
+		ctx.fillStyle='black';
+		ctx.fill();
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.font = "13px Arial";
+		ctx.fillStyle = 'black';
+		ctx.fillText("zzz",750+125,100+30);
+
+		</script>
+		
+		<div class="block">
+			<p style="font-size:30px;font-family: Papyrus, fantasy;font-weight:bold;text-align:center;color:#F3B34B;">Here is my Time Table <br>Click on the Table anywhere to vist the layout of LHC</p>
+		<a href="img.html">
+		<table width=100% border=1 id="Time">
+			<tr>
+				<th>Time/Day</th>	
+				<th>08:30 to 09:25 </th>
+				<th>09:30 to 10:25 </th>
+				<th>09:30 to 10:55 </th>
+				<th>10:35 to 11:30 </th>
+				<th>11:35 to 12:30 </th>
+				<th>14:00 to 15:25 </th>
+				<th>15:25 to 17:00 </th>
+			</tr>
+			<tr>
+				<th><u>Monday</u></th>
+				<td style="background-color:#005353;text-align:center;"><b>CS 213</b></td>
+				<td style="background-color:#50D8F0;text-align:center;color:black;">CS 215</td>
+				<td></td>
+				<td style="background-color:red;text-align:center;"><b>CS 207</b></td>
+				<td style="background-color:#447D9A;text-align:center;">EE 101(S6) </td>
+				<td colspan="2" style="background-color:#086EEA;text-align:center;"><b>CS251(lab)</b></td>
+			</tr>
+			<tr>
+				<th><u>Tuesday</u></th>
+				<td style="background-color:#447D9A;text-align:center;">EE 101(S6)</td>
+				<td style="background-color:#005353;text-align:center;"><b>CS 213</b></td>
+				<td></td>
+				<td style="background-color:#50D8F0;text-align:center;color:black;">CS 215</td>
+				<td style="background-color:red;text-align:center;"><b>CS 207</b></td>
+				<td style="background-color:#086EEA;text-align:center;"><b>CS 251</b></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th><u>Wednesday</u></th>
+				<td></td>
+				<td></td>
+				<td style="background-color:#6B1414;text-align:center;">SI 401</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th><u>Thursday</u></th>
+				<td style="background-color:red;text-align:center;"><b>CS 207</b></td>
+				<td style="background-color:#447D9A;text-align:center;">EE 101(S6)</td>
+				<td></td>
+				<td style="background-color:#005353;text-align:center;"><b>CS 213</b></td>
+				<td style="background-color:#50D8F0;text-align:center;color:black">CS 215</td>
+				<td colspan="2" style="background-color:#005353;text-align:center;"><b>CS 293( CS 213 lab )</b></td>
+			</tr>
+			<tr>
+				<th><u>Friday</u></th>
+				<td></td>
+				<td></td>
+				<td style="background-color:#6B1414;text-align:center;">SI 401</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr></table></a>
+		</div>
+
+		<footer>
+		<address>&copy; Copyright <span style="font-size:25px;">&nbsp JynXD!</span></address>
+		</footer>
+	</body>
+</html>

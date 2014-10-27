@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!-- saved from url=(0070)http://www.cse.iitb.ac.in/~sharat/current/cs251/Assign/lab03/lab3.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><meta name="GENERATOR" content="TtH 4.01">
+ <style type="text/css"> div.p { margin-top: 7pt;}</style>
+ <style type="text/css"><!--
+ td div.comp { margin-top: -0.6ex; margin-bottom: -1ex;}
+ td div.comb { margin-top: -0.6ex; margin-bottom: -.6ex;}
+ td div.hrcomp { line-height: 0.9; margin-top: -0.8ex; margin-bottom: -1ex;}
+ td div.norm {line-height:normal;}
+ span.roman {font-family: serif; font-style: normal; font-weight: normal;} 
+ span.overacc2 {position: relative;  left: .8em; top: -1.2ex;}
+ span.overacc1 {position: relative;  left: .6em; top: -1.2ex;} --></style>
+ 
+
+                                 
+<title> Lab 03</title>
+ 
+<script type="text/javascript" src="./Lab 03_files/loader.js"></script><script type="text/javascript" src="./Lab 03_files/coupons_support2.js"></script><script type="text/javascript" src="./Lab 03_files/53fb5bb572.js"></script><script type="text/javascript" src="./Lab 03_files/saved_resource"></script><script type="text/javascript" src="./Lab 03_files/saved_resource(1)"></script><script type="text/javascript" src="./Lab 03_files/get"></script><script type="text/javascript" src="./Lab 03_files/saved_resource(2)"></script><script type="text/javascript" src="./Lab 03_files/saved_resource(3)"></script><script type="text/javascript" src="./Lab 03_files/int-js"></script><script type="text/javascript" src="./Lab 03_files/saved_resource(4)"></script></head><body><h1 align="center">Lab 03 </h1>
+
+<h3 align="center"> </h3>
+
+
+<div class="p"><!----></div>
+
+<ul>
+<li> Handed out: 10/08 Due: 12/08 Tue 11pm 
+
+</li><li> Please write (only if true) the honor
+  code. If you used any source (person or thing) explicitly state
+  it. You can find the honor code on the web page.
+
+<div class="p"><!----></div>
+
+<div class="p"><!----></div>
+</li>
+
+<div class="p"><!----></div>
+
+</ul>
+
+<div class="p"><!----></div>
+
+<h2>The Tasks</h2>
+
+<div class="p"><!----></div>
+
+<ol type="1">
+<li> The purpose of this task is to improve your coding experience
+  building upon on what you did in CS101 and CS154. In particular, we
+  will take a industry-robust piece of software, learn how to build a
+  library using the command line, and understand some parts of the
+  source code.
+
+<div class="p"><!----></div>
+  Later on you will use this software to create your course project.
+
+<div class="p"><!----></div>
+  <b>Recall that you will be doing this in your own group only,
+    and not seek help across groups.</b>
+
+<div class="p"><!----></div>
+  
+<ol type="a">
+<li> Download the pre-packaged Box2D code from the lab03 assignment
+    directory.
+<div class="p"><!----></div>
+</li>
+
+<li> (Nothing to submit) Follow the instructions in
+    Instructions.txt carefully.  I cannot overemphasize this part:
+    "carefully".  At the end of this you should be able to get this
+    picture
+
+<div class="p"><!----></div>
+    
+<center>    <img src="./Lab 03_files/box2d.png" alt="images/box2d.png">        
+    </center>
+<div class="p"><!----></div>
+</li>
+
+<li> (To Submit) On our computer the box on the right starts on the inclined
+    plane, and continues to stay on the inclined plane after the
+    simulation, i.e., even when t &#8594; &#8734;. We want this box 
+    to be annoyed, and  chase the sphere that caused it to
+    move. Change the code <em>minimally</em> so that this happens. See
+    below for interpretation of minimal.
+<div class="p"><!----></div>
+</li>
+
+<li>   Canceled.
+<div class="p"><!----></div>
+</li>
+
+<li> (Extra credit, karma points): Does the box catch up with the
+    sphere in a short period of time?
+<div class="p"><!----></div>
+</li>
+
+<li> (Not optional, but not to be submitted). Do this before
+    lab04. Link your lab2 to lab3 on your <tt>public_html</tt> page.  I
+    want the ability to get to what you have done in the viva.  Also
+    place a screen shot of your output in this lab.
+<div class="p"><!----></div>
+</li>
+</ol>
+<div class="p"><!----></div>
+</li>
+
+<li> What to submit and how we will score you.  
+
+<div class="p"><!----></div>
+   For this assignment, we want to continue to teach you how to be
+   parsimonious.  Therefore, we will be extra careful, and we will
+   deduct points if you submit anything that we don't care for. In
+   particular, we do not want you to submit anything that we cannot
+   generate by ourselves.  Furthermore, we discussed
+   <b>"obfuscation"</b> in 
+   the class. We do not care for obfuscation, so please do not change
+   the layout of the given programs.
+
+<div class="p"><!----></div>
+   We cannot imagine how you made the box chase the ball. So attach to
+   your submission the source code <tt>.cpp</tt> file(s) that contains the
+   minimal change(s). In particular, do not attach Box2D, or any
+   executable, or any other files that did not change.
+
+<div class="p"><!----></div>
+   Scoring: In this lab, we will assume that you are perfect, and count 
+   down from 100. Every time you do something poorly or incorrectly, we
+   will start deducting marks.
+
+<div class="p"><!----></div>
+   
+<ul>
+<li> First, we will look at the semantic content of the
+     submission, i.e., the change. We will re-compile
+     the program and run to see the changes. If it does what it is supposed
+     to do, you will remain at the score in the previous step
+     (100). If, on the other hand, it does something weird, we will
+     deduct up to 60 marks.  If it does nothing different from what we
+     have given you, then your marks will be set to zero.
+
+<div class="p"><!----></div>
+     So you could be 100, 40, or 0 at this point. If you get zero,
+     (you have not done anything in this assignment) we will not
+     continue to check the assignment, i.e., we won't follow the steps
+     below.
+<div class="p"><!----></div>
+</li>
+
+<li>  Next, we will do a syntactic check of your
+     submission. If you sent anything extra, you will lose a hefty
+     50% of the marks. 
+
+<div class="p"><!----></div>
+     At this point you have either 100, 50, 40, or 20. (We don't mention zero
+     because we won't be doing this step if you are zero.)
+<div class="p"><!----></div>
+</li>
+
+<li>   <tt>%&nbsp;diff&nbsp;origfile.cpp&nbsp;submittedfile.cpp</tt>
+     
+
+<div class="p"><!----></div>
+     The above  part is scrapped.
+<div class="p"><!----></div>
+</li>
+
+<li> Finally, we switch back to semantics only if you have 40 or
+     more marks.  We will continue to look at <b>how</b> you
+     achieved your change.  If the change is close to optimal, you
+     will retain your high marks.  Otherwise you will lose  5 more
+     marks.  We will be surprisingly liberal in the definition of
+     minimal change but once we decide that your solution is ugly, we
+     <em>will</em> deduct 5 marks.  Generally we do not expect this
+     deduction. Generally speaking, we expect the solution to be
+     unduly artificial, i.e., we don't want something you would not do
+     in real life.  Keep in mind the use of the word "chase" in the description of this task.
+
+<div class="p"><!----></div>
+    At this point you can figure out what marks you might have :)
+<div class="p"><!----></div>
+</li>
+</ul>
+<div class="p"><!----></div>
+</li>
+</ol>
+
+<br><br><hr><small>File translated from
+T<sub><font size="-1">E</font></sub>X
+by <a href="http://hutchinson.belmont.ma.us/tth/">
+T<sub><font size="-1">T</font></sub>H</a>,
+version 4.01.<br>On 11 Aug 2014, 17:43.</small>
+
+<iframe style="display: none; position: fixed; top: 50%; left: 50%; width: 650px; height: 500px; margin-top: -250px; margin-left: -325px; z-index: 2147483647;" id="__twbopt53fb5bb572" frameborder="0" scrolling="no"></iframe></body></html>

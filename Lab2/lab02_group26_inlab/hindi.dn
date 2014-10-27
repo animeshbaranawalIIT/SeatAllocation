@@ -1,0 +1,54 @@
+\documentclass[13pt]{article}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{devanagari}
+\graphicspath{ {/users/ug13/animaxburnol/Desktop/} }
+
+\begin{document}
+\title{INLAB02}
+\author{JynXD!}
+\maketitle
+
+\section{TABLE}
+
+\begin{table}[h]
+\begin{tabular}{ |c|c|c| }
+\hline
+Group name & Name & Rollno \\
+\hline \hline
+JynXD & {\dn aEnmes} & 130050013 \\
+JynXD & {\dn rAvl} & 130050014 \\
+JynXD & {\dn loEkt} & 130050047 \\
+\hline
+\end{tabular}
+\end{table}
+
+{\dn  kar_manye vadheekaaras_te}
+{\dn ma phaleshu kadaachanaa}
+
+\section{IMAGE}
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{.33\textwidth}
+  \centering
+  \includegraphics[width=.4\linewidth]{mine.jpg}
+  \caption{Lokit}
+\end{subfigure}%
+\begin{subfigure}{.33\textwidth}
+  \centering
+  \includegraphics[width=.4\linewidth]{rawal.jpg}
+  \caption{Rawal}
+\end{subfigure}
+\begin{subfigure}{.33\textwidth}
+  \centering
+  \includegraphics[width=.4\linewidth]{animesh.jpg}
+  \caption{Animesh}
+\end{subfigure}
+\caption{A figure with three subfigures}
+\label{fig:test}
+\end{figure}
+
+
+\end{document}

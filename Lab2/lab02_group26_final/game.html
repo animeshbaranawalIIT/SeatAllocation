@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>Tic-tac-toe </title>
+		<script type="text/javascript" src="animeshjava.js"></script>
+<style>
+#Tic-tac{
+width:310px;
+height:330px;
+text-align: center;
+margin-left: 38%;
+}
+
+input{
+width:100px;
+height:100px;
+font-size:70px;
+}
+
+body{ 
+	background-image: url('background.jpg');
+ 	background-size:100%;
+ 	background-attachment: fixed;
+ 	margin-top: 0px;
+ }
+</style>
+
+</head>
+<body onload="disp()">
+
+
+
+<!--<script>
+
+var Name1=prompt("Player 1 name:","");
+var Name2=prompt("Player 2 name:","");
+
+
+</script>-->
+<p style="font-size:45px;text-align:center;color:#F3B34B;font-family: Papyrus, fantasy;"><b>Tic Tac Toe</b></p>
+<div id="Tic-tac">
+<!--<script >
+function disp(){
+document.getElementById("play1").innerHTML= Name1;
+document.getElementById("play2").innerHTML= Name2;
+
+}</script>-->
+<table width="310px">
+<tr>
+	<td><img src="cross1.jpg" width="50px" height="50px"></td>
+	<td id="play1" style="text-align:left; font-size:20px;color:#F3B34B;font-family: Papyrus, fantasy;"></td>
+	<td id="play2" style="text-align:right;font-size:20px;color:#F3B34B;
+	font-family: Papyrus, fantasy;"></td>
+	<td><img src="circle2.jpg" width="50px" height="50px" align="right"></td>
+</tr>
+</table>
+
+<table style="text-align:center">
+	<tr>
+		<td><input type="button" id="btn1" onclick="clickBtn('btn1')"/></td>
+		<td><input type="button" id="btn2" onclick="clickBtn('btn2')"/></td>
+		<td><input type="button" id="btn3" onclick="clickBtn('btn3')"/></td>
+	</tr>
+	<tr>
+		<td><input type="button" id="btn4" onclick="clickBtn('btn4')"/></td>
+		<td><input type="button" id="btn5" onclick="clickBtn('btn5')"/></td>
+		<td><input type="button" id="btn6" onclick="clickBtn('btn6')"/></td>
+	</tr>
+	<tr>
+		<td><input type="button" id="btn7" onclick="clickBtn('btn7')"/></td>
+		<td><input type="button" id="btn8" onclick="clickBtn('btn8')"/></td>
+		<td><input type="button" id="btn9" onclick="clickBtn('btn9')"/></td>
+	</tr>
+</table>
+
+<a href="game.html" style="text-decoration:none;"><div style="border:1px solid;background-color:black;color:white;width:80px;text-align:center;border-radius:5px;margin-left:37%;" >Reset
+</div>
+</a>
+<font color="#F3B34B" weight="bold" size="15px">
+<p id="demo" style="display:none;font-family:Papyrus, fantasy; margin-top:13px;">.</p>
+</font>
+</div>
+
+<!--<script>
+var player=1;
+
+function clickBtn(btn){
+	
+	if(player==1){
+	document.getElementById(btn).value=" ";
+	document.getElementById(btn).disabled="disabled";
+	document.getElementById(btn).style.backgroundImage= "url('cross1.jpg')";
+	document.getElementById(btn).style.backgroundImage.width="100px";
+	document.getElementById(btn).style.backgroundImage.height="100px";
+			player=2;winner();}
+	else
+		if(player==2){
+						document.getElementById(btn).value="  ";
+						document.getElementById(btn).disabled="disabled";
+						document.getElementById(btn).style.backgroundImage= "url('circle2.jpg')";
+						document.getElementById(btn).style.backgroundImage.width="100px";
+						document.getElementById(btn).style.backgroundImage.height="100px";
+						player=1;winner();
+					}
+}
+
+function winner(){
+	if((document.getElementById("btn1").value==" " && document.getElementById("btn2").value==" " && document.getElementById("btn3").value==" ")||(document.getElementById("btn1").value==" " && document.getElementById("btn5").value==" " && document.getElementById("btn9").value==" ")||(document.getElementById("btn1").value==" " && document.getElementById("btn4").value==" " && document.getElementById("btn7").value==" ")||(document.getElementById("btn4").value==" " && document.getElementById("btn5").value==" " && document.getElementById("btn6").value==" ")||(document.getElementById("btn7").value==" " && document.getElementById("btn8").value==" " && document.getElementById("btn9").value==" ")||(document.getElementById("btn7").value==" " && document.getElementById("btn5").value==" " && document.getElementById("btn3").value==" ")||(document.getElementById("btn2").value==" " && document.getElementById("btn5").value==" " && document.getElementById("btn8").value==" ")||(document.getElementById("btn3").value==" " && document.getElementById("btn6").value==" " && document.getElementById("btn9").value==" ")){document.getElementById("demo").innerHTML = Name1 + " Wins!";document.getElementById("demo").style.display = 'block'; }
+	else
+		if((document.getElementById("btn1").value=="  " && document.getElementById("btn2").value=="  " && document.getElementById("btn3").value=="  ")||(document.getElementById("btn1").value=="  " && document.getElementById("btn5").value=="  " && document.getElementById("btn9").value=="  ")||(document.getElementById("btn1").value=="  " && document.getElementById("btn4").value=="  " && document.getElementById("btn7").value=="  ")||(document.getElementById("btn4").value=="  " && document.getElementById("btn5").value=="  " && document.getElementById("btn6").value=="  ")||(document.getElementById("btn7").value=="  " && document.getElementById("btn8").value=="  " && document.getElementById("btn9").value=="  ")||(document.getElementById("btn7").value=="  " && document.getElementById("btn5").value=="  " && document.getElementById("btn3").value=="  ")||(document.getElementById("btn2").value=="  " && document.getElementById("btn5").value=="  " && document.getElementById("btn8").value=="  ")||(document.getElementById("btn3").value=="  " && document.getElementById("btn6").value=="  " && document.getElementById("btn9").value=="  ")){document.getElementById("demo").innerHTML = Name2 + " Wins!";document.getElementById("demo").style.display = 'block'; }
+
+}
+function reset(){
+	
+	window.location.reload();
+}
+
+
+</script>-->
+</body>
+</html>

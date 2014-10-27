@@ -1,0 +1,2 @@
+s/\/\/.*//   #replaces all the comments in the file with "nothing" irrespective of the postion of starting of comments.
+/^\s*$/d    #removes all the lines not containing any characters (if the line contains only whitespaces, in that case also the line is removed)

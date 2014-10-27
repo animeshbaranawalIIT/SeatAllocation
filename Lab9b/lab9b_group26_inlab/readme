@@ -1,0 +1,53 @@
+Animesh Baranawal - 130050013- 100%
+Rawal Khirodkar   - 130050014- 100%
+Lokit Kumar Paras - 130050047- 100%
+
+We pledge on our honour that we have not given or received any unauthorized assistance in this or any previous assignment.
+
+#############################################################################################################################################
+Part 1:
+Major differences:
+
+1.For Build type Debug, the cmake passes appropriate debugging flags to the compiler , in the build type release the debugging flags are
+not that highlighted as in Debug case,this results in different output of the Time profile of the two files even when they are executed for the same input ("same time in this case")
+
+2.The time profile of gprof_Debug is detailed, giving amount of time spent in each sub-function call.The time profile of gprof_Release is much more superficial which is useful when you are only concerned with the overall functionality of the program. Debug build type is usually used for getting detailed debugging report.
+#############################################################################################################################################
+Part 2:
+Q1. Explaination of time command output
+
+Running the time command with fixed input of n displays different output when run different times.
+It has three parts:
+
+1. Real - Time from start to finish of the call. This is all elapsed time including time slices used by other processes and time the process spends blocked.
+2. User - This is only actual CPU time used in executing the process. Other processes and time the process spends blocked do not count towards this figure.
+3. Sys 
+
+The outputs are different every time because the time taken by the background processes is different every time as these processes are dynamic.
+
+Source: http://stackoverflow.com/questions/556405/what-do-real-user-and-sys-mean-in-the-output-of-time1
+
+Q2. Using ctime library
+
+Source: http://www.cplusplus.com/reference/ctime/clock/
+Source: http://stackoverflow.com/questions/6348902/how-can-i-add-numbers-in-a-bash-script
+Source: http://stackoverflow.com/questions/18668556/comparing-numbers-in-bash
+
+Yes there is a difference in the output of the above timing methods.
+The time command displays three types of time taken by the program - its real time, its user time and its sys time. However, using clock inside the program displays the processor time taken by program.
+
+Source: http://gnuplot.sourceforge.net/docs_4.2/node173.html
+Source: http://physics.ucsc.edu/~medling/programming/gnuplot_tutorial_1/index.html
+############################################################################################################################################
+Part 3:
+
+1)  currently 4 users are logged in
+2)	CPU usage before animation - 0.3%
+	CPU usage after animation - 35.2%
+
+3) Percentage of swap used = 0
+4) longest running process is- khubd
+   for finding this I called the top command as "top -d 1 -o TIME+" which gives the list of processes in decreasing order of time.
+5) Number of Zombie processes = 0
+   Number of processes with non-zero nice values =1 (its nice value was -20 )
+############################################################################################################################################

@@ -1,0 +1,202 @@
+#!/bin/bash
+
+gnuplot <<EOF
+set term png size 1800,1000
+set output "clustered.png"
+set title "COMPANIES COMPARED ON AN AVERAGE"
+set xlabel "COMPANY CODE"
+set ylabel "VALUE"
+set boxwidth 1
+set xtics rotate
+set style fill solid border -1
+set style histogram clustered
+set style data histograms
+plot "overall.txt" using 1:xtic(4) title "Individual Average Bond" linecolor rgb "#EC0D0D", "" using 2:xtic(4) title "Individual Average International" linecolor rgb "#FF8000", "" using 3:xtic(4) title "Individual Average Stocks" linecolor rgb "#FAFA00"
+
+set output "rowstacked.png"
+set title "OVERALL COMPANY PERFORMANCE"
+set xlabel "COMPANY CODE"
+set ylabel "TOTAL"
+set boxwidth 1
+set xtics rotate
+set style fill solid border -1
+set style histogram rowstacked
+set style data histograms
+plot "overall.txt" using 1:xtic(4) title "Individual Bonds" linecolor rgb "#EC0D0D", "" using 2:xtic(4) title "Individual International" linecolor rgb "#FF8000", "" using 3:xtic(4) title "Individual Stocks" linecolor rgb "#FAFA00"
+
+set term png size 640,400
+set output "bonds_ancient.png"
+set title "CATEGORY: Ancient Companies"
+set xlabel "COMPANY CODE"
+set ylabel "PRICE"
+set yrange [-10:250]
+set ytics 25
+set xtics rotate
+set style line 1 lt 2 lc rgb "red" lw 3
+set style line 2 lt 2 lc rgb "#F57C03" lw 2
+set style line 3 lt 2 lc rgb "blue" lw 3
+set style line 4 lt 2 lc rgb "#AC3A8E" lw 2
+plot "bonds_ancient.txt" using 2:1:xtic(3) with yerrorbars title "BONDS" , "" using 2:xtic(3) with lines title "" ls 1
+
+set output "int_ancient.png"
+set title "CATEGORY: Ancient Companies"
+set xlabel "COMPANY CODE"
+set ylabel "PRICE"
+set yrange [-10:250]
+set ytics 25
+set xtics rotate
+set style line 1 lt 2 lc rgb "red" lw 3
+set style line 2 lt 2 lc rgb "#F57C03" lw 2
+set style line 3 lt 2 lc rgb "blue" lw 3
+set style line 4 lt 2 lc rgb "#AC3A8E" lw 2
+plot "int_ancient.txt" using 2:1:xtic(3) with yerrorbars title "INTERNATIONAL" , "" using 2:xtic(3) with lines title "" ls 2
+
+set output "stocks_ancient.png"
+set title "CATEGORY: Ancient Companies"
+set xlabel "COMPANY CODE"
+set ylabel "PRICE"
+set yrange [-10:250]
+set ytics 25
+set xtics rotate
+set style line 1 lt 2 lc rgb "red" lw 3
+set style line 2 lt 2 lc rgb "#F57C03" lw 2
+set style line 3 lt 2 lc rgb "blue" lw 3
+set style line 4 lt 2 lc rgb "#AC3A8E" lw 2
+plot "stocks_ancient.txt" using 2:1:xtic(3) with yerrorbars title "STOCKS" , "" using 2:xtic(3) with lines title "" ls 3
+
+set output "bonds_bluechip.png"
+set title "CATEGORY: Bluechip Companies"
+set xlabel "COMPANY CODE"
+set ylabel "PRICE"
+set yrange [-10:250]
+set ytics 25
+set xtics rotate
+set style line 1 lt 2 lc rgb "red" lw 3
+set style line 2 lt 2 lc rgb "#F57C03" lw 2
+set style line 3 lt 2 lc rgb "blue" lw 3
+set style line 4 lt 2 lc rgb "#AC3A8E" lw 2
+plot "bonds_bluechip.txt" using 2:1:xtic(3) with yerrorbars title "BONDS" , "" using 2:xtic(3) with lines title "" ls 1
+
+set output "int_bluechip.png"
+set title "CATEGORY: bluechip Companies"
+set xlabel "COMPANY CODE"
+set ylabel "PRICE"
+set yrange [-10:250]
+set ytics 25
+set xtics rotate
+set style line 1 lt 2 lc rgb "red" lw 3
+set style line 2 lt 2 lc rgb "#F57C03" lw 2
+set style line 3 lt 2 lc rgb "blue" lw 3
+set style line 4 lt 2 lc rgb "#AC3A8E" lw 2
+plot "int_bluechip.txt" using 2:1:xtic(3) with yerrorbars title "INTERNATIONAL" , "" using 2:xtic(3) with lines title "" ls 2
+
+set output "stocks_bluechip.png"
+set title "CATEGORY: bluechip Companies"
+set xlabel "COMPANY CODE"
+set ylabel "PRICE"
+set yrange [-10:250]
+set ytics 25
+set xtics rotate
+set style line 1 lt 2 lc rgb "red" lw 3
+set style line 2 lt 2 lc rgb "#F57C03" lw 2
+set style line 3 lt 2 lc rgb "blue" lw 3
+set style line 4 lt 2 lc rgb "#AC3A8E" lw 2
+plot "stocks_bluechip.txt" using 2:1:xtic(3) with yerrorbars title "STOCKS" , "" using 2:xtic(3) with lines title "" ls 3
+
+set output "bonds_new.png"
+set title "CATEGORY: dotcom Companies"
+set xlabel "COMPANY CODE"
+set ylabel "PRICE"
+set yrange [-10:250]
+set ytics 25
+set xtics rotate
+set style line 1 lt 2 lc rgb "red" lw 3
+set style line 2 lt 2 lc rgb "#F57C03" lw 2
+set style line 3 lt 2 lc rgb "blue" lw 3
+set style line 4 lt 2 lc rgb "#AC3A8E" lw 2
+plot "SD_Bonds.txt" using 2:1:xtic(3) with yerrorbars title "BONDS" , "" using 2:xtic(3) with lines title "" ls 1
+
+set output "int_new.png"
+set title "CATEGORY: dotcom Companies"
+set xlabel "COMPANY CODE"
+set ylabel "PRICE"
+set yrange [-10:250]
+set ytics 25
+set xtics rotate
+set style line 1 lt 2 lc rgb "red" lw 3
+set style line 2 lt 2 lc rgb "#F57C03" lw 2
+set style line 3 lt 2 lc rgb "blue" lw 3
+set style line 4 lt 2 lc rgb "#AC3A8E" lw 2
+plot "SD_INT.txt" using 2:1:xtic(3) with yerrorbars title "INTERNATIONAL" , "" using 2:xtic(3) with lines title "" ls 2
+
+set output "stocks_new.png"
+set title "CATEGORY: dotcom Companies"
+set xlabel "COMPANY CODE"
+set ylabel "PRICE"
+set yrange [-10:250]
+set ytics 25
+set xtics rotate
+set style line 1 lt 2 lc rgb "red" lw 3
+set style line 2 lt 2 lc rgb "#F57C03" lw 2
+set style line 3 lt 2 lc rgb "blue" lw 3
+set style line 4 lt 2 lc rgb "#AC3A8E" lw 2
+plot "SD_Stocks.txt" using 2:1:xtic(3) with yerrorbars title "STOCKS" , "" using 2:xtic(3) with lines title "" ls 3
+
+set term png size 1200,1000
+set output "combined_stocks.png"
+set xlabel "RANGE OF Combined STOCKS"
+set ylabel "FREQUENCY"
+set boxwidth 9
+set yrange [0:35]
+set ytics 5
+set style fill solid border -1
+set style histogram clustered
+set style data histograms
+binwidth=10
+bin(x,width)=width*floor(x/width)+5
+
+plot 'combinedStocks.txt' using (bin(\$1,binwidth)):(1.0) smooth freq with boxes title "Histogram of Combined Stocks" linecolor rgb "#C32318"
+
+
+set term png size 1200,1000
+set output "combined_bonds.png"
+set xlabel "RANGE OF Combined BONDS"
+set ylabel "FREQUENCY"
+set boxwidth 9
+set yrange [0:200]
+set ytics 25
+set style fill solid border -1
+set style histogram clustered
+set style data histograms
+binwidth=10
+bin(x,width)=width*floor(x/width)+5
+
+plot 'combinedBonds.txt' using (bin(\$1,binwidth)):(1.0) smooth freq with boxes title "Histogram of Combined Bonds" linecolor rgb "#0E24E8"
+
+set term png size 1200,1000
+set output "combined_international.png"
+set xlabel "RANGE OF Combined International"
+set ylabel "FREQUENCY"
+set boxwidth 9
+set yrange [0:300]
+set ytics 25
+set style fill solid border -1
+set style histogram clustered
+set style data histograms
+binwidth=10
+bin(x,width)=width*floor(x/width)+5
+
+plot 'combinedInternational.txt' using (bin(\$1,binwidth)):(1.0) smooth freq with boxes title "Histogram of Combined International" linecolor rgb "#088B22"
+
+set output "comparison.png"
+set title "OVERALL COMPARISON"
+set xlabel "COMPANY CATEGORY"
+set ylabel "TOTAL (SUM OF AVERAGE OF AVERAGES)"
+set boxwidth 0.7
+set xtics rotate
+set style fill solid border -1
+set style histogram rowstacked
+set style data histograms
+plot "overallcompare.txt" using 1:xtic(4) title "Bonds" linecolor rgb "#EC0D0D", "" using 2:xtic(4) title "International" linecolor rgb "#FF8000", "" using 3:xtic(4) title "Stocks" linecolor rgb "#FAFA00"
+
+EOF

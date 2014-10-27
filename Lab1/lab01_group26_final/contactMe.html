@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>contacts</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+ 	<script type="text/javascript"
+     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+ 	<style>
+ 	body{ background-image: url("hd-wallpapers.jpg");
+ 			background-size:100%;
+ 			background-attachment: fixed;
+ 			color:#0FA0E8;
+ 			font-size:25px;}
+
+	
+	#dub {
+
+		color:white;
+
+	}
+	</style>
+</head>
+<body>
+	<nav>
+			<table class="class1" style="margin-left:12%;width:75%;" cellspacing="10">
+				<tr>
+
+					<td><a href="index.html">Home</a></td>
+					<td><a href="aboutMe.html">About Me</td>
+					<td><a href="group.html">Group</a></td>
+					<td>Contact Me</td>
+					
+				</tr>
+			</table>
+			
+	</nav>
+	<br>
+	<br>
+
+	<div style="text-align:center;">
+		Hello and welcome to my homepage again!
+		To contact me, click the button below.<br>
+		<button type="button" onclick="toggle()">Click me.</button>
+		<br>
+		<br>
+		<br>
+		<br>
+		<div id="dub" style="display:none;">
+			Phone number: 7506134635<br>
+			E-mail: lokit95@gmail.com<br>
+			Address: Room 17, H4<br>
+			<a href="mailto:lokit95@gmail.com?Subject=Hello%20again" style="text-decoration:none;">Send us an E-mail</a><br>
+			<a href="https://www.facebook.com/lokit.kumarparas"> Click to visit our profile: <img src="fb.png" width=20 heigh=20> </a>
+		</div>
+	</div>
+	<script>
+	function toggle(){
+		var yoho=document.getElementById("dub");
+		if(yoho.style.display!=='none'){yoho.style.display='none';}
+		else{yoho.style.display='block';}
+	}
+	</script>
+</body>
+</html>

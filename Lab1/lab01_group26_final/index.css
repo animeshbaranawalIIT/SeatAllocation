@@ -1,0 +1,43 @@
+.class1{
+		width:100%;
+		height:10px;
+	}
+	.class1 tr{
+		font-family: Arial;
+	}
+	.class1 td a:link {
+		text-decoration:none;
+		margin: 0;
+		color: white;
+	}
+	.class1 td a:visited {
+		text-decoration:none;
+		margin: 0;
+		color: white;
+	}
+	.class1 td a:hover {
+		text-decoration:none;
+		margin: 0;
+		color:#50D8F0;
+	}
+	.class1 td{
+		font-size: 25px;
+		text-align: center;
+		color: white;
+		width:25%;
+		padding:10px 0px;
+
+	}
+	nav table td{
+		background-color:#447D9A;
+		border-radius:5px; 
+	}
+	.formula{
+		size:20px;
+		text-align: center;
+
+	}
+#fuck{
+	font-size: 45px;
+
+}

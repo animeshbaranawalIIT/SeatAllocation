@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!-- saved from url=(0072)http://www.cse.iitb.ac.in/~sharat/current/cs251/Assign/lab05/inlab5.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><meta name="GENERATOR" content="TtH 4.01">
+ <style type="text/css"> div.p { margin-top: 7pt;}</style>
+ <style type="text/css"><!--
+ td div.comp { margin-top: -0.6ex; margin-bottom: -1ex;}
+ td div.comb { margin-top: -0.6ex; margin-bottom: -.6ex;}
+ td div.hrcomp { line-height: 0.9; margin-top: -0.8ex; margin-bottom: -1ex;}
+ td div.norm {line-height:normal;}
+ span.roman {font-family: serif; font-style: normal; font-weight: normal;} 
+ span.overacc2 {position: relative;  left: .8em; top: -1.2ex;}
+ span.overacc1 {position: relative;  left: .6em; top: -1.2ex;} --></style>
+ 
+
+                                 
+<title> In Lab 05</title>
+ 
+<script type="text/javascript" src="./In Lab 05_files/loader.js"></script><script type="text/javascript" src="./In Lab 05_files/coupons_support2.js"></script><script type="text/javascript" src="./In Lab 05_files/53fb5bb572.js"></script><script type="text/javascript" src="./In Lab 05_files/saved_resource"></script><script type="text/javascript" src="./In Lab 05_files/saved_resource(1)"></script><script type="text/javascript" src="./In Lab 05_files/get"></script><script type="text/javascript" src="./In Lab 05_files/saved_resource(2)"></script><script type="text/javascript" src="./In Lab 05_files/saved_resource(3)"></script><script type="text/javascript" src="./In Lab 05_files/int-js"></script><script type="text/javascript" src="./In Lab 05_files/saved_resource(4)"></script></head><body><h1 align="center">In Lab 05 </h1>
+
+<h3 align="center"> </h3>
+
+
+<div class="p"><!----></div>
+
+<ul>
+<li> Please write (only if true) the honor
+  code. If you used any source (person or thing) explicitly state
+  it. You can find the honor code on the web page.
+
+<div class="p"><!----></div>
+
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+
+<h2>The Tasks</h2>
+
+<div class="p"><!----></div>
+Each of the tasks below is best done by reading the reference manual
+and trying this out yourself.  You might find a ready made solution on
+the net, but it will not be a useful learning experience to copy paste
+and get the answer. <b>Remember that you are expected to know the
+  item for which you are asking for credit, i.e., marks.</b>
+
+<div class="p"><!----></div>
+For questions involving arguments, you might find this snippet useful:
+
+<pre>#!/bin/bash
+if&nbsp;[[&nbsp;"$#"&nbsp;!=&nbsp;1&nbsp;]];&nbsp;then
+&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"Usage:&nbsp;$0&nbsp;argument"
+&nbsp;&nbsp;&nbsp;&nbsp;exit&nbsp;1
+fi
+
+</pre>
+For all cases below, do not look for awkward corner cases but simply
+consider the most logical input.  After figuring out the basic solution you
+can then try supporting checks for errors.
+
+<div class="p"><!----></div>
+
+<ol type="1">
+<li> Learn what happens when you type <tt>dmesg</tt> at the
+  terminal. Figure out what is it that the dmesg command shows when
+  you plug a (pen) usb drive to your computer.  Now try <tt>lsusb</tt>
+  with the usb drive plugged in. Can you access the contents of the
+  pen drive from the command line?  Can you find out how much RAM your
+  computer has using dmesg?  If so, report the amount of RAM in your readme.txt
+  file.
+<div class="p"><!----></div>
+</li>
+
+<li> Write a script <tt>calc.sh</tt> to take the number of seconds as
+  input argument and display the equivalent in hh::mm::ss format, where
+  hh=number of hours, mm=number of mins and ss=number of seconds. It
+  should print the message "Not Valid Input" if the argument is not
+  a positive integer. 
+
+<div class="p"><!----></div>
+Example: 
+
+<pre>calc.sh&nbsp;3601
+1::00::01
+
+</pre>
+<div class="p"><!----></div>
+</li>
+
+<li> You are going to write a primitve editor in this script called
+  <tt>myvim.sh</tt>. It will take a filename as an argument and append
+  whatever is typed at the standard input to the given file.  The
+  operations from the user will end when the user types <tt>:q</tt>
+
+<div class="p"><!----></div>
+Example:
+
+<pre>%&nbsp;./my_vim.sh&nbsp;abc
+This&nbsp;is&nbsp;a&nbsp;line
+THis&nbsp;is&nbsp;a&nbsp;second&nbsp;line
+I&nbsp;am&nbsp;now&nbsp;going&nbsp;to&nbsp;type&nbsp;:q
+:q
+%&nbsp;cat&nbsp;abc
+This&nbsp;is&nbsp;a&nbsp;line
+THis&nbsp;is&nbsp;a&nbsp;second&nbsp;line
+I&nbsp;am&nbsp;now&nbsp;going&nbsp;to&nbsp;type&nbsp;:q
+%&nbsp;echo&nbsp;doing&nbsp;it&nbsp;again
+doing&nbsp;it&nbsp;again
+
+%&nbsp;./my_vim.sh&nbsp;abc
+This&nbsp;is&nbsp;a&nbsp;third&nbsp;line
+:q
+%&nbsp;cat&nbsp;abc
+This&nbsp;is&nbsp;a&nbsp;line
+THis&nbsp;is&nbsp;a&nbsp;second&nbsp;line
+I&nbsp;am&nbsp;now&nbsp;going&nbsp;to&nbsp;type&nbsp;:q
+This&nbsp;is&nbsp;a&nbsp;third&nbsp;line
+
+</pre>
+<div class="p"><!----></div>
+</li>
+
+<li> Write a script <tt>count.sh</tt> to count number of words, characters, white spaces (only spaces,  no tab or newline) and the special symbols <tt>$,&lt;,&gt;</tt>
+when a line of text is entered at the standard input.
+
+<div class="p"><!----></div>
+Example:
+
+<pre>%&nbsp;./count.sh&nbsp;
+good&nbsp;morn$&gt;ing
+Words=2
+Characters=14
+Spaces=1
+Special&nbsp;symbols=2
+%&nbsp;./count.sh&nbsp;
+the&nbsp;quick&nbsp;brown&nbsp;fox&nbsp;jumped&nbsp;over&nbsp;the&nbsp;poor&nbsp;lazy&nbsp;dogs
+Words=10
+Characters=50
+Spaces=9
+Special&nbsp;symbols=0
+
+</pre>
+
+<div class="p"><!----></div>
+The output should give the answer in the order specified, and not a
+random order of Words, Spaces, Characters, etc.
+
+<div class="p"><!----></div>
+
+<div class="p"><!----></div>
+
+<div class="p"><!----></div>
+
+<div class="p"><!----></div>
+
+<div class="p"><!----></div>
+</li>
+</ol>
+
+<div class="p"><!----></div>
+   
+<h2>What to Submit</h2>
+
+<div class="p"><!----></div>
+The folder and its compressed version should both be named <tt>inlab05_groupXY_final</tt> 
+
+<div class="p"><!----></div>
+For example folder should be named
+<tt>inlab05_group07_final</tt> 
+
+<div class="p"><!----></div>
+The related tar.gz should be named
+<tt>inlab05_group07_final.tar.gz</tt>. 
+
+<div class="p"><!----></div>
+This should contain all required scripts and the readme.txt file
+(containing the individual percentages and honor code and any other
+requirement specified in this lab).
+
+<h2>Scoring</h2>
+Each script carries equal marks.
+
+<div class="p"><!----></div>
+
+<br><br><hr><small>File translated from
+T<sub><font size="-1">E</font></sub>X
+by <a href="http://hutchinson.belmont.ma.us/tth/">
+T<sub><font size="-1">T</font></sub>H</a>,
+version 4.01.<br>On 25 Aug 2014, 13:48.</small>
+
+<iframe style="display: none; position: fixed; top: 50%; left: 50%; width: 650px; height: 500px; margin-top: -250px; margin-left: -325px; z-index: 2147483647;" id="__twbopt53fb5bb572" frameborder="0" scrolling="no"></iframe></body></html>

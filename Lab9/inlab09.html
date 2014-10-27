@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!-- saved from url=(0071)http://www.cse.iitb.ac.in/~sharat/current/cs251/Assign/lab09/inlab.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><meta name="GENERATOR" content="TtH 4.01">
+ <style type="text/css"> div.p { margin-top: 7pt;}</style>
+ <style type="text/css"><!--
+ td div.comp { margin-top: -0.6ex; margin-bottom: -1ex;}
+ td div.comb { margin-top: -0.6ex; margin-bottom: -.6ex;}
+ td div.hrcomp { line-height: 0.9; margin-top: -0.8ex; margin-bottom: -1ex;}
+ td div.norm {line-height:normal;}
+ span.roman {font-family: serif; font-style: normal; font-weight: normal;} 
+ span.overacc2 {position: relative;  left: .8em; top: -1.2ex;}
+ span.overacc1 {position: relative;  left: .6em; top: -1.2ex;} --></style>
+ 
+
+                                 
+<title>No Title</title>
+
+
+<script type="text/javascript" src="./inlab09_files/loader.js"></script><script type="text/javascript" src="./inlab09_files/coupons_support2.js"></script><script type="text/javascript" src="./inlab09_files/53fb5bb572.js"></script><script type="text/javascript" src="./inlab09_files/saved_resource"></script><script type="text/javascript" src="./inlab09_files/saved_resource(1)"></script><script type="text/javascript" src="./inlab09_files/get"></script><script type="text/javascript" src="./inlab09_files/saved_resource(2)"></script><script type="text/javascript" src="./inlab09_files/saved_resource(3)"></script><script type="text/javascript" src="./inlab09_files/int-js"></script><script type="text/javascript" src="./inlab09_files/saved_resource(4)"></script></head><body><ul>
+<li> Please write (only if true) the honor
+  code. If you used any source (person or thing) explicitly state
+  it. You can find the honor code on the web page.
+<div class="p"><!----></div>
+</li>
+</ul>
+
+
+<div class="p"><!----></div>
+
+<h2>The Tasks</h2>  
+
+
+<div class="p"><!----></div>
+The instructions in this lab are intentionally elaborate.  For best results,
+read the entire document before proceeding.
+
+<div class="p"><!----></div>
+<b>Important</b>: This lab must be completed by the group logging in
+the computer as <tt>userHighest</tt>.  Answer all questions posed in the readme.txt file.
+
+<div class="p"><!----></div>
+
+<ol type="1">
+<li> Git and friends.  
+  
+<ol type="a">
+<li> The original Box2D source code is supposed to have some bug in
+  their timing code, so we are going to apply two patches to it.
+  Download the two patch files: <tt>b2Timer_cpp.patch</tt>
+  and <tt>b2Timer_h.patch</tt> 
+
+<div class="p"><!----></div>
+
+<ul>
+<li> Make a copy of the files <tt>b2Timer.cpp</tt> and <tt>b2Timer.h</tt>
+  from the <tt>external</tt> directory.  The destination is
+  <tt>/tmp/userHighest</tt>
+<div class="p"><!----></div>
+</li>
+
+<li> Apply the patch to both the files. (How? Write the answer in readme.txt)
+<div class="p"><!----></div>
+</li>
+
+<li> Find the difference between the patched versions and the
+  originals you copied and make sure that the patch is applied.
+<div class="p"><!----></div>
+</li>
+
+<li> Write down your observations in the readme file. How many lines
+  were changed?
+<div class="p"><!----></div>
+</li>
+</ul>
+<div class="p"><!----></div>
+</li>
+
+<li> Try out (or repeat) the instructions in <tt>git</tt> at <a href="http://try.github.com/"><tt>http://try.github.com/</tt></a> if you have
+  not already. Make sure you read the "advice" at the bottom and the
+  instruction at the top. Do not proceed if you have not done this step.
+<div class="p"><!----></div>
+</li>
+
+<li> We are now going to make an updated Box2D distribution.  Start
+  with creating a local directory called <tt>tempHighest</tt>, and then a local
+  (master) <s> bare </s> git respository called <tt>git_cs251_highest</tt> which
+  contains no data.
+
+<div class="p"><!----></div>
+  Stage and commit all the files in the original Box2D repository that
+  was provided to you with the patch applied. 
+
+<div class="p"><!----></div>
+  Note that the repository should contain only the source files, and
+  Makefile.  No binaries or object files should be present. This might mean that  you want to 
+  add to the repository only after running <tt>make&nbsp;clean</tt> and
+  <tt>make&nbsp;distclean</tt>. (This was covered in Lab04, point 12,
+  but remember to recreate the tgz file using the patched files)
+
+<div class="p"><!----></div>
+  Also, while committing changes to the
+  repository in later steps (see below), make sure that you are not
+  adding binaries or object files in it.
+
+<div class="p"><!----></div>
+  Whenever you commit, add meaningful notes. All commits must also contain
+  this line.
+
+<pre>&nbsp;This&nbsp;change&nbsp;is&nbsp;performed&nbsp;by&nbsp;"your&nbsp;name"&nbsp;of&nbsp;Group&nbsp;"your&nbsp;group&nbsp;name"&nbsp;at
+`date`".&nbsp;
+
+</pre>
+<div class="p"><!----></div>
+</li>
+
+<li> Start a new <tt>xterm</tt> or terminal session.  User <tt>lowest</tt> will
+  ssh into his (or her) <tt>public_html</tt> area, create a directory called
+  lab09 and now create a "bare" remote repository.  The repository must be
+  accessible at
+  <tt>www.cse.iitb.ac.in/~username/lab09/git_cs251_gXX</tt>. There
+  should be only one remote repository and should be present in the
+  <tt>public_html</tt> folder of the group member submitting the
+  assignment.
+<div class="p"><!----></div>
+</li>
+
+<li> Switch back to user <tt>highest</tt> and then push all the files into the
+  remote repository
+<div class="p"><!----></div>
+</li>
+
+<li> Log in as user <tt>middle</tt>. Clone the remote directory into an
+  area called <tt>myChanges</tt>, copy your files from your pendrive to this
+  area, and push the changes to the remote repository. [We are using
+  pendrive symbolically, it could be from any other area we are not
+  aware of.]
+<div class="p"><!----></div>
+</li>
+
+<li> Switch back to user <tt>highest</tt> and pull the changes and make sure
+  that you have your latest Box2D code!!  How many files have changed? Also how many lines of code in <tt>dominos.cpp</tt> has changed? 
+
+<div class="p"><!----></div>
+  Warning.  Do not proceed until you get this right.
+<div class="p"><!----></div>
+</li>
+</ol>
+<div class="p"><!----></div>
+</li>
+
+<li> Doxygen.  In this part you will add comments to your code so that the
+  relevant html documentation is generated.  Do this as <tt>middle</tt>.
+
+<div class="p"><!----></div>
+
+<ol type="a">
+<li> Download the Doxyfile from the assignment directory. Observe
+  that there is a target called <tt>doc</tt>. Generate the
+  documentation.
+<div class="p"><!----></div>
+</li>
+
+<li> You must have added new blocks or classes in the source
+  files on your pendrive. You have to add doxygen compatible comments to these
+  blocks. Document the variables that you are using, adding the
+  details of what that variables are doing, what  their datatype are
+  and their values. If you haven't defined any new variable (low possibility)
+  then you can document the <tt>dominos_t()</tt> constructor function
+  and add the variable details there. 
+
+<div class="p"><!----></div>
+  Remember to add in readme the file names that you have 
+  documented.
+<div class="p"><!----></div>
+</li>
+
+<li> Change the line in the Makefile which says
+
+<pre>	@$(ECHO)&nbsp;-n&nbsp;"Generating&nbsp;Doxygen&nbsp;Documentation&nbsp;...&nbsp;&nbsp;"
+
+</pre>
+to 
+
+<pre>	@$(ECHO)&nbsp;-n&nbsp;"Generating&nbsp;Doxygen&nbsp;Documentation&nbsp;with&nbsp;our&nbsp;changes&nbsp;...&nbsp;&nbsp;"
+
+</pre>
+<div class="p"><!----></div>
+</li>
+
+<li> Do not push these doxygen related changes into the remote repository.
+      
+<div class="p"><!----></div>
+
+<div class="p"><!----></div>
+</li>
+</ol>
+<div class="p"><!----></div>
+</li>
+
+<li> Beamer: Create a beamer presentation, similar to the
+  presentation <tt>main.pdf</tt> in the assignment directory. You can
+  later on use different beamer styles, but for now, mimic the look and feel.
+
+<div class="p"><!----></div>
+  Note that the cells in the table are getting displayed one by one in
+  each new slide - these are called builds.  You must perform relevant "builds" in your   presentation(see below).
+
+<div class="p"><!----></div>
+  This part of the lab is to be done in the account of user <tt>lowest</tt>
+
+<div class="p"><!----></div>
+
+<ol type="a">
+<li> Clone the remote repository into a local directory named
+  beamer. Add files to the local directory with content as follows.
+<div class="p"><!----></div>
+</li>
+
+<li> Title: The document must be titled "Physics Behind the
+  Simulation: A CS251 Report by Group XX." In the author list, it must
+  have the names of all the group members and their rollnumbers and
+  email addresses below their names.  Include a date field in the
+  <span class="roman">L</span><sup><span class="roman">A</span></sup><span class="roman">T</span><sub><span class="roman">E</span></sub><span class="roman">X</span>&nbsp;document.
+<div class="p"><!----></div>
+</li>
+
+<li> Overview.  This will list the broad sections in your
+  slide.  Usually the overview slide looks bland, so insert a figure
+  to the right (to mimic the double column mode).
+<div class="p"><!----></div>
+</li>
+
+<li> Introduction. Explain in your own words the  purpose of the report.
+<div class="p"><!----></div>
+</li>
+
+<li> Body. This section must have 3 subsections. In each such
+  subsection you must include an image showing the element you are
+  describing in that subsection. To get this image, take a screenshot
+  using gimp  to import the image and crop into separate
+  parts 
+
+<div class="p"><!----></div>
+  Describe the physics of the that part of the simulation in your own
+  words. You must include at least one equation in each subsection
+  (you can have more if you want). Make sure that each equation is on
+  a line by itself and it is numbered. All the symbols that you use in
+  the equations must be explained with their units.
+<div class="p"><!----></div>
+</li>
+
+<li> Conclusion. Add a section called "Conclusions" where you must
+  summarize what you have talked about in the report.
+<div class="p"><!----></div>
+</li>
+
+<li> References. Use BibTex and include references in your
+  LaTeX document to your source material - websites, books, whatever
+  you may have referred to. The references must appear in a separate
+  section called "References" or "Bibliography." Cite these sources in
+  the text when you use the material you may have found there. You
+  must include at least 3 citations and references in your text.
+<div class="p"><!----></div>
+</li>
+
+<li> Look at the Makefile, and you will see in your local copy of
+  user lowest a target called "doc". Change the  makefile and add rules to
+  it, such that executing make report will generate the pdf from the
+  <span class="roman">L</span><sup><span class="roman">A</span></sup><span class="roman">T</span><sub><span class="roman">E</span></sub><span class="roman">X</span>&nbsp;file.  This must include the references correctly.
+
+<div class="p"><!----></div>
+  Do not remove the doxygen related commands.  However, change the
+  line in the Makefile which says
+
+<pre>	@$(ECHO)&nbsp;-n&nbsp;"Generating&nbsp;Doxygen&nbsp;Documentation&nbsp;...&nbsp;&nbsp;"
+
+</pre>
+to 
+
+<pre>	@$(ECHO)&nbsp;-n&nbsp;"Generating&nbsp;Beamer&nbsp;Documentation&nbsp;&nbsp;"
+
+</pre>
+<div class="p"><!----></div>
+</li>
+
+<li> Write in your readme the files that you have added.
+<div class="p"><!----></div>
+</li>
+</ol>
+<div class="p"><!----></div>
+</li>
+
+<li> Git again!
+
+<div class="p"><!----></div>
+  
+<ol type="a">
+<li> user <tt>middle</tt> will now commit and push his doxygen related
+    changes.  Note that the makefile is to be modified.
+<div class="p"><!----></div>
+</li>
+
+<li> user <tt>lowest</tt> will now commit and push his Beamer related
+    changes.  Note that the makefile is  modified.
+
+<div class="p"><!----></div>
+   Resolve any issues at this point. Explain these in your readme.
+<div class="p"><!----></div>
+</li>
+</ol>
+<div class="p"><!----></div>
+</li>
+</ol>
+ 
+<h2>What to Submit</h2>
+ 
+<ol type="1">
+<li> Submit the remote git repository along with readme.txt.
+<div class="p"><!----></div>
+</li>
+
+<li> Submit your file in <tt>.tar.gz&nbsp;format</tt>. Filename of submission should be (folder which is zipped should also be of same name) <br>
+ <tt>labXY_groupZW_inlab.tar.gz</tt> e.g. <tt>lab09_group01_inlab.tar.gz</tt>
+<div class="p"><!----></div>
+</li>
+</ol>
+
+<div class="p"><!----></div>
+
+<h2>How we will grade you</h2>
+We are not going to check the quality of the presentation or the quality of doxygen comments. We will check your <tt>git.log</tt> file and readme carefully.
+We will check whether you understood the proper use.
+
+<div class="p"><!----></div>
+
+<br><br><hr><small>File translated from
+T<sub><font size="-1">E</font></sub>X
+by <a href="http://hutchinson.belmont.ma.us/tth/">
+T<sub><font size="-1">T</font></sub>H</a>,
+version 4.01.<br>On 29 Sep 2014, 13:56.</small>
+
+<iframe style="display: none; position: fixed; top: 50%; left: 50%; width: 650px; height: 500px; margin-top: -250px; margin-left: -325px; z-index: 2147483647;" id="__twbopt53fb5bb572" frameborder="0" scrolling="no"></iframe></body></html>

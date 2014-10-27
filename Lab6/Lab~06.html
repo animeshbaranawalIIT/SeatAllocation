@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!-- saved from url=(0070)http://www.cse.iitb.ac.in/~sharat/current/cs251/Assign/lab06/lab6.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><meta name="GENERATOR" content="TtH 4.01">
+ <style type="text/css"> div.p { margin-top: 7pt;}</style>
+ <style type="text/css"><!--
+ td div.comp { margin-top: -0.6ex; margin-bottom: -1ex;}
+ td div.comb { margin-top: -0.6ex; margin-bottom: -.6ex;}
+ td div.hrcomp { line-height: 0.9; margin-top: -0.8ex; margin-bottom: -1ex;}
+ td div.norm {line-height:normal;}
+ span.roman {font-family: serif; font-style: normal; font-weight: normal;} 
+ span.overacc2 {position: relative;  left: .8em; top: -1.2ex;}
+ span.overacc1 {position: relative;  left: .6em; top: -1.2ex;} --></style>
+ 
+
+                                 
+<title> Lab~06</title>
+ 
+<script type="text/javascript" src="./Lab~06_files/loader.js"></script><script type="text/javascript" src="./Lab~06_files/coupons_support2.js"></script><script type="text/javascript" src="./Lab~06_files/53fb5bb572.js"></script><script type="text/javascript" src="./Lab~06_files/saved_resource"></script><script type="text/javascript" src="./Lab~06_files/saved_resource(1)"></script><script type="text/javascript" src="./Lab~06_files/get"></script><script type="text/javascript" src="./Lab~06_files/saved_resource(2)"></script><script type="text/javascript" src="./Lab~06_files/saved_resource(3)"></script><script type="text/javascript" src="./Lab~06_files/int-js"></script><script type="text/javascript" src="./Lab~06_files/saved_resource(4)"></script></head><body><h1 align="center">Lab&nbsp;06 </h1>
+
+<h3 align="center"> </h3>
+
+
+<div class="p"><!----></div>
+
+<ul>
+<li> Handed out: 29/08 Due: 01/09 Monday 11pm 
+
+</li><li> Please write (only if true) the honor
+  code. If you used any source (person or thing) explicitly state
+  it. You can find the honor code on the web page.
+
+<div class="p"><!----></div>
+
+<div class="p"><!----></div>
+</li>
+
+<div class="p"><!----></div>
+
+</ul>
+
+<div class="p"><!----></div>
+
+<h2>Overview</h2>
+We continue with shell scripts and develop more scripting expertise.
+
+<div class="p"><!----></div>
+
+<h2>Pre-tasks</h2>
+
+<ol type="1">
+<li> Link your submission submitted in Lab 04.
+<div class="p"><!----></div>
+</li>
+
+<li> Box 2D. Show a demo of "something related to your project" to
+  your TA. It might have, for example, 1-2 moving elements related to
+  your project.
+
+<div class="p"><!----></div>
+  <font color="#FF0000">Heads up!</font>  On Monday 8th September, there is no lab
+  due to midsem.  However, I will ask you to submit all Box2D material
+  you have developed so far.  This is a hard submission deadline and
+  will count towards your project points.  Since you have midsem exams
+  that week, you might want to submit latest by Friday 5th September.
+<div class="p"><!----></div>
+</li>
+
+<li> Refer to the <a href="http://www.gnuplot.info/">gnuplot</a>, <a href="http://www.grymoire.com/Unix/Sed.html">sed</a> and <a href="http://www.grymoire.com/Unix/Awk.html">awk</a> tutorials.
+<div class="p"><!----></div>
+</li>
+
+<li> Read briefly about
+  <a href="http://sprott.physics.wisc.edu/pickover/hailstone.html">hailstone
+    numbers</a>. It's not necessary to understand this page completely
+  but compile the provided program <tt>runme.cpp</tt> as
+
+<div class="p"><!----></div>
+  <tt>g++&nbsp;-std=c++11&nbsp;runme.cpp&nbsp;-o&nbsp;runme</tt><a href="http://www.cse.iitb.ac.in/~sharat/current/cs251/Assign/lab06/lab6.html#tthFtNtAAB" name="tthFrefAAB"><sup>1</sup></a>
+
+<div class="p"><!----></div>
+  The program <tt>runme</tt> takes an integer n and repeatedly
+  applies the function h(n) mentioned in the link above, until
+  the sequence reaches 1. It prints integers separated by
+  comma as follows
+  
+<ul>
+<li> The length of the chain.
+<div class="p"><!----></div>
+</li>
+
+<li> Number of even integers encountered (including <tt>n</tt>).
+<div class="p"><!----></div>
+</li>
+
+<li> Number of primes encountered in the series (excluding <tt>n</tt>).
+<div class="p"><!----></div>
+</li>
+
+<li> Sum of the primes encountered in the series (excluding <tt>n</tt>).
+<div class="p"><!----></div>
+</li>
+</ul>	
+
+<div class="p"><!----></div>
+  <tt>./runme&nbsp;20</tt> will print <tt>7,&nbsp;6,&nbsp;2,&nbsp;7</tt>
+  (20&#8594;10&#8594;5&#8594;16&#8594;8&#8594;4&#8594;2&#8594;1).
+<div class="p"><!----></div>
+</li>
+</ol>
+
+<div class="p"><!----></div>
+
+<h2>Outlab Tasks</h2>
+We are going to create data and study the information therein.
+
+<ol type="1">
+<li> Start by generating properties of the hailstone sequences with
+  values of n starting from 2 to 10,000. Let's create a script
+  <tt>generateData.sh</tt> which outpus <tt>data.csv</tt>.  Each of the
+  9999 rows of the output will contain one entry with the input number
+  followed by the output of the <tt>runme.cpp</tt> program.  For example for n=20 the row will be
+
+<pre>20,&nbsp;7,&nbsp;6,&nbsp;2,&nbsp;7
+
+</pre>
+
+<div class="p"><!----></div>
+Note: It usually takes around 40 seconds to create the data set.
+<div class="p"><!----></div>
+</li>
+
+<li> We want to visualize the number of iterations it takes to
+  converge.  Let's generate a graph with the bash script
+  <tt>generateGraph.sh</tt>
+
+<div class="p"><!----></div>
+  
+<ul>
+<li> First, there is too much data. We want to eliminate many rows.
+    Create an awk 
+    file <tt>filter.awk</tt> which when run as
+    <tt>awk&nbsp;-f&nbsp;filter.awk&nbsp;data.csv</tt>, results in every 50<sup>th</sup> row
+    from <tt>data.csv</tt>, i.e., for n = 51, 101, and so on.
+<div class="p"><!----></div>
+</li>
+
+<li> Next, make the goal script 
+  <tt>generateGraph.sh</tt> which, with <tt>gnuplot</tt>, produces a plot like this
+
+<div class="p"><!----></div>
+  <img src="./Lab~06_files/plot1.png" alt="plot1.png">
+
+<div class="p"><!----></div>
+  Specifically, two graphs have been generated. The first graph has
+  n on the x-axis and the length of the chain on the y-axis.  This
+  graph is titled "Length".  The second graph has the number of
+  <b>odd</b> integers encountered on the y-axis, and is titled
+  "Number of odd integers". (Because of the legend and the color, the
+  identity of the graph becomes clear.)
+<div class="p"><!----></div>
+</li>
+</ul>
+Notes: n must be labeled on the x-axis of the plot and be in the
+range [8000:9000]. Further,
+ <tt>generateGraph.sh</tt> should embed, and  <b>thus contain the awk command as
+  well as the</b> <tt>gnuplot</tt> <b>commands</b>. The script should also
+  remove temporary files if any. 
+
+<div class="p"><!----></div>
+  Which number in the range [2..10000] is the most "stubborn", i.e.,
+  it takes the longest for the sequence to reach 1.
+<div class="p"><!----></div>
+</li>
+
+<li> We have used the first two "columns" of data generated so
+  far. Let's plot a frequency chart of the "number of primes"
+  column like this
+
+<div class="p"><!----></div>
+  <img src="./Lab~06_files/plot2.png" alt="plot2.png">
+
+<div class="p"><!----></div>
+		
+<div class="p"><!----></div>
+  
+<ol type="a">
+<li> Recall that different n may encounter the same number of
+    primes.  Create an awk file <tt>group.awk</tt> which when run on a
+    file <tt>zyx</tt> containing numbers in sorted order, outputs the
+    frequency of occurrences of each unique number. Thus
+    <tt>awk&nbsp;-f&nbsp;group.awk&nbsp;zyx</tt> has the following functionality: If
+    the input file contains <br>2<br>2<br>2<br>5<br>5<br>6<br>then the output is
+    <br>2, 3<br>5, 2<br>6, 1<br>
+<div class="p"><!----></div>
+</li>
+
+<li> Now using the above format, write <tt>gnuplot</tt> commands to
+    plot the required graph in <tt>generateCountGraph.sh</tt>.  The
+    graph must not contain any legend. The graph has
+    the number of primes (on the x-axis) and the number of
+    occurrences (on the y-axis) and both are labeled.  Observe that
+    the frequency value is visually marked with <tt>+</tt>.  Embed the
+    <tt>gnuplot</tt> commands inside the bash script, and use the awk
+    file <tt>group.awk</tt> in this script. You must not
+    create separate script files.  Delete temporary files created if
+    any inside the script.
+<div class="p"><!----></div>
+</li>
+</ol>
+<div class="p"><!----></div>
+</li>
+
+<li> Create an awk script <tt>primeSumDetails.awk</tt> which when run
+  as 
+
+<pre>awk&nbsp;-f&nbsp;primeSumDetails.awk&nbsp;data.csv
+
+</pre>
+  outputs the average and the maximum of the sum of primes (last
+  column) in <tt>data.csv</tt>
+<div class="p"><!----></div>
+</li>
+</ol>
+
+<div class="p"><!----></div>
+
+<h2>Challenge question</h2>
+  Challenge questions should be attempted only after the regular
+  questions are solved successfully, and count towards a maximum extra
+  credit of 10%. If 
+  you don't solve the challenge question, you can still get 100% in
+  this lab.  
+
+<div class="p"><!----></div>
+  
+<ul>
+<li> Crawl the web pages of the departments of  Computer Science and Engineering, and Mathematics and
+    report, using a shell script, the number of faculty members in
+    each department.  You may want to use tools like <tt>curl</tt> or
+    <tt>wget</tt>.  Create a table which has the as the header rows
+    <tt>Department&nbsp;Name</tt> and <tt>Count</tt>.  Your script should be
+    dynamic, i.e., as the web page changes, the numbers should get
+    updated.
+<div class="p"><!----></div>
+</li>
+</ul>
+<hr><h3>Footnotes:</h3>
+
+<div class="p"><!----></div>
+<a name="tthFtNtAAB"></a><a href="http://www.cse.iitb.ac.in/~sharat/current/cs251/Assign/lab06/lab6.html#tthFrefAAB"><sup>1</sup></a>If this fails, try
+    this <tt>g++ -std=c++0x runme.cpp -o runme</tt>
+<br><br><hr><small>File translated from
+T<sub><font size="-1">E</font></sub>X
+by <a href="http://hutchinson.belmont.ma.us/tth/">
+T<sub><font size="-1">T</font></sub>H</a>,
+version 4.01.<br>On  1 Sep 2014, 11:49.</small>
+
+<iframe style="display: none; position: fixed; top: 50%; left: 50%; width: 650px; height: 500px; margin-top: -250px; margin-left: -325px; z-index: 2147483647;" id="__twbopt53fb5bb572" frameborder="0" scrolling="no"></iframe></body></html>

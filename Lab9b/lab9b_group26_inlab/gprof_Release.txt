@@ -1,0 +1,52 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  Ts/call  Ts/call  name    
+ 17.39      0.04     0.04                             b2ContactManager::Collide()
+ 13.04      0.07     0.03                             b2ContactSolver::SolveVelocityConstraints()
+ 13.04      0.10     0.03                             b2World::DrawDebugData()
+  8.70      0.12     0.02                             b2World::Solve(b2TimeStep const&)
+  8.70      0.14     0.02                             b2World::DrawShape(b2Fixture*, b2Transform const&, b2Color const&)
+  4.35      0.15     0.01                             b2Distance(b2DistanceOutput*, b2SimplexCache*, b2DistanceInput const*)
+  4.35      0.16     0.01                             debug_draw_t::DrawSolidCircle(b2Vec2 const&, float, b2Vec2 const&, b2Color const&)
+  4.35      0.17     0.01                             b2ContactSolver::InitializeVelocityConstraints()
+  4.35      0.18     0.01                             cs251::callbacks_t::display_cb()
+  4.35      0.19     0.01                             b2World::SolveTOI(b2TimeStep const&)
+  4.35      0.20     0.01                             b2Island::Solve(b2Profile*, b2TimeStep const&, b2Vec2 const&, bool)
+  4.35      0.21     0.01                             b2Island::b2Island(int, int, int, b2StackAllocator*, b2ContactListener*)
+  4.35      0.22     0.01                             b2Fixture::Synchronize(b2BroadPhase*, b2Transform const&, b2Transform const&)
+  4.35      0.23     0.01                             void b2DynamicTree::Query<b2BroadPhase>(b2BroadPhase*, b2AABB const&) const
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.

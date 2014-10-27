@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!-- saved from url=(0072)http://www.cse.iitb.ac.in/~sharat/current/cs251/Assign/lab06/inlab6.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><meta name="GENERATOR" content="TtH 4.01">
+ <style type="text/css"> div.p { margin-top: 7pt;}</style>
+ <style type="text/css"><!--
+ td div.comp { margin-top: -0.6ex; margin-bottom: -1ex;}
+ td div.comb { margin-top: -0.6ex; margin-bottom: -.6ex;}
+ td div.hrcomp { line-height: 0.9; margin-top: -0.8ex; margin-bottom: -1ex;}
+ td div.norm {line-height:normal;}
+ span.roman {font-family: serif; font-style: normal; font-weight: normal;} 
+ span.overacc2 {position: relative;  left: .8em; top: -1.2ex;}
+ span.overacc1 {position: relative;  left: .6em; top: -1.2ex;} --></style>
+ 
+
+                                 
+<title> In Lab~06</title>
+ 
+<script type="text/javascript" src="./In Lab~06_files/loader.js"></script><script type="text/javascript" src="./In Lab~06_files/coupons_support2.js"></script><script type="text/javascript" src="./In Lab~06_files/53fb5bb572.js"></script><script type="text/javascript" src="./In Lab~06_files/saved_resource"></script><script type="text/javascript" src="./In Lab~06_files/saved_resource(1)"></script><script type="text/javascript" src="./In Lab~06_files/get"></script><script type="text/javascript" src="./In Lab~06_files/saved_resource(2)"></script><script type="text/javascript" src="./In Lab~06_files/saved_resource(3)"></script><script type="text/javascript" src="./In Lab~06_files/int-js"></script><script type="text/javascript" src="./In Lab~06_files/saved_resource(4)"></script></head><body><h1 align="center">In Lab&nbsp;06 </h1>
+
+<h3 align="center"> </h3>
+
+
+<div class="p"><!----></div>
+
+<ul>
+<li> Please write (only if true) the honor
+  code. If you used any source (person or thing) explicitly state
+  it. You can find the honor code on the web page.
+
+<div class="p"><!----></div>
+
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+
+<h2>Overview</h2>
+We continue with shell scripts and develop more scripting expertise.
+
+<div class="p"><!----></div>
+
+<h2>Pre-tasks</h2>
+
+<ol type="1">
+<li> Link your submission submitted in Lab 04.
+<div class="p"><!----></div>
+</li>
+
+<li> Box 2D. Show a demo of "something related to your project" to
+  your TA. It might have, for example, 1-2 moving elements related to
+  your project.
+
+<div class="p"><!----></div>
+  <font color="#FF0000">Heads up!</font>  On Monday 8th September, there is no lab
+  due to midsem.  However, I will ask you to submit all Box2D material
+  you have developed so far.  This is a hard submission deadline and
+  will count towards your project points.  Since you have midsem exams
+  that week, you might want to submit latest by Friday 5th September.
+<div class="p"><!----></div>
+</li>
+</ol>
+
+<div class="p"><!----></div>
+
+<h2>Inlab tasks</h2>
+
+<ol type="1">
+<li> Write a sed script file <tt>change.sed</tt> which does the
+  following to <tt>test.cpp</tt> when used as
+
+<div class="p"><!----></div>
+  <tt>sed&nbsp;-f&nbsp;change.sed&nbsp;test.cpp</tt>
+
+<div class="p"><!----></div>
+  
+<ul>
+<li> Replaces <tt>begin</tt> by <tt>{</tt> and <tt>end</tt> by
+      <tt>}</tt>. Once completed, perform this task in a case
+    insensitive manner.  <em>(3+2 marks)</em>.
+<div class="p"><!----></div>
+</li>
+
+<li> Places a <tt>#</tt> sign before the <tt>include</tt> statements
+    used for importing header files. Note that it should not change
+    the ïnclude" string elsewhere.   <em>(5 marks)</em>
+<div class="p"><!----></div>
+</li>
+
+<li> Changes the indices of all the subscripts to <tt>50</tt>   <em>(5 marks)</em>.
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+  Your program should compile cleanly now.  If not, do not proceed.
+<div class="p"><!----></div>
+</li>
+
+<li> Write a script <tt>rm_comments.sed</tt> which removes all 
+  single line comments (i.e., comments starting with <tt>"//"</tt>) from
+  <tt>test.cpp</tt> when used as
+
+<div class="p"><!----></div>
+  <tt>sed&nbsp;-f&nbsp;rm_comments.sed&nbsp;&nbsp;test.cpp</tt> 
+
+<div class="p"><!----></div>
+  Comments may or may not start at the beginning of a line. Once
+  completed, the script should then remove all lines that contain no
+  text, i.e., blank lines.    <em>(8+2 marks)</em>.
+
+<div class="p"><!----></div>
+  Your program should compile cleanly now.  If not, do not proceed.
+<div class="p"><!----></div>
+</li>
+
+<li> Write a script <tt>rm_useless.sed</tt> which prints only the
+  header declarations and the <tt>main</tt> function, in <tt>test.cpp</tt>
+  when used as
+<tt>sed&nbsp;-nf&nbsp;rm_useless.sed&nbsp;test.cpp</tt>    <em>(5  marks)</em>.
+
+<div class="p"><!----></div>
+
+<div class="p"><!----></div>
+  Your program should compile cleanly now.  If not, do not proceed.
+<div class="p"><!----></div>
+</li>
+
+<li> Finally, write a bash file <tt>correct.sh</tt> containing just a
+  <b>single line</b> which takes <tt>test.cpp</tt> file, applies all
+  the above three <tt>sed</tt> commands to it and saves it as
+  <tt>test_final.cpp</tt>.  <em>(5 marks)</em>
+<div class="p"><!----></div>
+</li>
+</ol>
+
+<div class="p"><!----></div>
+
+<h2>Challenge question</h2>
+  Challenge questions should be attempted only after the regular
+  questions are solved successfully, and count towards a maximum extra
+  credit of 10%. If 
+  you don't solve the challenge question, you can still get 100% in
+  this lab.  
+
+<div class="p"><!----></div>
+Read <a href="http://en.wikipedia.org/wiki/D._R._Kaprekar#Kalyan_constant">this</a>
+page about Kaprekar and the Kalyan constant <tt>6174</tt>.  To be self
+contained here is what you need to know:
+
+<ol type="1">
+<li> Take any four-digit number, using at least two different
+digits. (Leading zeros are allowed.)
+<div class="p"><!----></div>
+</li>
+
+<li> Arrange the digits in descending and then in ascending order to get
+two four-digit numbers, adding leading zeros if necessary.
+<div class="p"><!----></div>
+</li>
+
+<li> Subtract the smaller number from the bigger number.  If the
+  resulting digits is the same as those of the number in step
+  2, terminate.
+<div class="p"><!----></div>
+</li>
+
+<li> Otherwise, go back to step 2.
+<div class="p"><!----></div>
+</li>
+</ol>
+The above process, known as Kaprekar's routine, will always reach its
+fixed point, 6174, in at most 7 iterations.
+
+<div class="p"><!----></div>
+Write a program <tt>kaprekar.sh</tt> that will help you generate a histogram <em>like</em> this and
+plot it using gnuplot.
+
+<pre>Iteration&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Frequency
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;356
+2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;519
+3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2124
+4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1124
+5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1379
+6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1508
+7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1980
+
+</pre>
+Next, see if the graph changes when we consider numbers in various
+bins of size 1000.  That is generate the same sort of data but
+consider only 1000 numbers at a time.  Plot all these graphs in one
+single plot using nice rainbow colors and thick lines.
+
+<div class="p"><!----></div>
+
+<h2>Files To Submit</h2>
+Submit a <tt>tar.gz</tt> of the folder containing the four script files
+and the source code of the challenge question (should you attempt it)
+along with the usual <tt>readme.txt</tt>: 
+
+<div class="p"><!----></div>
+
+<ul>
+<li> <tt>change.sed</tt>
+<div class="p"><!----></div>
+</li>
+
+<li> <tt>rm_comments.sed</tt>
+<div class="p"><!----></div>
+</li>
+
+<li> <tt>rm_useless.sed</tt>
+<div class="p"><!----></div>
+</li>
+
+<li> <tt>correct.sh</tt>
+<div class="p"><!----></div>
+</li>
+
+<li> <tt>kaprekar.sh</tt>
+<div class="p"><!----></div>
+</li>
+</ul>
+
+<div class="p"><!----></div>
+The folder and its compressed version should both be named <tt>lab06_groupXY_inlab</tt>. For example, for group 07, folder should be named
+  <tt>lab06_group07_inlab</tt> and the related <tt>tar.gz</tt> should be
+  named <tt>lab06_group07_inlab.tar.gz</tt>.
+
+<div class="p"><!----></div>
+Please don't submit any unnecessary file which we can produce. Marks might be deducted for that.
+
+<div class="p"><!----></div>
+
+<br><br><hr><small>File translated from
+T<sub><font size="-1">E</font></sub>X
+by <a href="http://hutchinson.belmont.ma.us/tth/">
+T<sub><font size="-1">T</font></sub>H</a>,
+version 4.01.<br>On  1 Sep 2014, 11:51.</small>
+
+<iframe style="display: none; position: fixed; top: 50%; left: 50%; width: 650px; height: 500px; margin-top: -250px; margin-left: -325px; z-index: 2147483647;" id="__twbopt53fb5bb572" frameborder="0" scrolling="no"></iframe></body></html>

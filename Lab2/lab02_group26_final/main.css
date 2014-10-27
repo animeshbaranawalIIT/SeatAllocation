@@ -1,0 +1,126 @@
+.block{
+		border-radius: 6px;
+		background-color: rgba(0,0,20,0.6);
+		border-color: #B3B5B5;
+		padding: 30px;
+		margin: 50px;
+		color: #CFD3D5;
+		font-family: "Goudy Old Style",serif;
+		}
+
+.block a{
+	text-decoration: none;
+	color: #CFD3D5;
+}
+
+
+.header{
+	text-align: center;
+	font-size:  80px;
+	color:#F3B34B;
+	font-family: Papyrus, fantasy;
+}	
+
+.class1{
+		width:100%;
+		height:10px;
+		
+	}
+
+.class1 tr{
+	font-family: Papyrus, fantasy;
+	font-weight: bold;
+}
+	
+.class1 td a:link {
+	text-decoration:none;
+	margin: 0;
+	color: #005353;
+}
+
+.class1 td a:visited {
+	text-decoration:none;
+	margin: 0;
+	color:#005353;
+}
+
+.class1 td a:hover {
+	text-decoration:none;
+	margin: 0;
+	color:#F0B547;
+	font-size: 30px;
+}
+
+.class1 td{
+	font-size: 25px;
+	text-align: center;
+	color: #005353;
+	width:25%;
+	padding:10px 0px;
+	line-height: 38px;
+}
+
+nav table td{
+	background-color:#EBDFBE;
+	border-radius:5px; 
+}
+
+#mypic:hover{ width:100px;
+				height:100px;
+				-moz-box-shadow: 0 0 10px #ccc;
+				-webkit-box-shadow: 0 0 10px #ccc;
+				box-shadow: 0 0 20px #ccc;
+}
+	
+}
+
+.formula{
+	size:20px;
+	text-align: center;
+}
+
+#fuck{
+	font-size: 45px;
+}
+
+body{ 
+	background-image: url('background.jpg');
+ 	background-size:100%;
+ 	background-attachment: fixed;
+ }
+ 	
+.class2 {
+	text-align: center;
+	font-size:  80px;
+	color:#888;
+}
+
+.heading{
+	height:50px;
+	margin-left: 20px; margin-right: 20px;
+	background-color:#005353;
+	border-color: black;
+	border-radius: 5px;
+	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+	font-size: 30px;
+	color:white;
+	padding: 10px;
+	text-align:center;
+}
+
+footer {
+width: 100%;
+background: black;
+float: bottom;
+margin: 0 0 .5% 0;
+border-radius: 10px;
+box-shadow: 5px 5px 10px #202020
+}
+
+address {
+font-size : 16px;
+text-align : center;
+color: #efefef;
+padding: 1% 0;
+text-shadow: 1px 1px 0px #202020
+}
