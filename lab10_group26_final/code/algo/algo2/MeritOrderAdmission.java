@@ -139,12 +139,14 @@ public class MeritOrderAdmission{
 	
 	public Boolean apple(int i, Candidate c, String cat, Boolean pd, int j){
 		String temp;
-		if(progs.get(i).applyalgo2(c,cat,pd)){ 
+		if(c.waiting.equals("")){
+			if(progs.get(i).applyalgo2(c,cat,pd)){ 
 					System.out.println("App accepted");
 					temp = c.Preference.get(j); // waitlisted program
 					//System.out.println(temp);
-					if(c.waiting.equals("")){ progs.get(i).num++; c.waiting=temp; c.previouswaitlist=i; } // assign waitlisted program if waitlist initially empty
-					else{ 
+					//if(c.waiting.equals("")){
+					 progs.get(i).num++; c.waiting=temp; c.previouswaitlist=i;// } // assign waitlisted program if waitlist initially empty
+					/*else{ 
 						if(c.Preference.indexOf(temp)<c.Preference.indexOf(c.waiting)){ //update waitlist if waitlist initially not empty 
 							progs.get(i).num++;
 							progs.get(c.previouswaitlist).num--;
@@ -152,10 +154,12 @@ public class MeritOrderAdmission{
 							c.waiting=temp; 
 						}
 						else {System.out.println("Found but not gud enough");} 
-					}
-		return true;
+					}*/
+				return true;
+			}
+			else{return false;}
 		}
-		else{return false;}
+		else {return false;}
 	}
 	
 	
@@ -170,28 +174,28 @@ public class MeritOrderAdmission{
 					case "GE": if(apple(i,c,cat,pd,j)){got = true;}break;
 
 					case "OBC" : if(apple(i,c,cat,pd,j)){got = true;break;}       // first tries to get the programme through GE category
-								 if(apple(i+1,c,"OBC",pd,j)){got = true;}break;     // makes sure that an OBC guy gets a seat through category if not by GE rank
+								 if(c.rank[1] != 0){if(apple(i+1,c,"OBC",pd,j)){got = true;}}break;     // makes sure that an OBC guy gets a seat through category if not by GE rank
 
 					case "SC": if(apple(i,c,cat,pd,j)){got = true;break;}
-								if(apple(i+2,c,"SC",pd,j)){got = true;}break;
+								if(c.rank[2] != 0){if(apple(i+2,c,"SC",pd,j)){got = true;}}break;
 
 					case "ST": if(apple(i,c,cat,pd,j)){got = true;break;}
-								if(apple(i+3,c,"SC",pd,j)){got = true;}break;
+								if(c.rank[3] != 0){if(apple(i+3,c,"SC",pd,j)){got = true;}}break;
 
 					case "GE_PD" : if(apple(i,c,cat,pd,j)){got = true;break;}
-								   if(apple(i+4,c,"GE_PD",pd,j)){got = true;}break;
+								   if(c.rank[4] != 0){if(apple(i+4,c,"GE_PD",pd,j)){got = true;}}break;
 
 					case "OBC_PD" : if(apple(i,c,cat,pd,j)){got = true;break;}
-									if(apple(i+1,c,"OBC",pd,j)){got = true;break;}
-									if(apple(i+5,c,"OBC_PD",pd,j)){got = true;}break;
+									if(c.rank[1] != 0){if(apple(i+1,c,"OBC",pd,j)){got = true;break;}}
+									if(c.rank[5] != 0){if(apple(i+5,c,"OBC_PD",pd,j)){got = true;}}break;
 
 					case "SC_PD":   if(apple(i,c,cat,pd,j)){got = true;break;}
-									if(apple(i+2,c,"SC",pd,j)){got = true;break;}
-									if(apple(i+6,c,"SC_PD",pd,j)){got = true;}break;
+									if(c.rank[2] != 0){if(apple(i+2,c,"SC",pd,j)){got = true;break;}}
+									if(c.rank[6] != 0){if(apple(i+6,c,"SC_PD",pd,j)){got = true;}}break;
 
 					case "ST_PD" : if(apple(i,c,cat,pd,j)){got = true;break;}
-									if(apple(i+3,c,"ST",pd,j)){got = true;break;}
-									if(apple(i+7,c,"ST_PD",pd,j)){got = true;}break;
+									if(c.rank[3] != 0){if(apple(i+3,c,"ST",pd,j)){got = true;break;}}
+									if(c.rank[7] != 0){if(apple(i+7,c,"ST_PD",pd,j)){got = true;}}break;
 
 				}
 				
@@ -200,9 +204,12 @@ public class MeritOrderAdmission{
 				if(cat.equals("OBC") || cat.equals("ST") || cat.equals("SC")){           // when it is a OBC or SC or ST meritlist
 					i=find(c.Preference.get(j),cat,false); 
 					//System.out.println(i);
+					int x=1;
+					if(cat.equals("SC")){ x++;}
+					if(cat.equals("ST")){ x += 2;}
 					
 					if(apple(i,c,cat,pd,j)){ got =true;}
-					else{if(c.PD){if(apple(i+4,c,cat+"_PD",pd,j)){ got =true;}}
+					else{if(c.PD){if(c.rank[x+4] != 0){if(apple(i+4,c,cat+"_PD",pd,j)){ got =true;}}}
 					}
 					
 				}
