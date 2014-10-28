@@ -10,8 +10,6 @@ public class Candidate {
 	Boolean DS; // Is the student of DS category ?
 	Boolean Nationality; // Is the student a foreigner?
 	ArrayList<String> Preference; // Preference list of the student
-	//String appliedfor; // Programme upto which applied;
-	//String next; // Next programme for application
 	String waiting; // Programme for which waitlisted
 	int previouswaitlist;
 	int[] rank; // ranks of the candidate
@@ -29,25 +27,18 @@ public class Candidate {
 		Preference = new ArrayList<String>();
 		rank = new int[8];
 		for(int i=0;i<8;i++){ rank[i] = values[i]; }
-		waiting=""; //next=""; appliedfor="";
+		waiting="";
 		previouswaitlist=-1;
 	}
 	
 	public void addpreference(String ProgCODE){ // Adding Programmes to Preference List
 		Preference.add(ProgCODE);
 	}
-	//public void setapplied(String ProgCODE){ this.appliedfor=ProgCODE; } //Manipulating Data Members
-	//public void setnext(String ProgCODE){ this.next=ProgCODE; } //Manipulating Data Members
 	public void setwaitlisted(String ProgCODE){ this.waiting=ProgCODE; } //Manipulating Data Members
-	/*public String findnext(){ //Find next programme to which candidate should apply
-		int ind = this.Preference.indexOf(this.appliedfor)+1;
-		if(ind == this.Preference.size()) return "NULL"; //Preference list exhausted
-		else return this.Preference.get(ind);
-	}*/
+	
+	public void waitchanger(/*Candidate c,*/ int q, int i){ this.waiting=this.Preference.get(q); this.previouswaitlist=i;}  // sets the waitlisted programme for the candidate
 
-	public void waitchanger(/*Candidate c,*/ int q, int i){ this.waiting=this.Preference.get(q); this.previouswaitlist=i;}
-
-	public void display(){ 
+	public void display(){                    // function to print out the final seat alloted to candidates
 		if(waiting.equals("")) System.out.println(Id+",-1");
 		else System.out.println(Id+","+waiting/*+","+r*/);
 	}
