@@ -1,0 +1,145 @@
+\hypertarget{classalgo1_1_1MeritList}{\section{algo1.\+Merit\+List Class Reference}
+\label{classalgo1_1_1MeritList}\index{algo1.\+Merit\+List@{algo1.\+Merit\+List}}
+}
+
+
+Class for Implementing \hyperlink{classalgo1_1_1MeritList}{Merit\+List}.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classalgo1_1_1MeritList_af90d9dd2fb5276e48e6029e8a776f302}{\hyperlink{classalgo1_1_1MeritList_af90d9dd2fb5276e48e6029e8a776f302}{Merit\+List} ()}\label{classalgo1_1_1MeritList_af90d9dd2fb5276e48e6029e8a776f302}
+
+\begin{DoxyCompactList}\small\item\em Constructor takes no arguments Arraylists initialised to new() \end{DoxyCompactList}\item 
+void \hyperlink{classalgo1_1_1MeritList_a7181fdbcb8d0f1893a26009128845b4d}{addcandidate} (\hyperlink{classalgo1_1_1Candidate}{Candidate} c, int\mbox{[}$\,$\mbox{]} ranklist)
+\begin{DoxyCompactList}\small\item\em adding a candidate to finlist and meritlist( based on his ranks he can get into any of the merit lists ) \end{DoxyCompactList}\item 
+int \hyperlink{classalgo1_1_1MeritList_a6435cf09817f3bf29fbee5a2e6fe0c6f}{rank} (\hyperlink{classalgo1_1_1Candidate}{Candidate} c, int cat, Boolean pd)
+\begin{DoxyCompactList}\small\item\em function to return rank of candidate given the category and P\+Dstatus of meritlist \end{DoxyCompactList}\item 
+Array\+List$<$ Hash\+Map$<$ \hyperlink{classalgo1_1_1Candidate}{Candidate}, \\*
+Integer $>$ $>$ \hyperlink{classalgo1_1_1MeritList_a4b2b79f9fd96e71ba58b1bdb68a0e547}{retmeritlist} ()
+\item 
+Array\+List$<$ \hyperlink{classalgo1_1_1Candidate}{Candidate} $>$ \hyperlink{classalgo1_1_1MeritList_af73c2b6eecff565900e1eb5416446664}{retfinlist} ()
+\item 
+void \hyperlink{classalgo1_1_1MeritList_a39d0fd32a27e81f645b5ace596a6adb6}{resetmerit} (Hash\+Map$<$ String, int\mbox{[}$\,$\mbox{]}$>$ ranklist)
+\begin{DoxyCompactList}\small\item\em reset merit list ( for the case of dereservation ) ~\newline
+ \end{DoxyCompactList}\item 
+void \hyperlink{classalgo1_1_1MeritList_afeb9301c32e3ae724c6bdae5f9923c39}{removefin} (\hyperlink{classalgo1_1_1Candidate}{Candidate} c)
+\begin{DoxyCompactList}\small\item\em remove a candidate from the array list of candidates \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for Implementing \hyperlink{classalgo1_1_1MeritList}{Merit\+List}. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classalgo1_1_1MeritList_a7181fdbcb8d0f1893a26009128845b4d}{\index{algo1\+::\+Merit\+List@{algo1\+::\+Merit\+List}!addcandidate@{addcandidate}}
+\index{addcandidate@{addcandidate}!algo1\+::\+Merit\+List@{algo1\+::\+Merit\+List}}
+\subsubsection[{addcandidate}]{\setlength{\rightskip}{0pt plus 5cm}void algo1.\+Merit\+List.\+addcandidate (
+\begin{DoxyParamCaption}
+\item[{{\bf Candidate}}]{c, }
+\item[{int\mbox{[}$\,$\mbox{]}}]{ranklist}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1MeritList_a7181fdbcb8d0f1893a26009128845b4d}
+
+
+adding a candidate to finlist and meritlist( based on his ranks he can get into any of the merit lists ) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & \hyperlink{classalgo1_1_1Candidate}{Candidate} to be added \\
+\hline
+{\em ranklist} & Ranks of the candidate which will decide which meritlists it will go \\
+\hline
+\end{DoxyParams}
+\hypertarget{classalgo1_1_1MeritList_a6435cf09817f3bf29fbee5a2e6fe0c6f}{\index{algo1\+::\+Merit\+List@{algo1\+::\+Merit\+List}!rank@{rank}}
+\index{rank@{rank}!algo1\+::\+Merit\+List@{algo1\+::\+Merit\+List}}
+\subsubsection[{rank}]{\setlength{\rightskip}{0pt plus 5cm}int algo1.\+Merit\+List.\+rank (
+\begin{DoxyParamCaption}
+\item[{{\bf Candidate}}]{c, }
+\item[{int}]{cat, }
+\item[{Boolean}]{pd}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1MeritList_a6435cf09817f3bf29fbee5a2e6fe0c6f}
+
+
+function to return rank of candidate given the category and P\+Dstatus of meritlist 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & candidate whose rank to be found \\
+\hline
+{\em cat} & category of merit list in which rank to be found \\
+\hline
+{\em pd} & pd status of merit list in which rank to be found \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns the rank of candidate in merit list 
+\end{DoxyReturn}
+\hypertarget{classalgo1_1_1MeritList_afeb9301c32e3ae724c6bdae5f9923c39}{\index{algo1\+::\+Merit\+List@{algo1\+::\+Merit\+List}!removefin@{removefin}}
+\index{removefin@{removefin}!algo1\+::\+Merit\+List@{algo1\+::\+Merit\+List}}
+\subsubsection[{removefin}]{\setlength{\rightskip}{0pt plus 5cm}void algo1.\+Merit\+List.\+removefin (
+\begin{DoxyParamCaption}
+\item[{{\bf Candidate}}]{c}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1MeritList_afeb9301c32e3ae724c6bdae5f9923c39}
+
+
+remove a candidate from the array list of candidates 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & \hyperlink{classalgo1_1_1Candidate}{Candidate} to be removed from list of candidates in merit list \\
+\hline
+\end{DoxyParams}
+\hypertarget{classalgo1_1_1MeritList_a39d0fd32a27e81f645b5ace596a6adb6}{\index{algo1\+::\+Merit\+List@{algo1\+::\+Merit\+List}!resetmerit@{resetmerit}}
+\index{resetmerit@{resetmerit}!algo1\+::\+Merit\+List@{algo1\+::\+Merit\+List}}
+\subsubsection[{resetmerit}]{\setlength{\rightskip}{0pt plus 5cm}void algo1.\+Merit\+List.\+resetmerit (
+\begin{DoxyParamCaption}
+\item[{Hash\+Map$<$ String, int\mbox{[}$\,$\mbox{]}$>$}]{ranklist}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1MeritList_a39d0fd32a27e81f645b5ace596a6adb6}
+
+
+reset merit list ( for the case of dereservation ) ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ranklist} & entire hashmap of ranklist of all candidates candidates with G\+E rank added to G\+E,O\+B\+C,O\+B\+C-\/\+P\+D,G\+E-\/\+P\+D meritlist ~\newline
+ candidates with G\+E rank of category S\+C rank also appended to S\+C,S\+C-\/\+P\+D (but with S\+C rank) ~\newline
+ candidates with G\+E rank of category S\+T rank also appended to S\+T,S\+T-\/\+P\+D (but with S\+T rank) ~\newline
+ candidates of S\+C category with no G\+E but S\+C rank appended to S\+C,S\+C-\/\+P\+D ~\newline
+ candidates of S\+T category with no G\+E but S\+T rank appended to S\+T,S\+T-\/\+P\+D ~\newline
+ S\+C/\+S\+T/\+S\+C-\/\+P\+D/\+S\+T-\/\+P\+D candidates with G\+E rank added to all merit lists \\
+\hline
+\end{DoxyParams}
+clear all the merit lists
+
+if candidate has non zero general rank gets appended to G\+E,O\+B\+C,G\+E-\/\+P\+D,O\+B\+C-\/\+P\+D
+
+if candidate has zero G\+E but non zero category(S\+C/\+S\+T) rank \hypertarget{classalgo1_1_1MeritList_af73c2b6eecff565900e1eb5416446664}{\index{algo1\+::\+Merit\+List@{algo1\+::\+Merit\+List}!retfinlist@{retfinlist}}
+\index{retfinlist@{retfinlist}!algo1\+::\+Merit\+List@{algo1\+::\+Merit\+List}}
+\subsubsection[{retfinlist}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<${\bf Candidate}$>$ algo1.\+Merit\+List.\+retfinlist (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1MeritList_af73c2b6eecff565900e1eb5416446664}
+\begin{DoxyReturn}{Returns}
+Returns the list of candidates in the merit list 
+\end{DoxyReturn}
+\hypertarget{classalgo1_1_1MeritList_a4b2b79f9fd96e71ba58b1bdb68a0e547}{\index{algo1\+::\+Merit\+List@{algo1\+::\+Merit\+List}!retmeritlist@{retmeritlist}}
+\index{retmeritlist@{retmeritlist}!algo1\+::\+Merit\+List@{algo1\+::\+Merit\+List}}
+\subsubsection[{retmeritlist}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<$Hash\+Map$<${\bf Candidate},Integer$>$ $>$ algo1.\+Merit\+List.\+retmeritlist (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1MeritList_a4b2b79f9fd96e71ba58b1bdb68a0e547}
+\begin{DoxyReturn}{Returns}
+Returns the entire list of merit lists 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Merit\+List.\+java\end{DoxyCompactItemize}

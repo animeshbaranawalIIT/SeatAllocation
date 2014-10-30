@@ -1,0 +1,166 @@
+\hypertarget{classalgo1_1_1GaleShapleyAdmission}{\section{algo1.\+Gale\+Shapley\+Admission Class Reference}
+\label{classalgo1_1_1GaleShapleyAdmission}\index{algo1.\+Gale\+Shapley\+Admission@{algo1.\+Gale\+Shapley\+Admission}}
+}
+
+
+Main class for implementing the algorithm.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classalgo1_1_1GaleShapleyAdmission_a1f0c35533697a9cb355f77e595cb90c9}{Gale\+Shapley\+Admission} (String f1, String f2, String f3)
+\begin{DoxyCompactList}\small\item\em The constructor of this class takes three filenames as inputs All the arraylists and hashmaps are initialised to new() \end{DoxyCompactList}\item 
+void \hyperlink{classalgo1_1_1GaleShapleyAdmission_acd76a7c612f3bbbef2039c0a000425bc}{fillprogs} (String f1)
+\begin{DoxyCompactList}\small\item\em function for filling data in list of virtual programmes and hashmap of \hyperlink{classalgo1_1_1Institute}{Institute}~\newline
+ \end{DoxyCompactList}\item 
+void \hyperlink{classalgo1_1_1GaleShapleyAdmission_a6910d1baa70d9d62133e75c8953d08d4}{fillranklist} (String f3)
+\begin{DoxyCompactList}\small\item\em function to feed the rank of all candidates in the hashmap \end{DoxyCompactList}\item 
+void \hyperlink{classalgo1_1_1GaleShapleyAdmission_a2ecccd278d3e3bc84fe56ca33db34371}{fillcandidatedata} (String f2)
+\begin{DoxyCompactList}\small\item\em function for filling data in the candidate list \end{DoxyCompactList}\item 
+\hypertarget{classalgo1_1_1GaleShapleyAdmission_ab48d97208cfb538bbc827a56c9e69211}{void \hyperlink{classalgo1_1_1GaleShapleyAdmission_ab48d97208cfb538bbc827a56c9e69211}{G\+S\+D\+Sc} ()}\label{classalgo1_1_1GaleShapleyAdmission_ab48d97208cfb538bbc827a56c9e69211}
+
+\begin{DoxyCompactList}\small\item\em this function allots D\+S seats to candidates which are in D\+S list~\newline
+ \hyperlink{classalgo1_1_1Candidate}{Candidate} checked if he has been waitlisted for some program and whether his preference list been exhausted~\newline
+ If none applicable for any candidate then candidate applies to next program on his preference list ~\newline
+ if this is applicable for every candidate algorithm terminates \end{DoxyCompactList}\item 
+\hypertarget{classalgo1_1_1GaleShapleyAdmission_a62bbe0a8daac08e2c47a4f74f4093f70}{void \hyperlink{classalgo1_1_1GaleShapleyAdmission_a62bbe0a8daac08e2c47a4f74f4093f70}{setmeritprogs} ()}\label{classalgo1_1_1GaleShapleyAdmission_a62bbe0a8daac08e2c47a4f74f4093f70}
+
+\begin{DoxyCompactList}\small\item\em function to distribute merit list to the programmes \end{DoxyCompactList}\item 
+int \hyperlink{classalgo1_1_1GaleShapleyAdmission_ad062c42d3c81430fd44880eda3c9e438}{progindex} (\hyperlink{classalgo1_1_1Candidate}{Candidate} c)
+\begin{DoxyCompactList}\small\item\em function to get index of program to which candidate will apply in the list of programs based on the category,code,P\+Dstatus of current of candidate~\newline
+ \end{DoxyCompactList}\item 
+\hypertarget{classalgo1_1_1GaleShapleyAdmission_a2d57927ddc6ca74ab249b032a1eed4c7}{void \hyperlink{classalgo1_1_1GaleShapleyAdmission_a2d57927ddc6ca74ab249b032a1eed4c7}{phase1} ()}\label{classalgo1_1_1GaleShapleyAdmission_a2d57927ddc6ca74ab249b032a1eed4c7}
+
+\begin{DoxyCompactList}\small\item\em this function allots seats to candidates which are in merit list~\newline
+ \hyperlink{classalgo1_1_1Candidate}{Candidate} checked if he has been waitlisted for some program and whether his preference list been exhausted~\newline
+ If none applicable for any candidate then candidate applies to next program on his preference list ~\newline
+ if this is applicable for every candidate algorithm terminates \end{DoxyCompactList}\item 
+\hypertarget{classalgo1_1_1GaleShapleyAdmission_a573830fcb25d126a88f81fb198492fd1}{void \hyperlink{classalgo1_1_1GaleShapleyAdmission_a573830fcb25d126a88f81fb198492fd1}{phase2} ()}\label{classalgo1_1_1GaleShapleyAdmission_a573830fcb25d126a88f81fb198492fd1}
+
+\begin{DoxyCompactList}\small\item\em D\+E\+R\+E\+S\+E\+R\+V\+A\+T\+I\+O\+N ~\newline
+ this function allots seats to candidates which are in modified merit list~\newline
+ \hyperlink{classalgo1_1_1Candidate}{Candidate} checked if he has been waitlisted for some program or whether his modified preference list been exhausted~\newline
+ If none applicable for any candidate then candidate applies to next program on his preference list ~\newline
+ if this is applicable for every candidate algorithm terminates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Main class for implementing the algorithm. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classalgo1_1_1GaleShapleyAdmission_a1f0c35533697a9cb355f77e595cb90c9}{\index{algo1\+::\+Gale\+Shapley\+Admission@{algo1\+::\+Gale\+Shapley\+Admission}!Gale\+Shapley\+Admission@{Gale\+Shapley\+Admission}}
+\index{Gale\+Shapley\+Admission@{Gale\+Shapley\+Admission}!algo1\+::\+Gale\+Shapley\+Admission@{algo1\+::\+Gale\+Shapley\+Admission}}
+\subsubsection[{Gale\+Shapley\+Admission}]{\setlength{\rightskip}{0pt plus 5cm}algo1.\+Gale\+Shapley\+Admission.\+Gale\+Shapley\+Admission (
+\begin{DoxyParamCaption}
+\item[{String}]{f1, }
+\item[{String}]{f2, }
+\item[{String}]{f3}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1GaleShapleyAdmission_a1f0c35533697a9cb355f77e595cb90c9}
+
+
+The constructor of this class takes three filenames as inputs All the arraylists and hashmaps are initialised to new() 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f1} & Filename1 \\
+\hline
+{\em f2} & Filename2 \\
+\hline
+{\em f3} & Filename2 The entire algorithm runs in the constructor \\
+\hline
+\end{DoxyParams}
+this modifies the merit list 
+
+\subsection{Member Function Documentation}
+\hypertarget{classalgo1_1_1GaleShapleyAdmission_a2ecccd278d3e3bc84fe56ca33db34371}{\index{algo1\+::\+Gale\+Shapley\+Admission@{algo1\+::\+Gale\+Shapley\+Admission}!fillcandidatedata@{fillcandidatedata}}
+\index{fillcandidatedata@{fillcandidatedata}!algo1\+::\+Gale\+Shapley\+Admission@{algo1\+::\+Gale\+Shapley\+Admission}}
+\subsubsection[{fillcandidatedata}]{\setlength{\rightskip}{0pt plus 5cm}void algo1.\+Gale\+Shapley\+Admission.\+fillcandidatedata (
+\begin{DoxyParamCaption}
+\item[{String}]{f2}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1GaleShapleyAdmission_a2ecccd278d3e3bc84fe56ca33db34371}
+
+
+function for filling data in the candidate list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f2} & Filename2 file is read line by line, delimiter used to split line into components~\newline
+ \hyperlink{classalgo1_1_1Candidate}{Candidate} called with its constructor and added to studlist ~\newline
+ Depending on category and rank also added to meritlist and D\+S list ~\newline
+ \\
+\hline
+\end{DoxyParams}
+leftover security for reading input from file \hypertarget{classalgo1_1_1GaleShapleyAdmission_acd76a7c612f3bbbef2039c0a000425bc}{\index{algo1\+::\+Gale\+Shapley\+Admission@{algo1\+::\+Gale\+Shapley\+Admission}!fillprogs@{fillprogs}}
+\index{fillprogs@{fillprogs}!algo1\+::\+Gale\+Shapley\+Admission@{algo1\+::\+Gale\+Shapley\+Admission}}
+\subsubsection[{fillprogs}]{\setlength{\rightskip}{0pt plus 5cm}void algo1.\+Gale\+Shapley\+Admission.\+fillprogs (
+\begin{DoxyParamCaption}
+\item[{String}]{f1}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1GaleShapleyAdmission_acd76a7c612f3bbbef2039c0a000425bc}
+
+
+function for filling data in list of virtual programmes and hashmap of \hyperlink{classalgo1_1_1Institute}{Institute}~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f1} & Filename 1 file is read line by line, delimiter used to split line into components~\newline
+ Virtual Programme called with its constructor and added to prog list ~\newline
+ D\+S qouta also initialised via this function ~\newline
+ \\
+\hline
+\end{DoxyParams}
+creating objects for reading data from file
+
+reading input from the file line by line
+
+delimiters used are \char`\"{},\char`\"{}
+
+split function to split string as per the delimiter
+
+\hyperlink{classalgo1_1_1Institute}{Institute} code determined by the first letter of the string code
+
+if institute not present in arraylist then add the institute
+
+leftover security for reading input from file \hypertarget{classalgo1_1_1GaleShapleyAdmission_a6910d1baa70d9d62133e75c8953d08d4}{\index{algo1\+::\+Gale\+Shapley\+Admission@{algo1\+::\+Gale\+Shapley\+Admission}!fillranklist@{fillranklist}}
+\index{fillranklist@{fillranklist}!algo1\+::\+Gale\+Shapley\+Admission@{algo1\+::\+Gale\+Shapley\+Admission}}
+\subsubsection[{fillranklist}]{\setlength{\rightskip}{0pt plus 5cm}void algo1.\+Gale\+Shapley\+Admission.\+fillranklist (
+\begin{DoxyParamCaption}
+\item[{String}]{f3}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1GaleShapleyAdmission_a6910d1baa70d9d62133e75c8953d08d4}
+
+
+function to feed the rank of all candidates in the hashmap 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f3} & Filename3 file is read line by line, delimiter used to split line into components~\newline
+ \hyperlink{classalgo1_1_1Candidate}{Candidate} I\+D, ranks added to ranklist \\
+\hline
+\end{DoxyParams}
+\hypertarget{classalgo1_1_1GaleShapleyAdmission_ad062c42d3c81430fd44880eda3c9e438}{\index{algo1\+::\+Gale\+Shapley\+Admission@{algo1\+::\+Gale\+Shapley\+Admission}!progindex@{progindex}}
+\index{progindex@{progindex}!algo1\+::\+Gale\+Shapley\+Admission@{algo1\+::\+Gale\+Shapley\+Admission}}
+\subsubsection[{progindex}]{\setlength{\rightskip}{0pt plus 5cm}int algo1.\+Gale\+Shapley\+Admission.\+progindex (
+\begin{DoxyParamCaption}
+\item[{{\bf Candidate}}]{c}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1GaleShapleyAdmission_ad062c42d3c81430fd44880eda3c9e438}
+
+
+function to get index of program to which candidate will apply in the list of programs based on the category,code,P\+Dstatus of current of candidate~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & \hyperlink{classalgo1_1_1Candidate}{Candidate} for which index of program is to be found \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Gale\+Shapley\+Admission.\+java\end{DoxyCompactItemize}

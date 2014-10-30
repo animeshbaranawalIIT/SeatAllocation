@@ -1,0 +1,13 @@
+import galeshapley.*;
+import meritorder.*;
+import java.io.*;
+
+public class Main {
+	
+	public static void main(String[] args){
+		GaleShapleyAdmission test = new GaleShapleyAdmission("test_cases/"+args[0]+"/programs.csv","test_cases/"+args[0]+"/choices.csv","test_cases/"+args[0]+"/ranklist.csv");
+		System.out.println();
+		MeritOrderAdmission testing = new MeritOrderAdmission("test_cases/"+args[0]+"/programs.csv","test_cases/"+args[0]+"/choices.csv","test_cases/"+args[0]+"/ranklist.csv");
+		
+	}
+}

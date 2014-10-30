@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['rank',['rank',['../classalgo1_1_1MeritList.html#a6435cf09817f3bf29fbee5a2e6fe0c6f',1,'algo1::MeritList']]],
+  ['removefin',['removefin',['../classalgo1_1_1MeritList.html#afeb9301c32e3ae724c6bdae5f9923c39',1,'algo1::MeritList']]],
+  ['resetmerit',['resetmerit',['../classalgo1_1_1MeritList.html#a39d0fd32a27e81f645b5ace596a6adb6',1,'algo1::MeritList']]],
+  ['retapplications',['retApplications',['../classalgo1_1_1VirtualProgramme.html#a52c76ebeb5a243bf81d4f08b1aec04f2',1,'algo1::VirtualProgramme']]],
+  ['retcategory',['retcategory',['../classalgo1_1_1Candidate.html#a3f72d7498999e22862c95a8905dd7948',1,'algo1.Candidate.retcategory()'],['../classalgo1_1_1VirtualProgramme.html#a366eefb773a07488d3e72742a6a2e899',1,'algo1.VirtualProgramme.retCategory()']]],
+  ['retcodepref',['retcodepref',['../classalgo1_1_1Candidate.html#a25387cafff70a23c6183cabbd977ddae',1,'algo1::Candidate']]],
+  ['retcourse',['retcourse',['../classalgo1_1_1VirtualProgramme.html#a49d9e5e9ede49143244131bb8c89aa62',1,'algo1::VirtualProgramme']]],
+  ['retcurrent',['retcurrent',['../classalgo1_1_1Candidate.html#a493e0636c7222053ae6dd73fe5479f41',1,'algo1::Candidate']]],
+  ['retdsstatus',['retDSstatus',['../classalgo1_1_1Candidate.html#a03d9dd7c570933348c481367635ffde0',1,'algo1::Candidate']]],
+  ['retfinlist',['retfinlist',['../classalgo1_1_1MeritList.html#af73c2b6eecff565900e1eb5416446664',1,'algo1::MeritList']]],
+  ['retid',['retID',['../classalgo1_1_1Candidate.html#ac85b7df6847dfa8b28b452bdc8f21194',1,'algo1::Candidate']]],
+  ['retmerit',['retmerit',['../classalgo1_1_1VirtualProgramme.html#ac242c6605d888eb982b3c904965d3385',1,'algo1::VirtualProgramme']]],
+  ['retmeritlist',['retmeritlist',['../classalgo1_1_1MeritList.html#a4b2b79f9fd96e71ba58b1bdb68a0e547',1,'algo1::MeritList']]],
+  ['retnationality',['retNationality',['../classalgo1_1_1Candidate.html#a2bb4223e00b5d69340db498b37a177fc',1,'algo1::Candidate']]],
+  ['retp2pref',['retp2pref',['../classalgo1_1_1Candidate.html#a18b976a123941824d6af496e629aa563',1,'algo1::Candidate']]],
+  ['retpdstatus',['retPdstatus',['../classalgo1_1_1VirtualProgramme.html#a826f7a9658a194569cd7abfa72d3b313',1,'algo1.VirtualProgramme.retPdstatus()'],['../classalgo1_1_1Candidate.html#a49d557fa291b974e69dd16ac74ab2117',1,'algo1.Candidate.retPDstatus()']]],
+  ['retphase2',['retphase2',['../classalgo1_1_1Candidate.html#a58e5d23bfa2289304f2c908e3f60ace7',1,'algo1::Candidate']]],
+  ['retpreference',['retpreference',['../classalgo1_1_1Candidate.html#ae6d04fe2e2b80283b99c05806014542b',1,'algo1::Candidate']]],
+  ['retquota',['retquota',['../classalgo1_1_1VirtualProgramme.html#af4d22578b4bcd68e5ab81a13a5d8aebc',1,'algo1::VirtualProgramme']]],
+  ['retseats',['retseats',['../classalgo1_1_1Institute.html#aeb65ca001f3ffdc633ef88eb471be498',1,'algo1::Institute']]],
+  ['retwaitlisted',['retWaitlisted',['../classalgo1_1_1VirtualProgramme.html#aa112fb4a6e20002145490bd39bcf3982',1,'algo1.VirtualProgramme.retWaitlisted()'],['../classalgo1_1_1Candidate.html#ad703d25063b19fe7e7364635f3d7db7c',1,'algo1.Candidate.retwaitlisted()']]]
+];

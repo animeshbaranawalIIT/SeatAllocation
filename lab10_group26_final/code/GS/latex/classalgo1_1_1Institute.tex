@@ -1,0 +1,90 @@
+\hypertarget{classalgo1_1_1Institute}{\section{algo1.\+Institute Class Reference}
+\label{classalgo1_1_1Institute}\index{algo1.\+Institute@{algo1.\+Institute}}
+}
+
+
+This class is required to fill the seats of D\+S candidates Each institute has 2 D\+S seats.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classalgo1_1_1Institute_a66f696cc392ea7beed38e13b78a8077b}{\hyperlink{classalgo1_1_1Institute_a66f696cc392ea7beed38e13b78a8077b}{Institute} ()}\label{classalgo1_1_1Institute_a66f696cc392ea7beed38e13b78a8077b}
+
+\begin{DoxyCompactList}\small\item\em Constructor takes no arguments All arraylists initialised to new(). \end{DoxyCompactList}\item 
+int \hyperlink{classalgo1_1_1Institute_aeb65ca001f3ffdc633ef88eb471be498}{retseats} ()
+\item 
+void \hyperlink{classalgo1_1_1Institute_a3ed297de4490738ce938b4f30c64d917}{apply} (\hyperlink{classalgo1_1_1Candidate}{Candidate} c, int t)
+\begin{DoxyCompactList}\small\item\em Adds application of student t = general rank of applied student. \end{DoxyCompactList}\item 
+Array\+List$<$ \hyperlink{classalgo1_1_1Candidate}{Candidate} $>$ \hyperlink{classalgo1_1_1Institute_a925b7fb3ae1b0a7cf133d00023b8b6c3}{filter} ()
+\begin{DoxyCompactList}\small\item\em filters the applicants Adds all the applications to waitlisted Sorts the waitlisted as per their G\+E rank Takes the top applications \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is required to fill the seats of D\+S candidates Each institute has 2 D\+S seats. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classalgo1_1_1Institute_a3ed297de4490738ce938b4f30c64d917}{\index{algo1\+::\+Institute@{algo1\+::\+Institute}!apply@{apply}}
+\index{apply@{apply}!algo1\+::\+Institute@{algo1\+::\+Institute}}
+\subsubsection[{apply}]{\setlength{\rightskip}{0pt plus 5cm}void algo1.\+Institute.\+apply (
+\begin{DoxyParamCaption}
+\item[{{\bf Candidate}}]{c, }
+\item[{int}]{t}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1Institute_a3ed297de4490738ce938b4f30c64d917}
+
+
+Adds application of student t = general rank of applied student. 
+
+This is added to the hashmap of institute 
+\begin{DoxyParams}{Parameters}
+{\em c} & D\+S \hyperlink{classalgo1_1_1Candidate}{Candidate} to be added \\
+\hline
+{\em t} & General rank of D\+S candidate \\
+\hline
+\end{DoxyParams}
+\hypertarget{classalgo1_1_1Institute_a925b7fb3ae1b0a7cf133d00023b8b6c3}{\index{algo1\+::\+Institute@{algo1\+::\+Institute}!filter@{filter}}
+\index{filter@{filter}!algo1\+::\+Institute@{algo1\+::\+Institute}}
+\subsubsection[{filter}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<${\bf Candidate}$>$ algo1.\+Institute.\+filter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1Institute_a925b7fb3ae1b0a7cf133d00023b8b6c3}
+
+
+filters the applicants Adds all the applications to waitlisted Sorts the waitlisted as per their G\+E rank Takes the top applications 
+
+\begin{DoxyReturn}{Returns}
+Returns the rejected list of candidates 
+\end{DoxyReturn}
+$<$ Arraylist for Rejected candidates
+
+Add the applications to waitlisted
+
+clear the applications list
+
+Sorts the waitlisted as per the G\+E rank
+
+Taking the top applications from waitlisted and removing the other applications
+
+quotaextrank required to determine when to increase the quota equal to the rank of the last candidate eligible for the seats
+
+if the extra incoming students rank equal to quotaextrank quota extended to accommodate him else he is rejected
+
+find the next program which to apply
+
+add candidate to rejected category \hypertarget{classalgo1_1_1Institute_aeb65ca001f3ffdc633ef88eb471be498}{\index{algo1\+::\+Institute@{algo1\+::\+Institute}!retseats@{retseats}}
+\index{retseats@{retseats}!algo1\+::\+Institute@{algo1\+::\+Institute}}
+\subsubsection[{retseats}]{\setlength{\rightskip}{0pt plus 5cm}int algo1.\+Institute.\+retseats (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1Institute_aeb65ca001f3ffdc633ef88eb471be498}
+\begin{DoxyReturn}{Returns}
+return number of seats 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Institute.\+java\end{DoxyCompactItemize}

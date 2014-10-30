@@ -204,7 +204,7 @@ public class VirtualProgramme{
 	//---------------------------------------------------------------------------------------------//
 	
 	
-	public Boolean extender(String cate, int i, Candidate c, int[] rank){                 // function for extending the quota if needed
+	/*public Boolean extender(String cate, int i, Candidate c, int[] rank){                 // function for extending the quota if needed
 		//System.out.println("Inside extender" + cate);
 		switch(cate){   
 			                  
@@ -236,7 +236,7 @@ public class VirtualProgramme{
 					case "ST_PD" : i = rank[7]; break;
 				}
 		return i;
-	}
+	}*/
 
 	public Boolean applyalgo2(Candidate c, int rank){	
 		//System.out.println("application of "+ c.retID() + cat + " "  + "in" + course + " " + category); System.out.println(pdstatus);System.out.println(lastadded);System.out.println(num); System.out.println(quota);					// for new applicant

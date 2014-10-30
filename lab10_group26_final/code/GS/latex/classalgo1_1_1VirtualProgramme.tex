@@ -1,0 +1,257 @@
+\hypertarget{classalgo1_1_1VirtualProgramme}{\section{algo1.\+Virtual\+Programme Class Reference}
+\label{classalgo1_1_1VirtualProgramme}\index{algo1.\+Virtual\+Programme@{algo1.\+Virtual\+Programme}}
+}
+
+
+Class for a Virtual Programme.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classalgo1_1_1VirtualProgramme_a4ca5f10194550ca6a878285fc0e32d5d}{Virtual\+Programme} (String code, int Cat, Boolean pd, int q)
+\begin{DoxyCompactList}\small\item\em Constructor takes only code, category, pd status and quota as the parameters. \end{DoxyCompactList}\item 
+void \hyperlink{classalgo1_1_1VirtualProgramme_a971912df704eaaca686fb261cee96d0f}{setquotaextrank} (int a)
+\item 
+String \hyperlink{classalgo1_1_1VirtualProgramme_a49d9e5e9ede49143244131bb8c89aa62}{retcourse} ()
+\item 
+int \hyperlink{classalgo1_1_1VirtualProgramme_a366eefb773a07488d3e72742a6a2e899}{ret\+Category} ()
+\item 
+Boolean \hyperlink{classalgo1_1_1VirtualProgramme_a826f7a9658a194569cd7abfa72d3b313}{ret\+Pdstatus} ()
+\item 
+Array\+List$<$ \hyperlink{classalgo1_1_1Candidate}{Candidate} $>$ \hyperlink{classalgo1_1_1VirtualProgramme_aa112fb4a6e20002145490bd39bcf3982}{ret\+Waitlisted} ()
+\item 
+Array\+List$<$ \hyperlink{classalgo1_1_1Candidate}{Candidate} $>$ \hyperlink{classalgo1_1_1VirtualProgramme_a52c76ebeb5a243bf81d4f08b1aec04f2}{ret\+Applications} ()
+\item 
+int \hyperlink{classalgo1_1_1VirtualProgramme_af4d22578b4bcd68e5ab81a13a5d8aebc}{retquota} ()
+\item 
+Hash\+Map$<$ \hyperlink{classalgo1_1_1Candidate}{Candidate}, Integer $>$ \hyperlink{classalgo1_1_1VirtualProgramme_ac242c6605d888eb982b3c904965d3385}{retmerit} ()
+\item 
+void \hyperlink{classalgo1_1_1VirtualProgramme_a1d6ad057cdf7e5e12a8fe82b4457a3d1}{setmerit} (\hyperlink{classalgo1_1_1MeritList}{Merit\+List} meritlist)
+\begin{DoxyCompactList}\small\item\em set merit list of the program given the entire list of meritlists based on category of the program \end{DoxyCompactList}\item 
+void \hyperlink{classalgo1_1_1VirtualProgramme_a08db91731dbba1d015a197594d31a908}{apply} (\hyperlink{classalgo1_1_1Candidate}{Candidate} c)
+\begin{DoxyCompactList}\small\item\em add application of a candidate \end{DoxyCompactList}\item 
+Array\+List$<$ \hyperlink{classalgo1_1_1Candidate}{Candidate} $>$ \hyperlink{classalgo1_1_1VirtualProgramme_acf0659ed464ce011568c9722fd72ea6f}{filter} ()
+\begin{DoxyCompactList}\small\item\em filters the applicants Adds all the applications to waitlisted Sorts the waitlisted as per their rank in merit list Takes the top applications \end{DoxyCompactList}\item 
+\hypertarget{classalgo1_1_1VirtualProgramme_aaae450c00ea65274f5904f4f6436244a}{void \hyperlink{classalgo1_1_1VirtualProgramme_aaae450c00ea65274f5904f4f6436244a}{prepphase2} ()}\label{classalgo1_1_1VirtualProgramme_aaae450c00ea65274f5904f4f6436244a}
+
+\begin{DoxyCompactList}\small\item\em preparation of program for phase 2 \end{DoxyCompactList}\item 
+Array\+List$<$ \hyperlink{classalgo1_1_1Candidate}{Candidate} $>$ \hyperlink{classalgo1_1_1VirtualProgramme_a14af298ca135c234a3084ee0754179ad}{filter2} ()
+\begin{DoxyCompactList}\small\item\em filters the applicants for phase2 Adds all the applications to wphase2 Sorts the wphase2 as per their rank in modified meritlist Takes the top applications \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for a Virtual Programme. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classalgo1_1_1VirtualProgramme_a4ca5f10194550ca6a878285fc0e32d5d}{\index{algo1\+::\+Virtual\+Programme@{algo1\+::\+Virtual\+Programme}!Virtual\+Programme@{Virtual\+Programme}}
+\index{Virtual\+Programme@{Virtual\+Programme}!algo1\+::\+Virtual\+Programme@{algo1\+::\+Virtual\+Programme}}
+\subsubsection[{Virtual\+Programme}]{\setlength{\rightskip}{0pt plus 5cm}algo1.\+Virtual\+Programme.\+Virtual\+Programme (
+\begin{DoxyParamCaption}
+\item[{String}]{code, }
+\item[{int}]{Cat, }
+\item[{Boolean}]{pd, }
+\item[{int}]{q}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1VirtualProgramme_a4ca5f10194550ca6a878285fc0e32d5d}
+
+
+Constructor takes only code, category, pd status and quota as the parameters. 
+
+All arraylists initialised to new() 
+\begin{DoxyParams}{Parameters}
+{\em code} & Course-\/code for Virtual Program \\
+\hline
+{\em Cat} & Category of Virtual Program \\
+\hline
+{\em pd} & P\+D status of Virtual Program \\
+\hline
+{\em q} & Quota of the Virtual Program \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classalgo1_1_1VirtualProgramme_a08db91731dbba1d015a197594d31a908}{\index{algo1\+::\+Virtual\+Programme@{algo1\+::\+Virtual\+Programme}!apply@{apply}}
+\index{apply@{apply}!algo1\+::\+Virtual\+Programme@{algo1\+::\+Virtual\+Programme}}
+\subsubsection[{apply}]{\setlength{\rightskip}{0pt plus 5cm}void algo1.\+Virtual\+Programme.\+apply (
+\begin{DoxyParamCaption}
+\item[{{\bf Candidate}}]{c}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1VirtualProgramme_a08db91731dbba1d015a197594d31a908}
+
+
+add application of a candidate 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & \hyperlink{classalgo1_1_1Candidate}{Candidate} which applies \\
+\hline
+\end{DoxyParams}
+\hypertarget{classalgo1_1_1VirtualProgramme_acf0659ed464ce011568c9722fd72ea6f}{\index{algo1\+::\+Virtual\+Programme@{algo1\+::\+Virtual\+Programme}!filter@{filter}}
+\index{filter@{filter}!algo1\+::\+Virtual\+Programme@{algo1\+::\+Virtual\+Programme}}
+\subsubsection[{filter}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<${\bf Candidate}$>$ algo1.\+Virtual\+Programme.\+filter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1VirtualProgramme_acf0659ed464ce011568c9722fd72ea6f}
+
+
+filters the applicants Adds all the applications to waitlisted Sorts the waitlisted as per their rank in merit list Takes the top applications 
+
+\begin{DoxyReturn}{Returns}
+Returns the rejected list of candidates 
+\end{DoxyReturn}
+$<$ Arraylist for Rejected candidates
+
+Add the applications to waitlisted
+
+clear the applications list
+
+Sorts the waitlisted as per the rank in merit
+
+Taking the top applications from waitlisted and removing the other applications
+
+quotaextrank required to determine when to increase the quota equal to the rank of the last candidate eligible for the seats
+
+if the extra incoming students rank equal to quotaextrank quota extended to accommodate him else he is rejected
+
+find the next program which to apply
+
+add candidate to rejected category \hypertarget{classalgo1_1_1VirtualProgramme_a14af298ca135c234a3084ee0754179ad}{\index{algo1\+::\+Virtual\+Programme@{algo1\+::\+Virtual\+Programme}!filter2@{filter2}}
+\index{filter2@{filter2}!algo1\+::\+Virtual\+Programme@{algo1\+::\+Virtual\+Programme}}
+\subsubsection[{filter2}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<${\bf Candidate}$>$ algo1.\+Virtual\+Programme.\+filter2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1VirtualProgramme_a14af298ca135c234a3084ee0754179ad}
+
+
+filters the applicants for phase2 Adds all the applications to wphase2 Sorts the wphase2 as per their rank in modified meritlist Takes the top applications 
+
+\begin{DoxyReturn}{Returns}
+Returns the rejected list of candidates 
+\end{DoxyReturn}
+$<$ Arraylist for Rejected candidates
+
+all this takes place only if seats left for dereservation
+
+Add the applications to waitlisted
+
+clear the applications list
+
+Sorts the waitlisted as per the rank in modified merit
+
+Taking the top applications from waitlisted and removing the other applications
+
+quotaextrank required to determine when to increase the quota equal to the rank of the last candidate eligible for the seats
+
+if the extra incoming students rank equal to quotaextrank quota extended to accommodate him else he is rejected
+
+find the next program which to apply
+
+add candidate to rejected category
+
+if no seats left for dereservation all applications are rejected \hypertarget{classalgo1_1_1VirtualProgramme_a52c76ebeb5a243bf81d4f08b1aec04f2}{\index{algo1\+::\+Virtual\+Programme@{algo1\+::\+Virtual\+Programme}!ret\+Applications@{ret\+Applications}}
+\index{ret\+Applications@{ret\+Applications}!algo1\+::\+Virtual\+Programme@{algo1\+::\+Virtual\+Programme}}
+\subsubsection[{ret\+Applications}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<${\bf Candidate}$>$ algo1.\+Virtual\+Programme.\+ret\+Applications (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1VirtualProgramme_a52c76ebeb5a243bf81d4f08b1aec04f2}
+\begin{DoxyReturn}{Returns}
+returns array of applications 
+\end{DoxyReturn}
+\hypertarget{classalgo1_1_1VirtualProgramme_a366eefb773a07488d3e72742a6a2e899}{\index{algo1\+::\+Virtual\+Programme@{algo1\+::\+Virtual\+Programme}!ret\+Category@{ret\+Category}}
+\index{ret\+Category@{ret\+Category}!algo1\+::\+Virtual\+Programme@{algo1\+::\+Virtual\+Programme}}
+\subsubsection[{ret\+Category}]{\setlength{\rightskip}{0pt plus 5cm}int algo1.\+Virtual\+Programme.\+ret\+Category (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1VirtualProgramme_a366eefb773a07488d3e72742a6a2e899}
+\begin{DoxyReturn}{Returns}
+returns category code 
+\end{DoxyReturn}
+\hypertarget{classalgo1_1_1VirtualProgramme_a49d9e5e9ede49143244131bb8c89aa62}{\index{algo1\+::\+Virtual\+Programme@{algo1\+::\+Virtual\+Programme}!retcourse@{retcourse}}
+\index{retcourse@{retcourse}!algo1\+::\+Virtual\+Programme@{algo1\+::\+Virtual\+Programme}}
+\subsubsection[{retcourse}]{\setlength{\rightskip}{0pt plus 5cm}String algo1.\+Virtual\+Programme.\+retcourse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1VirtualProgramme_a49d9e5e9ede49143244131bb8c89aa62}
+\begin{DoxyReturn}{Returns}
+returns course code 
+\end{DoxyReturn}
+\hypertarget{classalgo1_1_1VirtualProgramme_ac242c6605d888eb982b3c904965d3385}{\index{algo1\+::\+Virtual\+Programme@{algo1\+::\+Virtual\+Programme}!retmerit@{retmerit}}
+\index{retmerit@{retmerit}!algo1\+::\+Virtual\+Programme@{algo1\+::\+Virtual\+Programme}}
+\subsubsection[{retmerit}]{\setlength{\rightskip}{0pt plus 5cm}Hash\+Map$<${\bf Candidate},Integer$>$ algo1.\+Virtual\+Programme.\+retmerit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1VirtualProgramme_ac242c6605d888eb982b3c904965d3385}
+\begin{DoxyReturn}{Returns}
+returns meritlist of program 
+\end{DoxyReturn}
+\hypertarget{classalgo1_1_1VirtualProgramme_a826f7a9658a194569cd7abfa72d3b313}{\index{algo1\+::\+Virtual\+Programme@{algo1\+::\+Virtual\+Programme}!ret\+Pdstatus@{ret\+Pdstatus}}
+\index{ret\+Pdstatus@{ret\+Pdstatus}!algo1\+::\+Virtual\+Programme@{algo1\+::\+Virtual\+Programme}}
+\subsubsection[{ret\+Pdstatus}]{\setlength{\rightskip}{0pt plus 5cm}Boolean algo1.\+Virtual\+Programme.\+ret\+Pdstatus (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1VirtualProgramme_a826f7a9658a194569cd7abfa72d3b313}
+\begin{DoxyReturn}{Returns}
+returns pd status code 
+\end{DoxyReturn}
+\hypertarget{classalgo1_1_1VirtualProgramme_af4d22578b4bcd68e5ab81a13a5d8aebc}{\index{algo1\+::\+Virtual\+Programme@{algo1\+::\+Virtual\+Programme}!retquota@{retquota}}
+\index{retquota@{retquota}!algo1\+::\+Virtual\+Programme@{algo1\+::\+Virtual\+Programme}}
+\subsubsection[{retquota}]{\setlength{\rightskip}{0pt plus 5cm}int algo1.\+Virtual\+Programme.\+retquota (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1VirtualProgramme_af4d22578b4bcd68e5ab81a13a5d8aebc}
+\begin{DoxyReturn}{Returns}
+returns quota of program 
+\end{DoxyReturn}
+\hypertarget{classalgo1_1_1VirtualProgramme_aa112fb4a6e20002145490bd39bcf3982}{\index{algo1\+::\+Virtual\+Programme@{algo1\+::\+Virtual\+Programme}!ret\+Waitlisted@{ret\+Waitlisted}}
+\index{ret\+Waitlisted@{ret\+Waitlisted}!algo1\+::\+Virtual\+Programme@{algo1\+::\+Virtual\+Programme}}
+\subsubsection[{ret\+Waitlisted}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<${\bf Candidate}$>$ algo1.\+Virtual\+Programme.\+ret\+Waitlisted (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1VirtualProgramme_aa112fb4a6e20002145490bd39bcf3982}
+\begin{DoxyReturn}{Returns}
+returns array of waitlisted students 
+\end{DoxyReturn}
+\hypertarget{classalgo1_1_1VirtualProgramme_a1d6ad057cdf7e5e12a8fe82b4457a3d1}{\index{algo1\+::\+Virtual\+Programme@{algo1\+::\+Virtual\+Programme}!setmerit@{setmerit}}
+\index{setmerit@{setmerit}!algo1\+::\+Virtual\+Programme@{algo1\+::\+Virtual\+Programme}}
+\subsubsection[{setmerit}]{\setlength{\rightskip}{0pt plus 5cm}void algo1.\+Virtual\+Programme.\+setmerit (
+\begin{DoxyParamCaption}
+\item[{{\bf Merit\+List}}]{meritlist}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1VirtualProgramme_a1d6ad057cdf7e5e12a8fe82b4457a3d1}
+
+
+set merit list of the program given the entire list of meritlists based on category of the program 
+
+
+\begin{DoxyParams}{Parameters}
+{\em meritlist} & Arraylist of meritlists \\
+\hline
+\end{DoxyParams}
+\hypertarget{classalgo1_1_1VirtualProgramme_a971912df704eaaca686fb261cee96d0f}{\index{algo1\+::\+Virtual\+Programme@{algo1\+::\+Virtual\+Programme}!setquotaextrank@{setquotaextrank}}
+\index{setquotaextrank@{setquotaextrank}!algo1\+::\+Virtual\+Programme@{algo1\+::\+Virtual\+Programme}}
+\subsubsection[{setquotaextrank}]{\setlength{\rightskip}{0pt plus 5cm}void algo1.\+Virtual\+Programme.\+setquotaextrank (
+\begin{DoxyParamCaption}
+\item[{int}]{a}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1VirtualProgramme_a971912df704eaaca686fb261cee96d0f}
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Set quota extenstion deciding rank to int a \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Virtual\+Programme.\+java\end{DoxyCompactItemize}

@@ -1,0 +1,383 @@
+\hypertarget{classalgo1_1_1Candidate}{\section{algo1.\+Candidate Class Reference}
+\label{classalgo1_1_1Candidate}\index{algo1.\+Candidate@{algo1.\+Candidate}}
+}
+
+
+This class is used to represent a candidate.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classalgo1_1_1Candidate_1_1Prog__rep}{Prog\+\_\+rep}
+\begin{DoxyCompactList}\small\item\em This class is used to represent the preferences of a student. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classalgo1_1_1Candidate_a10018c508dbdb9b5ebe321fa8ebb5b02}{Candidate} (String a, String pd, String categ)
+\begin{DoxyCompactList}\small\item\em This is the constructor of the class. \end{DoxyCompactList}\item 
+\hypertarget{classalgo1_1_1Candidate_a1a1bb9814f55f7490e63665096140994}{void \hyperlink{classalgo1_1_1Candidate_a1a1bb9814f55f7490e63665096140994}{add\+\_\+preference} (int\mbox{[}$\,$\mbox{]} ranklist, String course)}\label{classalgo1_1_1Candidate_a1a1bb9814f55f7490e63665096140994}
+
+\begin{DoxyCompactList}\small\item\em This function sets the preference list as per the input and rank of candidate ~\newline
+ The preference list is for phase1 only ~\newline
+ G\+E category \+: G\+E ~\newline
+ O\+B\+C category \+: G\+E $>$ O\+B\+C ~\newline
+ G\+E-\/\+P\+D category \+: G\+E $>$ G\+E-\/\+P\+D ~\newline
+ O\+B\+C-\/\+P\+D category \+: G\+E $>$ G\+E-\/\+P\+D $>$ O\+B\+C $>$ O\+B\+C-\/\+P\+D ~\newline
+ S\+C category \+: G\+E $>$ S\+C ~\newline
+ S\+T category \+: G\+E $>$ S\+T ~\newline
+ S\+C-\/\+P\+D category \+: G\+E $>$ S\+C $>$ G\+E-\/\+P\+D $>$ S\+C-\/\+P\+D ~\newline
+ S\+T-\/\+P\+D category \+: G\+E $>$ S\+T $>$ G\+E-\/\+P\+D $>$ S\+T-\/\+P\+D ~\newline
+ \end{DoxyCompactList}\item 
+void \hyperlink{classalgo1_1_1Candidate_a3bd0ce5091bea5e9aa4012b5b749f08f}{setp2pref} (int\mbox{[}$\,$\mbox{]} rank)
+\begin{DoxyCompactList}\small\item\em This function sets the preference list as per the input and rank of candidate for dereservation. \end{DoxyCompactList}\item 
+\hyperlink{classalgo1_1_1Candidate_1_1Prog__rep}{Prog\+\_\+rep} \hyperlink{classalgo1_1_1Candidate_a843ccd1bb912db699272e72ee12d08c3}{findnext} ()
+\begin{DoxyCompactList}\small\item\em This function finds the next Virtual Programme to which to apply based on the value of the program to which he has applied i.\+e. \end{DoxyCompactList}\item 
+String \hyperlink{classalgo1_1_1Candidate_ac85b7df6847dfa8b28b452bdc8f21194}{ret\+I\+D} ()
+\item 
+int \hyperlink{classalgo1_1_1Candidate_a3f72d7498999e22862c95a8905dd7948}{retcategory} ()
+\item 
+Boolean \hyperlink{classalgo1_1_1Candidate_a49d557fa291b974e69dd16ac74ab2117}{ret\+P\+Dstatus} ()
+\item 
+Boolean \hyperlink{classalgo1_1_1Candidate_a2bb4223e00b5d69340db498b37a177fc}{ret\+Nationality} ()
+\item 
+Boolean \hyperlink{classalgo1_1_1Candidate_a03d9dd7c570933348c481367635ffde0}{ret\+D\+Sstatus} ()
+\item 
+\hyperlink{classalgo1_1_1Candidate_1_1Prog__rep}{Prog\+\_\+rep} \hyperlink{classalgo1_1_1Candidate_a493e0636c7222053ae6dd73fe5479f41}{retcurrent} ()
+\item 
+String \hyperlink{classalgo1_1_1Candidate_ad703d25063b19fe7e7364635f3d7db7c}{retwaitlisted} ()
+\item 
+Array\+List$<$ String $>$ \hyperlink{classalgo1_1_1Candidate_a25387cafff70a23c6183cabbd977ddae}{retcodepref} ()
+\item 
+Array\+List$<$ \hyperlink{classalgo1_1_1Candidate_1_1Prog__rep}{Prog\+\_\+rep} $>$ \hyperlink{classalgo1_1_1Candidate_ae6d04fe2e2b80283b99c05806014542b}{retpreference} ()
+\item 
+Array\+List$<$ \hyperlink{classalgo1_1_1Candidate_1_1Prog__rep}{Prog\+\_\+rep} $>$ \hyperlink{classalgo1_1_1Candidate_a18b976a123941824d6af496e629aa563}{retp2pref} ()
+\item 
+void \hyperlink{classalgo1_1_1Candidate_ac3fca899ed2ff282a7e2ea86bb7cb136}{set\+I\+D} (String a)
+\item 
+void \hyperlink{classalgo1_1_1Candidate_a6c4f47142a23f583611b195ae95b760f}{setcategory} (int a)
+\begin{DoxyCompactList}\small\item\em set I\+D \end{DoxyCompactList}\item 
+void \hyperlink{classalgo1_1_1Candidate_a5bcc56e00fef62570e606b62a500079e}{set\+P\+Dstatus} (Boolean a)
+\item 
+void \hyperlink{classalgo1_1_1Candidate_a37ee1ecb6665a94a951ee1a77a8a4d41}{set\+Nationality} (Boolean a)
+\item 
+void \hyperlink{classalgo1_1_1Candidate_ab258e1fe9ee4b1b7718fa9839f10a6c4}{set\+D\+Sstatus} (Boolean a)
+\item 
+void \hyperlink{classalgo1_1_1Candidate_ab899ae007b618eb18748b4daac995895}{setcurrent} (\hyperlink{classalgo1_1_1Candidate_1_1Prog__rep}{Prog\+\_\+rep} a)
+\item 
+void \hyperlink{classalgo1_1_1Candidate_a76b0a390b3f6eff005e4e6b848e892f8}{setwaitlisted} (String a)
+\item 
+void \hyperlink{classalgo1_1_1Candidate_ac0fb0aab52f490c18e0a0f6476609424}{setpreference} (Array\+List$<$ \hyperlink{classalgo1_1_1Candidate_1_1Prog__rep}{Prog\+\_\+rep} $>$ a)
+\item 
+void \hyperlink{classalgo1_1_1Candidate_aba8fad50474fba8f07233c4906df569e}{setphase2} (Boolean a)
+\item 
+Boolean \hyperlink{classalgo1_1_1Candidate_a58e5d23bfa2289304f2c908e3f60ace7}{retphase2} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is used to represent a candidate. 
+
+\begin{DoxyAuthor}{Author}
+Group26\+:Jyn\+X\+D! There are many data members in the \hyperlink{classalgo1_1_1Candidate}{Candidate} class. 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classalgo1_1_1Candidate_a10018c508dbdb9b5ebe321fa8ebb5b02}{\index{algo1\+::\+Candidate@{algo1\+::\+Candidate}!Candidate@{Candidate}}
+\index{Candidate@{Candidate}!algo1\+::\+Candidate@{algo1\+::\+Candidate}}
+\subsubsection[{Candidate}]{\setlength{\rightskip}{0pt plus 5cm}algo1.\+Candidate.\+Candidate (
+\begin{DoxyParamCaption}
+\item[{String}]{a, }
+\item[{String}]{pd, }
+\item[{String}]{categ}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1Candidate_a10018c508dbdb9b5ebe321fa8ebb5b02}
+
+
+This is the constructor of the class. 
+
+~\newline
+ Takes only I\+D, Category and P\+D status as parameter. ~\newline
+ Nationality and D\+Sstatus are configured accordingly. ~\newline
+ Note\+: Every category has been allotted an integer code. ~\newline
+ 1 -\/ G\+E, 2 -\/ O\+B\+C, 3 -\/ S\+C, 4 -\/ S\+T, 8 -\/ D\+S , 9 -\/ F (foreign) ~\newline
+ All the arrays have been initialised to new(). ~\newline
+ By the default, the waitlisted is set to \char`\"{}-\/1\char`\"{} in accordance to the output if the student gets no seat. ~\newline
+ By default, no candidate is eligible for phase2. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classalgo1_1_1Candidate_a843ccd1bb912db699272e72ee12d08c3}{\index{algo1\+::\+Candidate@{algo1\+::\+Candidate}!findnext@{findnext}}
+\index{findnext@{findnext}!algo1\+::\+Candidate@{algo1\+::\+Candidate}}
+\subsubsection[{findnext}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Prog\+\_\+rep} algo1.\+Candidate.\+findnext (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1Candidate_a843ccd1bb912db699272e72ee12d08c3}
+
+
+This function finds the next Virtual Programme to which to apply based on the value of the program to which he has applied i.\+e. 
+
+based on the value of 'current' data member \begin{DoxyReturn}{Returns}
+Returns the next preference to which to apply 
+\end{DoxyReturn}
+If phase2==true the preference list modifies and the output of findnext should change accordingly\hypertarget{classalgo1_1_1Candidate_a3f72d7498999e22862c95a8905dd7948}{\index{algo1\+::\+Candidate@{algo1\+::\+Candidate}!retcategory@{retcategory}}
+\index{retcategory@{retcategory}!algo1\+::\+Candidate@{algo1\+::\+Candidate}}
+\subsubsection[{retcategory}]{\setlength{\rightskip}{0pt plus 5cm}int algo1.\+Candidate.\+retcategory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1Candidate_a3f72d7498999e22862c95a8905dd7948}
+\begin{DoxyReturn}{Returns}
+returns category 
+\end{DoxyReturn}
+\hypertarget{classalgo1_1_1Candidate_a25387cafff70a23c6183cabbd977ddae}{\index{algo1\+::\+Candidate@{algo1\+::\+Candidate}!retcodepref@{retcodepref}}
+\index{retcodepref@{retcodepref}!algo1\+::\+Candidate@{algo1\+::\+Candidate}}
+\subsubsection[{retcodepref}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<$String$>$ algo1.\+Candidate.\+retcodepref (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1Candidate_a25387cafff70a23c6183cabbd977ddae}
+\begin{DoxyReturn}{Returns}
+return preference arraylist (by code ) 
+\end{DoxyReturn}
+\hypertarget{classalgo1_1_1Candidate_a493e0636c7222053ae6dd73fe5479f41}{\index{algo1\+::\+Candidate@{algo1\+::\+Candidate}!retcurrent@{retcurrent}}
+\index{retcurrent@{retcurrent}!algo1\+::\+Candidate@{algo1\+::\+Candidate}}
+\subsubsection[{retcurrent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Prog\+\_\+rep} algo1.\+Candidate.\+retcurrent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1Candidate_a493e0636c7222053ae6dd73fe5479f41}
+\begin{DoxyReturn}{Returns}
+return current program to which applied 
+\end{DoxyReturn}
+\hypertarget{classalgo1_1_1Candidate_a03d9dd7c570933348c481367635ffde0}{\index{algo1\+::\+Candidate@{algo1\+::\+Candidate}!ret\+D\+Sstatus@{ret\+D\+Sstatus}}
+\index{ret\+D\+Sstatus@{ret\+D\+Sstatus}!algo1\+::\+Candidate@{algo1\+::\+Candidate}}
+\subsubsection[{ret\+D\+Sstatus}]{\setlength{\rightskip}{0pt plus 5cm}Boolean algo1.\+Candidate.\+ret\+D\+Sstatus (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1Candidate_a03d9dd7c570933348c481367635ffde0}
+\begin{DoxyReturn}{Returns}
+return D\+Sstatus 
+\end{DoxyReturn}
+\hypertarget{classalgo1_1_1Candidate_ac85b7df6847dfa8b28b452bdc8f21194}{\index{algo1\+::\+Candidate@{algo1\+::\+Candidate}!ret\+I\+D@{ret\+I\+D}}
+\index{ret\+I\+D@{ret\+I\+D}!algo1\+::\+Candidate@{algo1\+::\+Candidate}}
+\subsubsection[{ret\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}String algo1.\+Candidate.\+ret\+I\+D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1Candidate_ac85b7df6847dfa8b28b452bdc8f21194}
+\begin{DoxyReturn}{Returns}
+returns I\+D 
+\end{DoxyReturn}
+\hypertarget{classalgo1_1_1Candidate_a2bb4223e00b5d69340db498b37a177fc}{\index{algo1\+::\+Candidate@{algo1\+::\+Candidate}!ret\+Nationality@{ret\+Nationality}}
+\index{ret\+Nationality@{ret\+Nationality}!algo1\+::\+Candidate@{algo1\+::\+Candidate}}
+\subsubsection[{ret\+Nationality}]{\setlength{\rightskip}{0pt plus 5cm}Boolean algo1.\+Candidate.\+ret\+Nationality (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1Candidate_a2bb4223e00b5d69340db498b37a177fc}
+\begin{DoxyReturn}{Returns}
+return Nationality 
+\end{DoxyReturn}
+\hypertarget{classalgo1_1_1Candidate_a18b976a123941824d6af496e629aa563}{\index{algo1\+::\+Candidate@{algo1\+::\+Candidate}!retp2pref@{retp2pref}}
+\index{retp2pref@{retp2pref}!algo1\+::\+Candidate@{algo1\+::\+Candidate}}
+\subsubsection[{retp2pref}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<${\bf Prog\+\_\+rep}$>$ algo1.\+Candidate.\+retp2pref (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1Candidate_a18b976a123941824d6af496e629aa563}
+\begin{DoxyReturn}{Returns}
+return preference arraylist for phase2 
+\end{DoxyReturn}
+\hypertarget{classalgo1_1_1Candidate_a49d557fa291b974e69dd16ac74ab2117}{\index{algo1\+::\+Candidate@{algo1\+::\+Candidate}!ret\+P\+Dstatus@{ret\+P\+Dstatus}}
+\index{ret\+P\+Dstatus@{ret\+P\+Dstatus}!algo1\+::\+Candidate@{algo1\+::\+Candidate}}
+\subsubsection[{ret\+P\+Dstatus}]{\setlength{\rightskip}{0pt plus 5cm}Boolean algo1.\+Candidate.\+ret\+P\+Dstatus (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1Candidate_a49d557fa291b974e69dd16ac74ab2117}
+\begin{DoxyReturn}{Returns}
+return P\+Dstatus 
+\end{DoxyReturn}
+\hypertarget{classalgo1_1_1Candidate_a58e5d23bfa2289304f2c908e3f60ace7}{\index{algo1\+::\+Candidate@{algo1\+::\+Candidate}!retphase2@{retphase2}}
+\index{retphase2@{retphase2}!algo1\+::\+Candidate@{algo1\+::\+Candidate}}
+\subsubsection[{retphase2}]{\setlength{\rightskip}{0pt plus 5cm}Boolean algo1.\+Candidate.\+retphase2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1Candidate_a58e5d23bfa2289304f2c908e3f60ace7}
+\begin{DoxyReturn}{Returns}
+return phase2 status 
+\end{DoxyReturn}
+\hypertarget{classalgo1_1_1Candidate_ae6d04fe2e2b80283b99c05806014542b}{\index{algo1\+::\+Candidate@{algo1\+::\+Candidate}!retpreference@{retpreference}}
+\index{retpreference@{retpreference}!algo1\+::\+Candidate@{algo1\+::\+Candidate}}
+\subsubsection[{retpreference}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<${\bf Prog\+\_\+rep}$>$ algo1.\+Candidate.\+retpreference (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1Candidate_ae6d04fe2e2b80283b99c05806014542b}
+\begin{DoxyReturn}{Returns}
+return preference arraylist ( by prog\+\_\+rep ) 
+\end{DoxyReturn}
+\hypertarget{classalgo1_1_1Candidate_ad703d25063b19fe7e7364635f3d7db7c}{\index{algo1\+::\+Candidate@{algo1\+::\+Candidate}!retwaitlisted@{retwaitlisted}}
+\index{retwaitlisted@{retwaitlisted}!algo1\+::\+Candidate@{algo1\+::\+Candidate}}
+\subsubsection[{retwaitlisted}]{\setlength{\rightskip}{0pt plus 5cm}String algo1.\+Candidate.\+retwaitlisted (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1Candidate_ad703d25063b19fe7e7364635f3d7db7c}
+\begin{DoxyReturn}{Returns}
+return program for which waitlisted 
+\end{DoxyReturn}
+\hypertarget{classalgo1_1_1Candidate_a6c4f47142a23f583611b195ae95b760f}{\index{algo1\+::\+Candidate@{algo1\+::\+Candidate}!setcategory@{setcategory}}
+\index{setcategory@{setcategory}!algo1\+::\+Candidate@{algo1\+::\+Candidate}}
+\subsubsection[{setcategory}]{\setlength{\rightskip}{0pt plus 5cm}void algo1.\+Candidate.\+setcategory (
+\begin{DoxyParamCaption}
+\item[{int}]{a}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1Candidate_a6c4f47142a23f583611b195ae95b760f}
+
+
+set I\+D 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & set category of student to int a \\
+\hline
+\end{DoxyParams}
+\hypertarget{classalgo1_1_1Candidate_ab899ae007b618eb18748b4daac995895}{\index{algo1\+::\+Candidate@{algo1\+::\+Candidate}!setcurrent@{setcurrent}}
+\index{setcurrent@{setcurrent}!algo1\+::\+Candidate@{algo1\+::\+Candidate}}
+\subsubsection[{setcurrent}]{\setlength{\rightskip}{0pt plus 5cm}void algo1.\+Candidate.\+setcurrent (
+\begin{DoxyParamCaption}
+\item[{{\bf Prog\+\_\+rep}}]{a}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1Candidate_ab899ae007b618eb18748b4daac995895}
+
+\begin{DoxyParams}{Parameters}
+{\em a} & set current program of student to \hyperlink{classalgo1_1_1Candidate_1_1Prog__rep}{Prog\+\_\+rep} a \\
+\hline
+\end{DoxyParams}
+\hypertarget{classalgo1_1_1Candidate_ab258e1fe9ee4b1b7718fa9839f10a6c4}{\index{algo1\+::\+Candidate@{algo1\+::\+Candidate}!set\+D\+Sstatus@{set\+D\+Sstatus}}
+\index{set\+D\+Sstatus@{set\+D\+Sstatus}!algo1\+::\+Candidate@{algo1\+::\+Candidate}}
+\subsubsection[{set\+D\+Sstatus}]{\setlength{\rightskip}{0pt plus 5cm}void algo1.\+Candidate.\+set\+D\+Sstatus (
+\begin{DoxyParamCaption}
+\item[{Boolean}]{a}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1Candidate_ab258e1fe9ee4b1b7718fa9839f10a6c4}
+
+\begin{DoxyParams}{Parameters}
+{\em a} & set D\+Sstatus of student to boolean a \\
+\hline
+\end{DoxyParams}
+\hypertarget{classalgo1_1_1Candidate_ac3fca899ed2ff282a7e2ea86bb7cb136}{\index{algo1\+::\+Candidate@{algo1\+::\+Candidate}!set\+I\+D@{set\+I\+D}}
+\index{set\+I\+D@{set\+I\+D}!algo1\+::\+Candidate@{algo1\+::\+Candidate}}
+\subsubsection[{set\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}void algo1.\+Candidate.\+set\+I\+D (
+\begin{DoxyParamCaption}
+\item[{String}]{a}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1Candidate_ac3fca899ed2ff282a7e2ea86bb7cb136}
+
+\begin{DoxyParams}{Parameters}
+{\em a} & sets I\+D of student to string a \\
+\hline
+\end{DoxyParams}
+\hypertarget{classalgo1_1_1Candidate_a37ee1ecb6665a94a951ee1a77a8a4d41}{\index{algo1\+::\+Candidate@{algo1\+::\+Candidate}!set\+Nationality@{set\+Nationality}}
+\index{set\+Nationality@{set\+Nationality}!algo1\+::\+Candidate@{algo1\+::\+Candidate}}
+\subsubsection[{set\+Nationality}]{\setlength{\rightskip}{0pt plus 5cm}void algo1.\+Candidate.\+set\+Nationality (
+\begin{DoxyParamCaption}
+\item[{Boolean}]{a}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1Candidate_a37ee1ecb6665a94a951ee1a77a8a4d41}
+
+\begin{DoxyParams}{Parameters}
+{\em a} & set Nationality of student to boolean a \\
+\hline
+\end{DoxyParams}
+\hypertarget{classalgo1_1_1Candidate_a3bd0ce5091bea5e9aa4012b5b749f08f}{\index{algo1\+::\+Candidate@{algo1\+::\+Candidate}!setp2pref@{setp2pref}}
+\index{setp2pref@{setp2pref}!algo1\+::\+Candidate@{algo1\+::\+Candidate}}
+\subsubsection[{setp2pref}]{\setlength{\rightskip}{0pt plus 5cm}void algo1.\+Candidate.\+setp2pref (
+\begin{DoxyParamCaption}
+\item[{int\mbox{[}$\,$\mbox{]}}]{rank}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1Candidate_a3bd0ce5091bea5e9aa4012b5b749f08f}
+
+
+This function sets the preference list as per the input and rank of candidate for dereservation. 
+
+~\newline
+ {\bfseries Note\+:} Only G\+E,S\+C,S\+T students who have not got a seat eligible for dereservation. ~\newline
+ if G\+E/\+O\+B\+C candidate with no pwd ~\newline
+ Modified Preference \+: G\+E $>$ O\+B\+C $>$ G\+E-\/\+P\+D $>$ O\+B\+C-\/\+P\+D ~\newline
+~\newline
+ if G\+E/\+O\+B\+C candidate with pwd ~\newline
+ Modified Preference \+: G\+E $>$ G\+E-\/\+P\+D $>$ O\+B\+C $>$ O\+B\+C-\/\+P\+D ~\newline
+~\newline
+ if S\+C/\+S\+T with G\+E rank with no pwd~\newline
+ Modified preference for S\+C \+: G\+E $>$ S\+C $>$ O\+B\+C $>$ G\+E-\/\+P\+D $>$ O\+B\+C-\/\+P\+D $>$ S\+C-\/\+P\+D~\newline
+ Modified preference for S\+T \+: G\+E $>$ S\+T $>$ O\+B\+C $>$ G\+E-\/\+P\+D $>$ O\+B\+C-\/\+P\+D $>$ S\+T-\/\+P\+D~\newline
+~\newline
+ if S\+C/\+S\+T with G\+E rank with pwd~\newline
+ Modified preference for S\+C \+: G\+E $>$ S\+C $>$ G\+E-\/\+P\+D $>$ S\+C-\/\+P\+D $>$ O\+B\+C $>$ O\+B\+C-\/\+P\+D ~\newline
+ Modified preference for S\+T \+: G\+E $>$ S\+T $>$ G\+E-\/\+P\+D $>$ S\+T-\/\+P\+D $>$ O\+B\+C $>$ O\+B\+C-\/\+P\+D ~\newline
+~\newline
+ if S\+C with no G\+E rank ~\newline
+ Modified preference for S\+C \+: S\+C $>$ S\+C-\/\+P\+D ~\newline
+~\newline
+ if S\+T with no G\+E rank~\newline
+ Modified preference for S\+T \+: S\+T $>$ S\+T-\/\+P\+D ~\newline
+~\newline
+ \hypertarget{classalgo1_1_1Candidate_a5bcc56e00fef62570e606b62a500079e}{\index{algo1\+::\+Candidate@{algo1\+::\+Candidate}!set\+P\+Dstatus@{set\+P\+Dstatus}}
+\index{set\+P\+Dstatus@{set\+P\+Dstatus}!algo1\+::\+Candidate@{algo1\+::\+Candidate}}
+\subsubsection[{set\+P\+Dstatus}]{\setlength{\rightskip}{0pt plus 5cm}void algo1.\+Candidate.\+set\+P\+Dstatus (
+\begin{DoxyParamCaption}
+\item[{Boolean}]{a}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1Candidate_a5bcc56e00fef62570e606b62a500079e}
+
+\begin{DoxyParams}{Parameters}
+{\em a} & set P\+Dstatus of student to boolean a \\
+\hline
+\end{DoxyParams}
+\hypertarget{classalgo1_1_1Candidate_aba8fad50474fba8f07233c4906df569e}{\index{algo1\+::\+Candidate@{algo1\+::\+Candidate}!setphase2@{setphase2}}
+\index{setphase2@{setphase2}!algo1\+::\+Candidate@{algo1\+::\+Candidate}}
+\subsubsection[{setphase2}]{\setlength{\rightskip}{0pt plus 5cm}void algo1.\+Candidate.\+setphase2 (
+\begin{DoxyParamCaption}
+\item[{Boolean}]{a}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1Candidate_aba8fad50474fba8f07233c4906df569e}
+
+\begin{DoxyParams}{Parameters}
+{\em a} & set phase2 status to boolean a \\
+\hline
+\end{DoxyParams}
+\hypertarget{classalgo1_1_1Candidate_ac0fb0aab52f490c18e0a0f6476609424}{\index{algo1\+::\+Candidate@{algo1\+::\+Candidate}!setpreference@{setpreference}}
+\index{setpreference@{setpreference}!algo1\+::\+Candidate@{algo1\+::\+Candidate}}
+\subsubsection[{setpreference}]{\setlength{\rightskip}{0pt plus 5cm}void algo1.\+Candidate.\+setpreference (
+\begin{DoxyParamCaption}
+\item[{Array\+List$<$ {\bf Prog\+\_\+rep} $>$}]{a}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1Candidate_ac0fb0aab52f490c18e0a0f6476609424}
+
+\begin{DoxyParams}{Parameters}
+{\em a} & set preference arraylist of student to arraylist a \\
+\hline
+\end{DoxyParams}
+\hypertarget{classalgo1_1_1Candidate_a76b0a390b3f6eff005e4e6b848e892f8}{\index{algo1\+::\+Candidate@{algo1\+::\+Candidate}!setwaitlisted@{setwaitlisted}}
+\index{setwaitlisted@{setwaitlisted}!algo1\+::\+Candidate@{algo1\+::\+Candidate}}
+\subsubsection[{setwaitlisted}]{\setlength{\rightskip}{0pt plus 5cm}void algo1.\+Candidate.\+setwaitlisted (
+\begin{DoxyParamCaption}
+\item[{String}]{a}
+\end{DoxyParamCaption}
+)}}\label{classalgo1_1_1Candidate_a76b0a390b3f6eff005e4e6b848e892f8}
+
+\begin{DoxyParams}{Parameters}
+{\em a} & set waitlisted program code of student to String a \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Candidate.\+java\end{DoxyCompactItemize}
