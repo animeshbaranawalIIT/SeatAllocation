@@ -1,0 +1,255 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+
+\mode<presentation> {
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+%\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{CS251 Project} % The short title appears at the bottom of every slide, the full title is only on the title page
+\subtitle{ Seat Allocation Algorithm and Web Interface for College Admission }
+
+\author{
+	Animesh Baranawal - 130050013 \\
+	\texttt {animeshbaranawal@gmail.com} \\
+	Rawal Khirodkar - 1300050014 \\
+	\texttt {rawalkhirodkar@gmail.com} \\
+	Lokit Kumar Paras - 130050047 \\
+	\texttt {lokit95@gmail.com} 
+}
+
+\institute[IITB] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+Indian Institute of Technology, Bombay \\ % Your institution for the title page
+\medskip
+\textit{http://www.cse.iitb.ac.in/~animaxburnol/group.html} % Your email address
+}
+\date{\today} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}
+\frametitle{Overview} % Table of contents slide, comment this block out to remove it
+\begin{itemize}
+  \item Introduction : Division of Tasks\pause
+  \item Parts of the project \pause
+    \begin{itemize}
+      \item Seat Allocation algorithms \pause
+        \begin{itemize}
+        \item Gale Shapley Algorithm 
+        \item Merit Order Algorithm \pause
+		\end{itemize}  
+      \item Web Interface for College Admission \pause
+    \end{itemize}
+  \item The Final Picture 
+\end{itemize}
+ % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+\section{Introduction of the Project} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
+%------------------------------------------------
+
+\subsection{Division of Tasks} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
+
+\begin{frame}
+\frametitle{Project}
+PURPOSE OF THE PROJECT 
+\begin{itemize}
+  \item How does \textbf{Seat Allocation} in Colleges really take place? \pause
+  \item How is the \textbf{Web Interface} for College Admission designed? \pause
+  \item Implementation of {\em Python} \textbf{GUI} alongwith \textbf{JAVA} to accomplish these tasks. \pause
+\end{itemize}
+
+TASK DISTRIBUTION AMONG MEMBERS
+\begin{itemize}
+	\item \textbf{Seat Allocation (Gale Shapley)} : Animesh Baranawal (130050013)
+	\item \textbf{Seat Allocation (Merit Order)} : Animesh Baranawal (130050013) \& Lokit Kumar Paras (130050047)
+	\item \textbf{Python GUI Web Interface} : Rawal Khirodkar (130050047) \& Lokit Kumar Paras (130050047) 
+\end{itemize}
+  
+\end{frame}
+
+%------------------------------------------------
+\section{PARTS OF PROJECT} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
+%------------------------------------------------
+
+\subsection{Seat Allocation Algorithms}
+
+\begin{frame}
+\frametitle{SEAT ALLOCATION}
+ALGORITHM 1 : GALE SHAPLEY \pause
+\begin{itemize}
+\item Most efficient algorithm for seat allocation used now-a-days \pause
+\item Internal Working of the algorithm quite complex \pause
+\end{itemize}
+
+\alert{GLIMPSE: OVERVIEW  OF THE INTERNALS OF ALGO} 
+\begin{block}{A simple overview}
+\begin{itemize}
+\item Every student applies to program as per his preference.\pause 
+\item The applications received by a program sorted as per ranks. 
+\item Top applications selected and others rejected.\pause 
+\item Rejected Students apply to next preference.\pause 
+\item Process continued until all students get a program or their preference list exhausted
+\end{itemize}
+\end{block}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{SEAT ALLOCATION}
+ALGORITHM 2 : MERIT ORDER ALGORITHM
+\begin{itemize}
+\item Not so efficient algorithm for seat allocation \pause
+\item However, working of algo is very simple \pause
+\end{itemize}
+
+\alert{GLIMPSE: OVERVIEW OF THE INTERNALS OF ALGO}
+\begin{block}{A simple overview}
+\begin{itemize}
+\item A sorted appended merit list maintained in this algorithm. 
+\item The list is traversed from top to down.\pause 
+\item The preference list of each candidate is traversed from top to down. 
+\item If seat left in program, candidate waitlisted. \pause 
+\item This step takes place for all candidates in the merit lists.
+\end{itemize}  
+\end{block}
+
+\end{frame}
+
+%------------------------------------------------
+\subsection{Web Interface for College Admission }
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Web via Python}
+Python GUI and DJANGO Magic!
+\begin{itemize}
+\item Developing Webpage for Rank Predictor via Python \pause
+\item Maintaining Login Sessions created using Django Framework \pause
+\item Rank inputs taken to show the possible branches available for candidate \pause
+\item Programs displayed as per Insitute wise and as per Branch wise \pause
+\end{itemize}
+
+\end{frame}
+
+%------------------------------------------------
+\section {THE Final Picture}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Appreciating the world of Algorithms and Web Maintenance}
+
+\begin{itemize}
+\item Some of the most elegant algorithm design used to allocate seats \pause
+\item Appreciating their use and needs in daily life \pause
+\item Using pdf parsing and web page maintenance to develop a simple important interface \pause
+\item Appreciating the framework of Django and universal behaviour of Python \pause
+\end{itemize}
+
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{References}
+\footnotesize{
+\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
+\bibitem[The Django Book]{p1} Adrian Holovaty, Jacob Kaplan-Moss
+\newblock Licensed under GNU Free Document License 
+\bibitem[stackoverflow.com]{p1} Stack Exchange Inc
+\newblock Stack Overflow Community
+\bibitem[eclipse.org]{p1} Eclipse Foundation
+\newblock Ecipse as IDE for JAVA
+\bibitem[GITHUB REPOSITORY]{p1} Repository for PROJECT
+\newblock www.github.com/animeshbaranawalIIT/SeatAllocation
+\end{thebibliography}
+}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\Huge{\centerline{The End}}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+
+\end{document} 

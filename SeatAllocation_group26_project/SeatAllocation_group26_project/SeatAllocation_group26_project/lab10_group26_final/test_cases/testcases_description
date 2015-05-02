@@ -1,0 +1,12 @@
+TEST CASES DESCRIPTION
+
+Test cases for the cases from 1 to 11 have been provided in the folder name corresponding to their index.
+
+
+Note:
+
+1. All the test cases have been created by modifying the sample test case provided by the instructor.
+
+2.Some of the testcases are same because they verify multiple conditions. For example:
+
+3. Note that test case 12 is a test case for checking constraint on quota extension in case of same ranks.
